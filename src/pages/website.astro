@@ -3,15 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
-import { waLink } from '../utils/whatsapp.js';
-
-// Pre-compute WA links for define:vars
-const waLinksJson = JSON.stringify({
-  all:      waLink('web_general'),
-  portfolio:waLink('web_portfolio'),
-  landing:  waLink('web_landing'),
-  sistem:   waLink('web_sistem'),
-});
 ---
 
 <BaseLayout
@@ -27,8 +18,6 @@ const waLinksJson = JSON.stringify({
   <section class="web-stitch-hero" transition:animate="fade">
     <div class="hero-bg-glow" aria-hidden="true"></div>
     <div class="web-stitch-hero-inner">
-      <!-- Label -->
-      <p class="web-stitch-label">Web Craftsmanship</p>
       <!-- Heading -->
       <h1 class="web-stitch-title">
         High-Performance<br />
@@ -38,10 +27,6 @@ const waLinksJson = JSON.stringify({
       <div class="web-stitch-cta">
         <a href="#projects" class="web-stitch-btn-primary">
           Lihat Projects
-        </a>
-        <a href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="web-stitch-btn-ghost">
-          <i class="fas fa-comment-dots"></i>
-          Hubungi via WhatsApp
         </a>
       </div>
     </div>
@@ -56,13 +41,6 @@ const waLinksJson = JSON.stringify({
       <button class="filter-btn" data-filter="portfolio">Portfolio</button>
       <button class="filter-btn" data-filter="landing">Landing Page</button>
       <button class="filter-btn" data-filter="sistem">Sistem Sederhana</button>
-    </div>
-
-    <!-- Floating WA CTA — changes based on active filter -->
-    <div class="wa-category-cta fade-up">
-      <a id="wa-web-cta" href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
-        <i class="fab fa-whatsapp"></i> Tanya tentang project ini
-      </a>
     </div>
 
     <!-- Project One: Image Left / Info Right -->
@@ -111,7 +89,7 @@ const waLinksJson = JSON.stringify({
           <a href="https://for-portfolio-mu.vercel.app" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Kunjungi Website
           </a>
-          <a href={waLink('web_portfolio')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+          <a href="https://wa.me/6287779560264?text=Halo%20Rangga%2C%20saya%20tertarik%20dengan%20web%20portfolio%20anda" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
@@ -132,7 +110,11 @@ const waLinksJson = JSON.stringify({
           <span class="web-tech-pill">JavaScript</span>
         </div>
         <div class="web-project-links web-project-links-right">
-          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+          <!-- // TODO: isi URL website nyata -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fas fa-external-link-alt"></i> Kunjungi Website
+          </a>
+          <a href="https://wa.me/6287779560264?text=Halo%20Rangga%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
@@ -210,7 +192,11 @@ const waLinksJson = JSON.stringify({
           <span class="web-tech-pill">Laragon</span>
         </div>
         <div class="web-project-links">
-          <a href={waLink('web_sistem')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+          <!-- // TODO: isi URL website nyata -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fas fa-external-link-alt"></i> Kunjungi Website
+          </a>
+          <a href="https://wa.me/6287779560264?text=Halo%20Rangga%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
@@ -231,7 +217,11 @@ const waLinksJson = JSON.stringify({
           <span class="web-tech-pill">JavaScript</span>
         </div>
         <div class="web-project-links web-project-links-right">
-          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+          <!-- // TODO: isi URL website nyata -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fas fa-external-link-alt"></i> Kunjungi Website
+          </a>
+          <a href="https://wa.me/6287779560264?text=Halo%20Rangga%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
@@ -273,10 +263,6 @@ const waLinksJson = JSON.stringify({
         <p class="web-stitch-bento-desc">
           We don't just build websites; we engineer experiences that convert attention into authority.
         </p>
-        <a href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="web-stitch-bento-link">
-          Start a conversation
-          <i class="fas fa-arrow-right"></i>
-        </a>
       </div>
       <div class="web-stitch-bento-stat">
         <i class="fas fa-rocket web-stitch-bento-icon"></i>
@@ -290,17 +276,6 @@ const waLinksJson = JSON.stringify({
       </div>
     </div>
 
-  </section>
-
-  <!-- ====== CTA ====== -->
-  <section class="web-cta-section" transition:animate="fade">
-    <div class="web-cta-box fade-up">
-      <h2>Punya ide project?</h2>
-      <p>Diskusi gratis — ceritakan ide Anda dan kita bikin jadi kenyataan.</p>
-      <a href={waLink('web_general')} target="_blank" rel="noopener" class="btn btn-web-solid">
-        <i class="fab fa-whatsapp"></i> Chat Sekarang
-      </a>
-    </div>
   </section>
 
   <PortfolioCTA />
@@ -327,16 +302,6 @@ const waLinksJson = JSON.stringify({
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-  }
-
-  .web-stitch-label {
-    font-family: 'Manrope', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent-secondary);
-    margin-bottom: 16px;
   }
 
   .web-stitch-title {
@@ -384,34 +349,6 @@ const waLinksJson = JSON.stringify({
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(163, 166, 255, 0.4);
     opacity: 0.9;
-  }
-
-  /* CTA buttons — ghost outlined */
-  .web-stitch-btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    border-radius: 9999px;
-    border: 1px solid rgba(64, 72, 93, 0.4);
-    color: var(--text-primary);
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .web-stitch-btn-ghost i {
-    font-size: 14px;
-  }
-
-  .web-stitch-btn-ghost:hover {
-    background: var(--surface-bright);
-    border-color: rgba(163, 166, 255, 0.3);
-    transform: translateY(-3px);
   }
 
   /* ---- PROJECTS SECTION ---- */
@@ -803,70 +740,6 @@ const waLinksJson = JSON.stringify({
     color: var(--text-secondary);
   }
 
-  /* ---- CTA SECTION ---- */
-  .web-cta-section {
-    padding: 0 48px 80px;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  .web-cta-box {
-    background: var(--surface-container-high);
-    border: 1px solid rgba(163, 166, 255, 0.1);
-    border-radius: 20px;
-    padding: 56px 48px;
-    text-align: center;
-  }
-
-  .web-cta-box h2 {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -1px;
-    margin-bottom: 12px;
-  }
-
-  .web-cta-box p {
-    font-size: 15px;
-    color: var(--text-secondary);
-    margin-bottom: 28px;
-  }
-
-  /* =============================================
-     WHATSAPP CTA STYLES
-     ============================================= */
-  .wa-category-cta {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 0 16px;
-    margin-top: -8px;
-    margin-bottom: 24px;
-  }
-
-  .btn-wa-category {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 9999px;
-    background: rgba(37, 211, 102, 0.12);
-    border: 1px solid rgba(37, 211, 102, 0.25);
-    color: #25d366;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-
-  .btn-wa-category:hover {
-    background: rgba(37, 211, 102, 0.22);
-    border-color: rgba(37, 211, 102, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .btn-wa-category i { font-size: 16px; }
-
   /* ---- RESPONSIVE ---- */
   @media (max-width: 1024px) {
     .web-stitch-bento {
@@ -940,8 +813,7 @@ const waLinksJson = JSON.stringify({
       gap: 12px;
     }
 
-    .web-stitch-btn-primary,
-    .web-stitch-btn-ghost {
+    .web-stitch-btn-primary {
       padding: 12px 24px;
       font-size: 12px;
     }
@@ -1002,14 +874,6 @@ const waLinksJson = JSON.stringify({
       font-size: 28px;
     }
 
-    .web-cta-box {
-      padding: 28px 20px;
-    }
-
-    .web-cta-box h2 {
-      font-size: clamp(24px, 7vw, 36px);
-    }
-
     .web-browser-chrome {
       padding: 8px 12px;
     }
@@ -1029,8 +893,7 @@ const waLinksJson = JSON.stringify({
       font-size: clamp(28px, 11vw, 44px);
     }
 
-    .web-stitch-btn-primary,
-    .web-stitch-btn-ghost {
+    .web-stitch-btn-primary {
       padding: 11px 20px;
       font-size: 11px;
       width: 100%;
@@ -1093,23 +956,4 @@ const waLinksJson = JSON.stringify({
       });
     });
   })();
-</script>
-
-<script define:vars={{ waLinksJson }}>
-  /* ---------- TAB-SWITCHING WA CTA ---------- */
-  document.addEventListener('DOMContentLoaded', function() {
-    var waLinks = JSON.parse(waLinksJson);
-    var waCtaBtn = document.getElementById('wa-web-cta');
-    if (!waCtaBtn) return;
-    var filterBar = document.querySelector('.filter-bar');
-    if (!filterBar) return;
-    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var filter = btn.dataset.filter || 'all';
-        if (waLinks[filter]) {
-          waCtaBtn.href = waLinks[filter];
-        }
-      });
-    });
-  });
 </script>
