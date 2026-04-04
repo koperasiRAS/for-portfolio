@@ -33,81 +33,22 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
         </div>
       </div>
 
-      <!-- Right: Floating cards -->
-      <div class="web-hero-cards fade-up">
-        <div class="web-card web-card-1">
-          <div class="web-card-browser">
-            <div class="browser-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="browser-url">for-portfolio-mu.vercel.app</div>
-          </div>
-          <a class="web-card-img-wrap glightbox"
-             href="/assets/thumbnails/web1.png"
-             data-gallery="web-gallery"
-             data-title="Website Portfolio: Frame Of Rangga"
-             data-type="image">
-            <img src="/assets/thumbnails/web1.png" alt="Website Portfolio FOR" loading="lazy" width="260" height="180" onerror="this.style.display='none'" />
-            <div class="gallery-overlay">
-              <span class="gallery-item-title">Website Portfolio FOR</span>
-              <div class="gallery-tech">
-                <span class="tech-tag">Astro</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JS</span>
-              </div>
-              <i class="fas fa-expand"></i>
-            </div>
-          </a>
-        </div>
+      <!-- Right: Floating Mockups -->
+      <div class="web-hero-mockups fade-up">
+        <!-- Laptop Mockup -->
+        <a class="mockup laptop glightbox" href="/assets/thumbnails/web1.png" data-gallery="web-gallery" data-title="Website Portfolio FOR">
+          <img src="/assets/thumbnails/web1.png" alt="Website Portfolio FOR" loading="lazy" width="600" height="340" />
+        </a>
 
-        <div class="web-card web-card-2">
-          <div class="web-card-browser">
-            <div class="browser-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="browser-url">landing-page.example</div>
-          </div>
-          <a class="web-card-img-wrap glightbox"
-             href="/assets/thumbnails/web2.png"
-             data-gallery="web-gallery"
-             data-title="Landing Page: Creative Agency"
-             data-type="image">
-            <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="260" height="180" onerror="this.style.display='none'" />
-            <div class="gallery-overlay">
-              <span class="gallery-item-title">Landing Page</span>
-              <div class="gallery-tech">
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">Astro</span>
-              </div>
-              <i class="fas fa-expand"></i>
-            </div>
-          </a>
-        </div>
+        <!-- Tablet Mockup -->
+        <a class="mockup tablet glightbox" href="/assets/thumbnails/web2.png" data-gallery="web-gallery" data-title="Landing Page">
+          <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="400" height="500" />
+        </a>
 
-        <div class="web-card web-card-3">
-          <div class="web-card-browser">
-            <div class="browser-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="browser-url">brand-design.example</div>
-          </div>
-          <a class="web-card-img-wrap glightbox"
-             href="/assets/design/brand/web3.png"
-             data-gallery="web-gallery"
-             data-title="Brand Design Showcase"
-             data-type="image">
-            <img src="/assets/design/brand/web3.png" alt="Brand Design Showcase" loading="lazy" width="220" height="140" onerror="this.style.display='none'" />
-            <div class="gallery-overlay">
-              <span class="gallery-item-title">Brand Design</span>
-              <div class="gallery-tech">
-                <span class="tech-tag">Figma</span>
-                <span class="tech-tag">Illustrator</span>
-              </div>
-              <i class="fas fa-expand"></i>
-            </div>
-          </a>
-        </div>
+        <!-- Phone Mockup -->
+        <a class="mockup phone glightbox" href="/assets/design/brand/web3.png" data-gallery="web-gallery" data-title="Brand Design Showcase">
+          <img src="/assets/design/brand/web3.png" alt="Brand Design Showcase" loading="lazy" width="220" height="400" />
+        </a>
       </div>
 
     </div>
