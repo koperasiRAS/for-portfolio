@@ -14,7 +14,6 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
   ogDescription="Brand identity, desain sosial media, poster, dan visual branding memorable oleh Rangga Danuarta."
   ogUrl="https://web-portfolio-gray-ten.vercel.app/design"
   hasGlightbox={true}
-  hasSwiper={true}
 >
   <Navbar slot="navbar" activePage="design" />
 
@@ -25,18 +24,28 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 
     <!-- Carousel -->
     <div class="fade-up">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
-          <div class="swiper-slide"><img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
-          <div class="swiper-slide"><img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
-          <div class="swiper-slide"><img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
-          <div class="swiper-slide"><img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
-          <div class="swiper-slide"><img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" />
+          </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
 
@@ -50,79 +59,95 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     </div>
 
     <!-- Gallery Grid -->
-    <div class="gallery-grid fade-up">
+    <div class="gallery-grid gallery-grid-portrait fade-up">
 
       <!-- Brand Identity -->
-      <GalleryItem
-        src="/assets/design/brand/skincare.png"
-        alt="Skincare Brand Design"
-        title="Brand Identity: Skincare"
-        category="brand"
-        href="/assets/design/brand/skincare.png"
-        gallery="design-gallery"
-      />
-      <GalleryItem
-        src="/assets/design/brand/desain elektronik.png"
-        alt="Elektronik Product Design"
-        title="Brand Identity: Elektronik"
-        category="brand"
-        href="/assets/design/brand/desain elektronik.png"
-        gallery="design-gallery"
-      />
-      <GalleryItem
-        src="/assets/design/brand/LACOSTE.png"
-        alt="LACOSTE Brand Design"
-        title="Brand Identity: LACOSTE"
-        category="brand"
-        href="/assets/design/brand/LACOSTE.png"
-        gallery="design-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/brand/skincare.png"
+          alt="Skincare Brand Design"
+          title="Brand Identity: Skincare"
+          category="brand"
+          href="/assets/design/brand/skincare.png"
+          gallery="design-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/brand/desain elektronik.png"
+          alt="Elektronik Product Design"
+          title="Brand Identity: Elektronik"
+          category="brand"
+          href="/assets/design/brand/desain elektronik.png"
+          gallery="design-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/brand/LACOSTE.png"
+          alt="LACOSTE Brand Design"
+          title="Brand Identity: LACOSTE"
+          category="brand"
+          href="/assets/design/brand/LACOSTE.png"
+          gallery="design-gallery"
+        />
+      </div>
 
       <!-- Social Media -->
-      <GalleryItem
-        src="/assets/design/social/carousels 1.png"
-        alt="Social Media Carousel Design"
-        title="Social Media: Carousel"
-        category="social"
-        href="/assets/design/social/carousels 1.png"
-        gallery="design-gallery"
-      />
-      <GalleryItem
-        src="/assets/design/social/desain iklan parfum.png"
-        alt="Parfum Advertisement Design"
-        title="Social Media: Parfum Iklan"
-        category="social"
-        href="/assets/design/social/desain iklan parfum.png"
-        gallery="design-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/social/carousels 1.png"
+          alt="Social Media Carousel Design"
+          title="Social Media: Carousel"
+          category="social"
+          href="/assets/design/social/carousels 1.png"
+          gallery="design-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/social/desain iklan parfum.png"
+          alt="Parfum Advertisement Design"
+          title="Social Media: Parfum Iklan"
+          category="social"
+          href="/assets/design/social/desain iklan parfum.png"
+          gallery="design-gallery"
+        />
+      </div>
 
       <!-- Poster -->
-      <GalleryItem
-        src="/assets/design/social/poster edukasi.png"
-        alt="Educational Poster Design"
-        title="Poster: Edukasi"
-        category="poster"
-        href="/assets/design/social/poster edukasi.png"
-        gallery="design-gallery"
-      />
-      <GalleryItem
-        src="/assets/design/social/poster product.png"
-        alt="Product Poster Design"
-        title="Poster: Product"
-        category="poster"
-        href="/assets/design/social/poster product.png"
-        gallery="design-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/social/poster edukasi.png"
+          alt="Educational Poster Design"
+          title="Poster: Edukasi"
+          category="poster"
+          href="/assets/design/social/poster edukasi.png"
+          gallery="design-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/social/poster product.png"
+          alt="Product Poster Design"
+          title="Poster: Product"
+          category="poster"
+          href="/assets/design/social/poster product.png"
+          gallery="design-gallery"
+        />
+      </div>
 
       <!-- Advertising -->
-      <GalleryItem
-        src="/assets/design/social/poster tips.png"
-        alt="Tips Social Media Design"
-        title="Advertising: Tips Konten"
-        category="advertising"
-        href="/assets/design/social/poster tips.png"
-        gallery="design-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/design/social/poster tips.png"
+          alt="Tips Social Media Design"
+          title="Advertising: Tips Konten"
+          category="advertising"
+          href="/assets/design/social/poster tips.png"
+          gallery="design-gallery"
+        />
+      </div>
 
     </div>
   </section>
@@ -133,6 +158,80 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 </BaseLayout>
 
 <script>
+  /* ---------- CAROUSEL ---------- */
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    if (!track) return;
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let current = 0;
+    let autoTimer = null;
+
+    // Build dots
+    slides.forEach(function(_, i) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      dot.addEventListener('click', function() { goTo(i); });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateSlide() {
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function nextSlide() { goTo((current + 1) % total); }
+    function prevSlide() { goTo((current - 1 + total) % total); }
+    function goTo(index) {
+      current = index;
+      updateSlide();
+      resetAuto();
+    }
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(nextSlide, 4000);
+    }
+
+    autoTimer = setInterval(nextSlide, 4000);
+
+    let startX = 0;
+    track.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+    }, { passive: true });
+
+    let isDragging = false;
+    track.addEventListener('mousedown', function(e) {
+      startX = e.clientX;
+      isDragging = true;
+      e.preventDefault();
+    });
+    track.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+      isDragging = false;
+    });
+    track.addEventListener('mouseleave', function() { isDragging = false; });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    track.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+    track.addEventListener('mouseleave', function() { autoTimer = setInterval(nextSlide, 4000); });
+  })();
+
+  /* ---------- GLIGHTBOX ---------- */
   document.addEventListener('DOMContentLoaded', function initGL() {
     if (typeof GLightbox === 'undefined') {
       setTimeout(initGL, 100);
@@ -147,7 +246,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     });
   });
 
-  /* ---------- CATEGORY FILTER (standalone, not dependent on script.js) ---------- */
+  /* ---------- CATEGORY FILTER ---------- */
   (function() {
     const filterBar = document.querySelector('.filter-bar');
     if (!filterBar) return;
