@@ -4,6 +4,15 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
 import { waLink } from '../utils/whatsapp.js';
+
+// Pre-compute WA links for define:vars
+const waLinksJson = JSON.stringify({
+  all:        waLink('design_general'),
+  brand:      waLink('design_brand'),
+  social:     waLink('design_sosmed'),
+  poster:     waLink('design_poster'),
+  advertising:waLink('design_advertising'),
+});
 ---
 
 <BaseLayout
@@ -48,6 +57,13 @@ import { waLink } from '../utils/whatsapp.js';
       <button class="filter-btn" data-filter="advertising">Advertising</button>
     </div>
 
+    <!-- Floating WA CTA — changes based on active filter -->
+    <div class="wa-category-cta fade-up">
+      <a id="wa-cta-btn" href={waLink('design_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
+        <i class="fab fa-whatsapp"></i> Tanya tentang desain ini
+      </a>
+    </div>
+
     <!-- Bento Grid — 12-col, editorial layout -->
     <div class="stitch-design-grid fade-up">
 
@@ -76,6 +92,9 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
+          <a href={waLink('design_advertising')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -104,6 +123,9 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
+          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -132,6 +154,9 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
+          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -155,6 +180,9 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
+          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -183,6 +211,9 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
+          <a href={waLink('design_sosmed')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -206,6 +237,9 @@ import { waLink } from '../utils/whatsapp.js';
             <p class="stitch-design-card-title">Modernist Expo</p>
             <span class="stitch-design-card-meta">Exhibition Design</span>
           </div>
+          <a href={waLink('design_poster')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </a>
 
@@ -633,6 +667,70 @@ import { waLink } from '../utils/whatsapp.js';
     transform: translateY(-3px);
   }
 
+  /* =============================================
+     WHATSAPP CTA STYLES
+     ============================================= */
+  .wa-category-cta {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 16px;
+    margin-top: -8px;
+    margin-bottom: 24px;
+  }
+
+  .btn-wa-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    background: rgba(37, 211, 102, 0.12);
+    border: 1px solid rgba(37, 211, 102, 0.25);
+    color: #25d366;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-wa-category:hover {
+    background: rgba(37, 211, 102, 0.22);
+    border-color: rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-wa-category i { font-size: 16px; }
+
+  /* Card WA button — top-right, hover reveal */
+  .design-card-wa-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.85);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.25s ease, background 0.25s ease;
+    z-index: 10;
+  }
+
+  .design-card-wa-btn:hover {
+    background: #25d366;
+    transform: scale(1.1);
+  }
+
+  .stitch-design-card:hover .design-card-wa-btn {
+    opacity: 1;
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .stitch-design-grid {
@@ -806,6 +904,21 @@ import { waLink } from '../utils/whatsapp.js';
       font-size: 14px;
     }
   }
+
+  /* Mobile always show card WA button */
+  @media (max-width: 768px) {
+    .design-card-wa-btn {
+      opacity: 1;
+    }
+
+    .stitch-design-overlay-hover .design-card-wa-btn {
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+  }
 </style>
 
 <script>
@@ -848,4 +961,23 @@ import { waLink } from '../utils/whatsapp.js';
       });
     });
   })();
+</script>
+
+<script define:vars={{ waLinksJson }}>
+  /* ---------- TAB-SWITCHING WA CTA ---------- */
+  document.addEventListener('DOMContentLoaded', function() {
+    var waLinks = JSON.parse(waLinksJson);
+    var waCtaBtn = document.getElementById('wa-cta-btn');
+    if (!waCtaBtn) return;
+    var filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.dataset.filter || 'all';
+        if (waLinks[filter]) {
+          waCtaBtn.href = waLinks[filter];
+        }
+      });
+    });
+  });
 </script>

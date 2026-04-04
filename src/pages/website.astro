@@ -4,6 +4,14 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
 import { waLink } from '../utils/whatsapp.js';
+
+// Pre-compute WA links for define:vars
+const waLinksJson = JSON.stringify({
+  all:      waLink('web_general'),
+  portfolio:waLink('web_portfolio'),
+  landing:  waLink('web_landing'),
+  sistem:   waLink('web_sistem'),
+});
 ---
 
 <BaseLayout
@@ -47,8 +55,14 @@ import { waLink } from '../utils/whatsapp.js';
       <button class="filter-btn active" data-filter="all">Semua</button>
       <button class="filter-btn" data-filter="portfolio">Portfolio</button>
       <button class="filter-btn" data-filter="landing">Landing Page</button>
-      <button class="filter-btn" data-filter="companyprofile">Company Profile</button>
       <button class="filter-btn" data-filter="sistem">Sistem Sederhana</button>
+    </div>
+
+    <!-- Floating WA CTA — changes based on active filter -->
+    <div class="wa-category-cta fade-up">
+      <a id="wa-web-cta" href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
+        <i class="fab fa-whatsapp"></i> Tanya tentang project ini
+      </a>
     </div>
 
     <!-- Project One: Image Left / Info Right -->
@@ -118,11 +132,8 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="web-tech-pill">JavaScript</span>
         </div>
         <div class="web-project-links web-project-links-right">
-          <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20landing%20page" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
-            <i class="fas fa-external-link-alt"></i> Tanya Project
-          </a>
-          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
-            <i class="fab fa-whatsapp"></i> Konsultasi
+          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
       </div>
@@ -199,11 +210,8 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="web-tech-pill">Laragon</span>
         </div>
         <div class="web-project-links">
-          <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20sistem%20POS" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
-            <i class="fas fa-external-link-alt"></i> Tanya Project
-          </a>
-          <a href={waLink('web_sistem')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
-            <i class="fab fa-whatsapp"></i> Konsultasi
+          <a href={waLink('web_sistem')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
       </div>
@@ -223,11 +231,8 @@ import { waLink } from '../utils/whatsapp.js';
           <span class="web-tech-pill">JavaScript</span>
         </div>
         <div class="web-project-links web-project-links-right">
-          <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20landing%20page%20untuk%20brand%20saya" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
-            <i class="fas fa-external-link-alt"></i> Tanya Project
-          </a>
-          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
-            <i class="fab fa-whatsapp"></i> Konsultasi
+          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
       </div>
@@ -828,6 +833,40 @@ import { waLink } from '../utils/whatsapp.js';
     margin-bottom: 28px;
   }
 
+  /* =============================================
+     WHATSAPP CTA STYLES
+     ============================================= */
+  .wa-category-cta {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 16px;
+    margin-top: -8px;
+    margin-bottom: 24px;
+  }
+
+  .btn-wa-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    background: rgba(37, 211, 102, 0.12);
+    border: 1px solid rgba(37, 211, 102, 0.25);
+    color: #25d366;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-wa-category:hover {
+    background: rgba(37, 211, 102, 0.22);
+    border-color: rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-wa-category i { font-size: 16px; }
+
   /* ---- RESPONSIVE ---- */
   @media (max-width: 1024px) {
     .web-stitch-bento {
@@ -1054,4 +1093,23 @@ import { waLink } from '../utils/whatsapp.js';
       });
     });
   })();
+</script>
+
+<script define:vars={{ waLinksJson }}>
+  /* ---------- TAB-SWITCHING WA CTA ---------- */
+  document.addEventListener('DOMContentLoaded', function() {
+    var waLinks = JSON.parse(waLinksJson);
+    var waCtaBtn = document.getElementById('wa-web-cta');
+    if (!waCtaBtn) return;
+    var filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.dataset.filter || 'all';
+        if (waLinks[filter]) {
+          waCtaBtn.href = waLinks[filter];
+        }
+      });
+    });
+  });
 </script>

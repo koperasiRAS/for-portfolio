@@ -4,6 +4,15 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
 import { waLink } from '../utils/whatsapp.js';
+
+// Pre-compute WA links for define:vars
+const waLinksJson = JSON.stringify({
+  all:        waLink('video_general'),
+  brand:      waLink('video_brand'),
+  dokumentasi:waLink('video_dokumentasi'),
+  sosmed:     waLink('video_konten'),
+  promosi:    waLink('video_promosi'),
+});
 ---
 
 <BaseLayout
@@ -38,6 +47,13 @@ import { waLink } from '../utils/whatsapp.js';
       <button class="filter-btn" data-filter="dokumentasi">Dokumentasi</button>
       <button class="filter-btn" data-filter="sosmed">Konten Sosmed</button>
       <button class="filter-btn" data-filter="promosi">Promosi</button>
+    </div>
+
+    <!-- Floating WA CTA — changes based on active filter -->
+    <div class="wa-category-cta fade-up">
+      <a id="wa-cta-btn" href={waLink('video_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
+        <i class="fab fa-whatsapp"></i> Tanya tentang video ini
+      </a>
     </div>
 
     <!-- Video Grid -->
@@ -110,9 +126,9 @@ import { waLink } from '../utils/whatsapp.js';
               <h3 class="stitch-video-card-title">Brand Video: Client Project</h3>
               <p class="stitch-video-card-meta">Brand Video &bull; 2024</p>
             </div>
-            <button class="stitch-more-btn" aria-label="More options">
-              <i class="fas fa-ellipsis-v"></i>
-            </button>
+            <a href={waLink('video_brand')} target="_blank" rel="noopener noreferrer" class="video-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang video ini">
+              <i class="fab fa-whatsapp"></i>
+            </a>
           </div>
         </a>
 
@@ -143,9 +159,9 @@ import { waLink } from '../utils/whatsapp.js';
               <h3 class="stitch-video-card-title">Dokumentasi Event</h3>
               <p class="stitch-video-card-meta">Dokumentasi &bull; 2024</p>
             </div>
-            <button class="stitch-more-btn" aria-label="More options">
-              <i class="fas fa-ellipsis-v"></i>
-            </button>
+            <a href={waLink('video_dokumentasi')} target="_blank" rel="noopener noreferrer" class="video-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang video ini">
+              <i class="fab fa-whatsapp"></i>
+            </a>
           </div>
         </a>
 
@@ -176,9 +192,9 @@ import { waLink } from '../utils/whatsapp.js';
               <h3 class="stitch-video-card-title">Konten Sosial Media</h3>
               <p class="stitch-video-card-meta">Konten Sosmed &bull; 2024</p>
             </div>
-            <button class="stitch-more-btn" aria-label="More options">
-              <i class="fas fa-ellipsis-v"></i>
-            </button>
+            <a href={waLink('video_konten')} target="_blank" rel="noopener noreferrer" class="video-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang video ini">
+              <i class="fab fa-whatsapp"></i>
+            </a>
           </div>
         </a>
 
@@ -209,9 +225,9 @@ import { waLink } from '../utils/whatsapp.js';
               <h3 class="stitch-video-card-title">Video Promosi Produk</h3>
               <p class="stitch-video-card-meta">Promosi &bull; 2024</p>
             </div>
-            <button class="stitch-more-btn" aria-label="More options">
-              <i class="fas fa-ellipsis-v"></i>
-            </button>
+            <a href={waLink('video_promosi')} target="_blank" rel="noopener noreferrer" class="video-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang video ini">
+              <i class="fab fa-whatsapp"></i>
+            </a>
           </div>
         </a>
 
@@ -607,6 +623,74 @@ import { waLink } from '../utils/whatsapp.js';
     margin-top: 64px;
   }
 
+  /* ── Floating WA Category CTA ── */
+  .wa-category-cta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .btn-wa-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    color: #25d366;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
+  }
+
+  .btn-wa-category:hover {
+    background: rgba(37, 211, 102, 0.25);
+    border-color: rgba(37, 211, 102, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.25);
+  }
+
+  .btn-wa-category i { font-size: 16px; }
+
+  /* ── Per-card WA hover button ── */
+  .video-card-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.9);
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  .stitch-video-card-regular:hover .video-card-wa-btn {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .video-card-wa-btn:hover {
+    background: rgba(37, 211, 102, 1);
+    transform: scale(1.1) !important;
+  }
+
+  @media (max-width: 768px) {
+    .video-card-wa-btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   .stitch-explore-btn {
     display: inline-flex;
     align-items: center;
@@ -812,4 +896,23 @@ import { waLink } from '../utils/whatsapp.js';
       });
     });
   })();
+</script>
+
+<!-- Floating WA CTA — switches message based on active filter tab -->
+<script define:vars={{ waLinksJson }}>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterBar = document.querySelector('.filter-bar');
+    const waCtaBtn = document.getElementById('wa-cta-btn');
+    if (!filterBar || !waCtaBtn) return;
+
+    const waLinks = JSON.parse(waLinksJson);
+    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const filter = btn.dataset.filter || 'all';
+        if (waLinks[filter]) {
+          waCtaBtn.href = waLinks[filter];
+        }
+      });
+    });
+  });
 </script>
