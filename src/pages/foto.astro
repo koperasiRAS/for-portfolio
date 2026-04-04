@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import GalleryItem from '../components/GalleryItem.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
 ---
 
@@ -15,49 +14,27 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 >
   <Navbar slot="navbar" activePage="foto" />
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" transition:animate="fade">
+  <!-- PAGE HERO — Stitch Reference -->
+  <section class="page-hero stitch-hero" transition:animate="fade">
     <div class="page-hero-bg-glow" aria-hidden="true"></div>
-    <div class="page-hero-inner">
-      <span class="section-label gradient-label">Portfolio</span>
-      <h1 class="page-hero-title">Photography</h1>
-      <p class="page-hero-sub">Momen-momen yang diabadikan dengan sentuhan visual yang kuat dan storytelling yang autentik.</p>
-    </div>
-  </section>
-
-  <!-- CAROUSEL -->
-  <section class="photo-carousel-section" transition:animate="fade">
-    <div class="carousel-container fade-up">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide">
-          <img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/wedding/anggie 2 landscape.jpg" alt="Portrait Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/wedding/anggie 4 landscape.jpg" alt="Editorial Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Brand Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/fotografer/fotografi mobil.jpg" alt="Automotive Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/fotografer/ccm rangga.jpg" alt="Lifestyle Photography" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/foto/fashion/foto baju coklat.jpg" alt="Commercial Photography" loading="lazy" />
-        </div>
+    <div class="page-hero-inner stitch-hero-inner">
+      <!-- Label badge -->
+      <div class="stitch-badge">
+        <i class="fas fa-camera"></i>
+        <span>Portfolio</span>
       </div>
-      <div class="carousel-dots" id="carouselDots"></div>
+      <!-- Heading -->
+      <h1 class="stitch-hero-title">Photography</h1>
+      <!-- Subtitle -->
+      <p class="stitch-hero-sub">
+        Momen-momen yang diabadikan dengan sentuhan visual yang kuat dan storytelling yang autentik. Dari pernikahan hingga konten brand, setiap frame bercerita.
+      </p>
     </div>
   </section>
 
-  <!-- FILTER + GALLERY -->
+  <!-- FILTER + GALLERY — Stitch Bento Grid -->
   <section class="gallery-section" transition:animate="fade">
-    <!-- Filter Bar -->
+    <!-- Filter Bar — Stitch pill style -->
     <div class="filter-bar fade-up" aria-label="Filter by category">
       <button class="filter-btn active" data-filter="all">Semua</button>
       <button class="filter-btn" data-filter="wedding">Wedding</button>
@@ -67,89 +44,165 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
       <button class="filter-btn" data-filter="fotografer">Fotografer</button>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="gallery-grid gallery-grid-portrait fade-up">
+    <!-- Bento Grid Gallery — Stitch asymmetric layout -->
+    <div class="stitch-bento-grid fade-up">
 
-      <!-- Wedding -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
-          alt="Wedding Photography"
-          title="Wedding: Ultah Raden"
-          category="wedding"
-          href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
-          gallery="portfolio-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/wedding/anggie 2 landscape.jpg"
-          alt="Portrait Photography"
-          title="Wedding: Anggie"
-          category="wedding"
-          href="/assets/foto/wedding/anggie 2 landscape.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/wedding/anggie 4 landscape.jpg"
-          alt="Editorial Photography"
-          title="Wedding: Anggie Editorial"
-          category="wedding"
-          href="/assets/foto/wedding/anggie 4 landscape.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
+      <!-- Wedding 1 — Featured Large (col-span-8) -->
+      <a class="stitch-card stitch-card-featured glightbox"
+         href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+         data-gallery="portfolio-gallery"
+         data-title="Wedding: Ultah Rangen"
+         data-category="wedding">
+        <div class="stitch-card-img-wrap">
+          <img
+            src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+            alt="Wedding Photography"
+            loading="lazy"
+            width="960"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Ultah Raden</h3>
+          <p class="stitch-card-desc">Momen pernikahan yang diabadikan dengan cahaya natural dan komposisi sinematik.</p>
+        </div>
+      </a>
 
-      <!-- Automotive -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/fotografer/fotografi mobil.jpg"
-          alt="Automotive Photography"
-          title="Automotive: Fotografi Mobil"
-          category="automotive"
-          href="/assets/foto/fotografer/fotografi mobil.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
+      <!-- Wedding 2 (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/wedding/anggie 2 landscape.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Wedding: Anggie"
+         data-category="wedding">
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/wedding/anggie 2 landscape.jpg"
+            alt="Portrait Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie</h3>
+        </div>
+      </a>
 
-      <!-- Komersial -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/fashion/foto baju coklat.jpg"
-          alt="Commercial Photography"
-          title="Komersial: Fashion Shoot"
-          category="komersial"
-          href="/assets/foto/fashion/foto baju coklat.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
+      <!-- Wedding 3 (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/wedding/anggie 4 landscape.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Wedding: Anggie Editorial"
+         data-category="wedding">
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/wedding/anggie 4 landscape.jpg"
+            alt="Editorial Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie Editorial</h3>
+        </div>
+      </a>
 
-      <!-- Lifestyle -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/fotografer/ccm rangga.jpg"
-          alt="Lifestyle Photography"
-          title="Lifestyle: CCM Rangga"
-          category="lifestyle"
-          href="/assets/foto/fotografer/ccm rangga.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
+      <!-- Automotive (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/fotografer/fotografi mobil.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Automotive: Fotografi Mobil"
+         data-category="automotive">
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/fotografer/fotografi mobil.jpg"
+            alt="Automotive Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Automotive</span>
+          <h3 class="stitch-card-title">Automotive: Fotografi Mobil</h3>
+        </div>
+      </a>
 
-      <!-- Fotografer -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/foto/fotografer/fotografi gojek.jpg"
-          alt="Brand Photography"
-          title="Fotografer: Fotografi Gojek"
-          category="fotografer"
-          href="/assets/foto/fotografer/fotografi gojek.jpg"
-          gallery="portfolio-gallery"
-        />
-      </div>
+      <!-- Komersial (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/fashion/foto baju coklat.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Komersial: Fashion Shoot"
+         data-category="komersial">
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/fashion/foto baju coklat.jpg"
+            alt="Commercial Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Komersial</span>
+          <h3 class="stitch-card-title">Komersial: Fashion Shoot</h3>
+        </div>
+      </a>
 
+      <!-- Lifestyle (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/fotografer/ccm rangga.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Lifestyle: CCM Rangga"
+         data-category="lifestyle">
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/fotografer/ccm rangga.jpg"
+            alt="Lifestyle Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Lifestyle</span>
+          <h3 class="stitch-card-title">Lifestyle: CCM Rangga</h3>
+        </div>
+      </a>
+
+      <!-- Fotografer (col-span-4) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/fotografer/fotografi gojek.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Fotografer: Fotografi Gojek"
+         data-category="fotografer">
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/fotografer/fotografi gojek.jpg"
+            alt="Brand Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Fotografer</span>
+          <h3 class="stitch-card-title">Fotografer: Fotografi Gojek</h3>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- View Archive CTA — Stitch style -->
+    <div class="stitch-archive-cta fade-up">
+      <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="stitch-archive-btn">
+        <span>Lihat Semua Karyawan</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
   </section>
 
@@ -158,85 +211,283 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
   <Footer slot="footer" variant="minimal" />
 </BaseLayout>
 
+<style>
+  /* =============================================
+     STITCH FOTO PAGE — Scoped styles
+     Matches: stitch/photography_showcase/code.html
+     ============================================= */
+
+  /* Hero — Stitch style */
+  .stitch-hero {
+    padding: 140px 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .stitch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.15);
+    color: var(--accent-secondary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .stitch-badge i {
+    font-size: 12px;
+  }
+
+  .stitch-hero-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .stitch-hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 580px;
+  }
+
+  /* Filter Bar — pill buttons, centered */
+  .filter-bar {
+    padding: 0 48px;
+    margin-bottom: 48px;
+  }
+
+  .filter-btn {
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 9px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: var(--surface-bright);
+    color: var(--accent-primary);
+    border-color: rgba(163, 166, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-secondary-container);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  /* Bento Grid — 12-column asymmetric */
+  .stitch-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 0 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Featured card — spans 8 of 12 cols */
+  .stitch-card-featured {
+    grid-column: span 8;
+  }
+
+  /* Standard cards — span 4 of 12 cols */
+  .stitch-card:not(.stitch-card-featured) {
+    grid-column: span 4;
+  }
+
+  /* Stitch Card */
+  .stitch-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface-container);
+    border: 1px solid rgba(163, 166, 255, 0.06);
+    cursor: pointer;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+
+  .stitch-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(163, 166, 255, 0.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Image containers */
+  .stitch-card-img-wrap {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  .stitch-card-img-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .stitch-card-img-portrait {
+    aspect-ratio: 4 / 5;
+  }
+
+  .stitch-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+
+  .stitch-card:hover .stitch-card-img-wrap img {
+    transform: scale(1.06);
+  }
+
+  /* Overlay — Stitch style, bottom gradient + text */
+  .stitch-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 14, 32, 0.92) 0%, rgba(6, 14, 32, 0.3) 40%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stitch-card:hover .stitch-card-overlay {
+    opacity: 1;
+  }
+
+  .stitch-card-cat {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-tertiary, #8ab0ff);
+    margin-bottom: 6px;
+  }
+
+  .stitch-card-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .stitch-card-desc {
+    font-size: 12px;
+    color: rgba(222, 229, 255, 0.7);
+    line-height: 1.5;
+    max-width: 320px;
+  }
+
+  /* Archive CTA */
+  .stitch-archive-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  .stitch-archive-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.12);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .stitch-archive-btn:hover {
+    background: var(--surface-bright);
+    border-color: rgba(163, 166, 255, 0.3);
+    color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .stitch-archive-btn i {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+  }
+
+  .stitch-archive-btn:hover i {
+    transform: translateX(4px);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stitch-hero {
+      padding: 120px 24px 60px;
+    }
+
+    .filter-bar,
+    .stitch-bento-grid {
+      padding: 0 24px;
+    }
+
+    .stitch-card-featured {
+      grid-column: span 12;
+    }
+
+    .stitch-card:not(.stitch-card-featured) {
+      grid-column: span 6;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stitch-card-featured,
+    .stitch-card:not(.stitch-card-featured) {
+      grid-column: span 12;
+    }
+
+    .filter-bar {
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>
+
 <script>
-  /* ---------- CAROUSEL ---------- */
-  (function() {
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    if (!track) return;
-
-    const slides = track.querySelectorAll('.carousel-slide');
-    const total = slides.length;
-    let current = 0;
-    let autoTimer = null;
-
-    // Build dots
-    slides.forEach(function(_, i) {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.addEventListener('click', function() { goTo(i); });
-      dotsContainer.appendChild(dot);
-    });
-
-    function updateSlide() {
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    function nextSlide() { goTo((current + 1) % total); }
-    function prevSlide() { goTo((current - 1 + total) % total); }
-    function goTo(index) {
-      current = index;
-      updateSlide();
-      resetAuto();
-    }
-    function resetAuto() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(nextSlide, 4000);
-    }
-
-    // Auto-slide
-    autoTimer = setInterval(nextSlide, 4000);
-
-    // Touch — mobile swipe
-    let startX = 0;
-    track.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-    track.addEventListener('touchend', function(e) {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-    }, { passive: true });
-
-    // Mouse drag — desktop
-    let isDragging = false;
-    track.addEventListener('mousedown', function(e) {
-      startX = e.clientX;
-      isDragging = true;
-      e.preventDefault();
-    });
-    track.addEventListener('mouseup', function(e) {
-      if (!isDragging) return;
-      const diff = startX - e.clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-      isDragging = false;
-    });
-    track.addEventListener('mouseleave', function() { isDragging = false; });
-
-    // Keyboard
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-
-    // Pause on hover
-    track.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
-    track.addEventListener('mouseleave', function() { autoTimer = setInterval(nextSlide, 4000); });
-  })();
-
   /* ---------- GLIGHTBOX ---------- */
   document.addEventListener('DOMContentLoaded', function initGL() {
     if (typeof GLightbox === 'undefined') {
@@ -257,16 +508,21 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     const filterBar = document.querySelector('.filter-bar');
     if (!filterBar) return;
     const btns = filterBar.querySelectorAll('.filter-btn');
-    const grid = document.querySelector('.gallery-grid');
-    if (!grid) return;
+    const cards = document.querySelectorAll('.stitch-card');
+    if (!cards.length) return;
+
     btns.forEach(function(btn) {
       btn.addEventListener('click', function() {
         const filter = btn.dataset.filter;
         btns.forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        grid.querySelectorAll('.gallery-item').forEach(function(item) {
-          const cat = item.dataset.category || '';
-          item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        cards.forEach(function(card) {
+          const cat = (card as HTMLElement).dataset.category || '';
+          if (filter === 'all' || cat === filter) {
+            (card as HTMLElement).style.display = '';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
         });
       });
     });

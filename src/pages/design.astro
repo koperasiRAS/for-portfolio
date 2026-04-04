@@ -2,58 +2,42 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import GalleryItem from '../components/GalleryItem.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
 ---
 
 <BaseLayout
   title="Brand Design Portfolio | Frame Of Rangga"
-  description="Portofolio brand design Rangga Danuarta — brand identity, social media content, poster, dan visual branding yang memorable dan berdampak."
+  description="Portofolio brand design Rangga Danuarta — brand identity, social media content, poster, dan visual branding yang memorable dan estadounid."
   ogImage="https://for-portfolio-mu.vercel.app/assets/og/og-design.jpg"
   ogUrl="https://for-portfolio-mu.vercel.app/design"
   hasGlightbox={true}
 >
   <Navbar slot="navbar" activePage="design" />
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" transition:animate="fade">
+  <!-- PAGE HERO — Stitch Editorial Header -->
+  <section class="page-hero stitch-hero" transition:animate="fade">
     <div class="page-hero-bg-glow" aria-hidden="true"></div>
-    <div class="page-hero-inner">
-      <span class="section-label gradient-label">Portfolio</span>
-      <h1 class="page-hero-title">Design Showcase</h1>
-      <p class="page-hero-sub">Brand identity, social media content, dan visual branding yang memorable dan berdampak.</p>
-    </div>
-  </section>
-
-  <!-- CAROUSEL -->
-  <section class="photo-carousel-section" transition:animate="fade">
-    <div class="carousel-container fade-up">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide">
-          <img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" />
-        </div>
-        <div class="carousel-slide">
-          <img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" />
-        </div>
+    <div class="stitch-editorial-header">
+      <!-- Left: Label + Heading -->
+      <div class="stitch-header-left">
+        <p class="stitch-header-label">Archive Vol. 04</p>
+        <h1 class="stitch-header-title">
+          Visual <span class="stitch-header-accent">Synthesis</span><br />
+          &amp; Brand Narrative
+        </h1>
       </div>
-      <div class="carousel-dots" id="carouselDots"></div>
+      <!-- Right: Description -->
+      <div class="stitch-header-desc">
+        <p>
+          Curated collection of identity systems, editorial layouts, and digital experiences defined by structural precision and creative intentionality.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- DESIGN GALLERY — Stitch Editorial Bento Grid -->
   <section class="gallery-section" transition:animate="fade">
+
     <!-- Filter Bar -->
     <div class="filter-bar fade-up" aria-label="Filter by category">
       <button class="filter-btn active" data-filter="all">Semua</button>
@@ -63,179 +47,669 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
       <button class="filter-btn" data-filter="advertising">Advertising</button>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="gallery-grid gallery-grid-portrait fade-up">
+    <!-- Bento Grid — 12-col, editorial layout -->
+    <div class="stitch-design-grid fade-up">
 
-      <!-- Brand Identity -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/brand/skincare.png"
-          alt="Skincare Brand Design"
-          title="Brand Identity: Skincare"
-          category="brand"
-          href="/assets/design/brand/skincare.png"
-          gallery="design-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/brand/desain elektronik.png"
-          alt="Elektronik Product Design"
-          title="Brand Identity: Elektronik"
-          category="brand"
-          href="/assets/design/brand/desain elektronik.png"
-          gallery="design-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/brand/LACOSTE.png"
-          alt="LACOSTE Brand Design"
-          title="Brand Identity: LACOSTE"
-          category="brand"
-          href="/assets/design/brand/LACOSTE.png"
-          gallery="design-gallery"
-        />
-      </div>
+      <!-- Project 1: Wide Featured — col-span-8, row-span-2 -->
+      <a class="stitch-design-card stitch-design-card-lg glightbox"
+         href="/assets/design/social/desain iklan parfum.png"
+         data-gallery="design-gallery"
+         data-title="Advertising: Parfum Campaign"
+         data-category="advertising">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/social/desain iklan parfum.png"
+            alt="Parfum Advertisement Design"
+            loading="lazy"
+            width="960"
+            height="600"
+          />
+        </div>
+        <div class="stitch-design-card-overlay">
+          <div class="stitch-design-card-badges">
+            <span class="stitch-badge-pill stitch-badge-brand">Branding</span>
+            <span class="stitch-badge-pill">2024</span>
+          </div>
+          <h3 class="stitch-design-card-title">Parfum Campaign</h3>
+          <p class="stitch-design-card-desc">Luxury fragrance advertising with cinematic visual language and editorial composition.</p>
+          <span class="stitch-design-card-link">
+            View Case Study <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </a>
 
-      <!-- Social Media -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/social/carousels 1.png"
-          alt="Social Media Carousel Design"
-          title="Social Media: Carousel"
-          category="social"
-          href="/assets/design/social/carousels 1.png"
-          gallery="design-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/social/desain iklan parfum.png"
-          alt="Parfum Advertisement Design"
-          title="Social Media: Parfum Iklan"
-          category="social"
-          href="/assets/design/social/desain iklan parfum.png"
-          gallery="design-gallery"
-        />
-      </div>
+      <!-- Project 2: Tall Portrait — col-span-4, row-span-3 -->
+      <a class="stitch-design-card stitch-design-card-tall glightbox"
+         href="/assets/design/brand/skincare.png"
+         data-gallery="design-gallery"
+         data-title="Brand Identity: Skincare"
+         data-category="brand">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/brand/skincare.png"
+            alt="Skincare Brand Design"
+            loading="lazy"
+            width="480"
+            height="900"
+          />
+        </div>
+        <div class="stitch-design-card-overlay">
+          <div class="stitch-design-card-badges">
+            <span class="stitch-badge-pill stitch-badge-editorial">Editorial</span>
+            <span class="stitch-badge-pill">2024</span>
+          </div>
+          <h3 class="stitch-design-card-title">Skincare Brand</h3>
+          <p class="stitch-design-card-desc">Clean beauty identity with minimalist Swiss design principles.</p>
+          <span class="stitch-design-card-link">
+            View Case Study <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </a>
 
-      <!-- Poster -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/social/poster edukasi.png"
-          alt="Educational Poster Design"
-          title="Poster: Edukasi"
-          category="poster"
-          href="/assets/design/social/poster edukasi.png"
-          gallery="design-gallery"
-        />
-      </div>
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/social/poster product.png"
-          alt="Product Poster Design"
-          title="Poster: Product"
-          category="poster"
-          href="/assets/design/social/poster product.png"
-          gallery="design-gallery"
-        />
-      </div>
+      <!-- Project 3: Medium Square — col-span-4, row-span-2 -->
+      <a class="stitch-design-card stitch-design-card-md glightbox"
+         href="/assets/design/brand/desain elektronik.png"
+         data-gallery="design-gallery"
+         data-title="Brand Identity: Elektronik"
+         data-category="brand">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/brand/desain elektronik.png"
+            alt="Elektronik Product Design"
+            loading="lazy"
+            width="480"
+            height="560"
+          />
+        </div>
+        <div class="stitch-design-card-overlay">
+          <div class="stitch-design-card-badges">
+            <span class="stitch-badge-pill stitch-badge-digital">Digital</span>
+            <span class="stitch-badge-pill">2024</span>
+          </div>
+          <h3 class="stitch-design-card-title">Elektronik Brand</h3>
+          <p class="stitch-design-card-desc">Tech-forward brand identity for consumer electronics line.</p>
+          <span class="stitch-design-card-link">
+            View Case Study <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </a>
 
-      <!-- Advertising -->
-      <div class="gallery-portrait-wrap">
-        <GalleryItem
-          src="/assets/design/social/poster tips.png"
-          alt="Tips Social Media Design"
-          title="Advertising: Tips Konten"
-          category="advertising"
-          href="/assets/design/social/poster tips.png"
-          gallery="design-gallery"
-        />
-      </div>
+      <!-- Project 4: Wide — col-span-4, row-span-1 -->
+      <a class="stitch-design-card stitch-design-card-wide glightbox"
+         href="/assets/design/brand/LACOSTE.png"
+         data-gallery="design-gallery"
+         data-title="Brand Identity: LACOSTE"
+         data-category="brand">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/brand/LACOSTE.png"
+            alt="LACOSTE Brand Design"
+            loading="lazy"
+            width="480"
+            height="280"
+          />
+        </div>
+        <div class="stitch-design-card-overlay stitch-design-overlay-centered">
+          <h3 class="stitch-design-card-title stitch-design-card-title-centered">LACOSTE</h3>
+          <span class="stitch-design-card-link">
+            View Case Study <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </a>
+
+      <!-- Project 5: Wide Bottom — col-span-8, row-span-2 -->
+      <a class="stitch-design-card stitch-design-card-wide-bottom glightbox"
+         href="/assets/design/social/carousels 1.png"
+         data-gallery="design-gallery"
+         data-title="Social Media: Carousels"
+         data-category="social">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/social/carousels 1.png"
+            alt="Social Media Carousel Design"
+            loading="lazy"
+            width="960"
+            height="560"
+          />
+        </div>
+        <div class="stitch-design-card-overlay stitch-design-overlay-left">
+          <div class="stitch-design-card-badges">
+            <span class="stitch-badge-pill stitch-badge-social">Social</span>
+            <span class="stitch-badge-pill">2024</span>
+          </div>
+          <h3 class="stitch-design-card-title">Social Media Carousels</h3>
+          <p class="stitch-design-card-desc">Engaging carousel content for Instagram and LinkedIn with consistent brand voice.</p>
+          <span class="stitch-design-card-link">
+            View Case Study <i class="fas fa-arrow-right"></i>
+          </span>
+        </div>
+      </a>
+
+      <!-- Project 6: Small — col-span-4, row-span-1 -->
+      <a class="stitch-design-card stitch-design-card-small glightbox"
+         href="/assets/design/social/poster edukasi.png"
+         data-gallery="design-gallery"
+         data-title="Poster: Edukasi"
+         data-category="poster">
+        <div class="stitch-design-img-wrap">
+          <img
+            src="/assets/design/social/poster edukasi.png"
+            alt="Educational Poster Design"
+            loading="lazy"
+            width="480"
+            height="280"
+          />
+        </div>
+        <div class="stitch-design-card-overlay stitch-design-overlay-hover">
+          <div class="stitch-design-card-center-content">
+            <p class="stitch-design-card-title">Modernist Expo</p>
+            <span class="stitch-design-card-meta">Exhibition Design</span>
+          </div>
+        </div>
+      </a>
 
     </div>
-  </section>
 
-  <PortfolioCTA />
+    <!-- Bottom CTA — Stitch style -->
+    <div class="stitch-design-cta fade-up">
+      <div class="stitch-design-cta-inner">
+        <h2 class="stitch-design-cta-title">
+          Ready to start a <em class="stitch-design-cta-accent">narrative?</em>
+        </h2>
+        <p class="stitch-design-cta-desc">
+          I specialize in helping brands find their unique visual voice through intentional design and strategic storytelling. Currently accepting new projects.
+        </p>
+        <div class="stitch-design-cta-buttons">
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="stitch-cta-primary">
+            Start Project
+          </a>
+          <a href="#" class="stitch-cta-secondary">
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <Footer slot="footer" variant="minimal" />
 </BaseLayout>
 
+<style>
+  /* =============================================
+     STITCH DESIGN PAGE — Scoped styles
+     Matches: stitch/design_showcase_redesign/code.html
+     ============================================= */
+
+  /* Hero / Editorial Header */
+  .stitch-hero {
+    padding: 140px 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .stitch-editorial-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .stitch-header-left {
+    flex: 1;
+  }
+
+  .stitch-header-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    margin-bottom: 16px;
+  }
+
+  .stitch-header-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--text-primary);
+    text-shadow: 0 0 30px rgba(163, 166, 255, 0.2);
+  }
+
+  .stitch-header-accent {
+    color: var(--accent-secondary);
+  }
+
+  .stitch-header-desc {
+    max-width: 260px;
+    padding-left: 28px;
+    border-left: 1px solid rgba(64, 72, 93, 0.4);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-bottom: 8px;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    padding: 0 48px;
+    margin-bottom: 48px;
+  }
+
+  .filter-btn {
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 9px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: var(--surface-bright);
+    color: var(--accent-primary);
+    border-color: rgba(163, 166, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-secondary-container);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 0 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* =============================================
+     EDITORIAL BENTO GRID
+     12-column, variable row heights
+     ============================================= */
+  .stitch-design-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 280px;
+    gap: 16px;
+  }
+
+  /* Card sizing variants */
+  .stitch-design-card-lg      { grid-column: span 8; grid-row: span 2; }
+  .stitch-design-card-tall    { grid-column: span 4; grid-row: span 3; }
+  .stitch-design-card-md      { grid-column: span 4; grid-row: span 2; }
+  .stitch-design-card-wide    { grid-column: span 4; grid-row: span 1; }
+  .stitch-design-card-wide-bottom { grid-column: span 8; grid-row: span 2; }
+  .stitch-design-card-small   { grid-column: span 4; grid-row: span 1; }
+
+  /* Card base */
+  .stitch-design-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.06);
+    cursor: pointer;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+  }
+
+  .stitch-design-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(163, 166, 255, 0.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Image */
+  .stitch-design-img-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .stitch-design-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    display: block;
+  }
+
+  .stitch-design-card:hover .stitch-design-img-wrap img {
+    transform: scale(1.06);
+  }
+
+  /* Overlay — bottom gradient */
+  .stitch-design-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(6, 14, 32, 0.9) 0%,
+      rgba(6, 14, 32, 0.2) 50%,
+      transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stitch-design-card:hover .stitch-design-card-overlay {
+    opacity: 1;
+  }
+
+  /* Centered overlay variant */
+  .stitch-design-overlay-centered {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(6, 14, 32, 0.5);
+  }
+
+  /* Left-aligned overlay (wide card) */
+  .stitch-design-overlay-left {
+    justify-content: flex-end;
+    background: linear-gradient(
+      to right,
+      rgba(6, 14, 32, 0.9) 0%,
+      rgba(6, 14, 32, 0.2) 60%,
+      transparent 100%
+    );
+  }
+
+  /* Hover-only overlay (small card) */
+  .stitch-design-overlay-hover {
+    opacity: 0;
+    background: rgba(6, 14, 32, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Badges */
+  .stitch-design-card-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .stitch-badge-pill {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background: rgba(6, 14, 32, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .stitch-badge-brand {
+    background: rgba(111, 0, 190, 0.7);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  .stitch-badge-editorial {
+    background: rgba(67, 136, 253, 0.7);
+    border-color: rgba(138, 176, 255, 0.3);
+    color: #8ab0ff;
+  }
+
+  .stitch-badge-digital {
+    background: rgba(163, 166, 255, 0.7);
+    border-color: rgba(163, 166, 255, 0.3);
+    color: #0a0081;
+  }
+
+  .stitch-badge-social {
+    background: rgba(111, 0, 190, 0.7);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  /* Card text */
+  .stitch-design-card-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.15;
+  }
+
+  .stitch-design-card-title-centered {
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .stitch-design-card-desc {
+    font-size: 12px;
+    color: rgba(222, 229, 255, 0.7);
+    line-height: 1.5;
+    max-width: 340px;
+    margin-bottom: 12px;
+  }
+
+  .stitch-design-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+  }
+
+  .stitch-design-card:hover .stitch-design-card-link {
+    gap: 12px;
+  }
+
+  /* Center content (small card) */
+  .stitch-design-card-center-content {
+    text-align: center;
+  }
+
+  .stitch-design-card-center-content .stitch-design-card-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .stitch-design-card-meta {
+    font-size: 10px;
+    color: var(--accent-primary);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* =============================================
+     BOTTOM CTA SECTION
+     ============================================= */
+  .stitch-design-cta {
+    margin-top: 80px;
+    border-radius: 20px;
+    background: var(--surface-container-low);
+    border: 1px solid rgba(163, 166, 255, 0.06);
+    padding: 64px 48px;
+    text-align: center;
+  }
+
+  .stitch-design-cta-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .stitch-design-cta-accent {
+    color: var(--accent-secondary);
+    font-style: italic;
+  }
+
+  .stitch-design-cta-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .stitch-design-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stitch-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-container));
+    color: #0f00a4;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(163, 166, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .stitch-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(163, 166, 255, 0.4);
+    opacity: 0.9;
+  }
+
+  .stitch-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    border: 1px solid rgba(64, 72, 93, 0.5);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .stitch-cta-secondary:hover {
+    background: var(--surface-bright);
+    border-color: rgba(163, 166, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stitch-design-grid {
+      grid-auto-rows: 220px;
+    }
+
+    .stitch-design-card-lg,
+    .stitch-design-card-wide-bottom {
+      grid-column: span 12;
+      grid-row: span 2;
+    }
+
+    .stitch-design-card-tall,
+    .stitch-design-card-md,
+    .stitch-design-card-wide,
+    .stitch-design-card-small {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stitch-hero {
+      padding: 120px 24px 60px;
+    }
+
+    .stitch-editorial-header {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stitch-header-desc {
+      padding-left: 0;
+      border-left: none;
+      max-width: 100%;
+      padding-top: 16px;
+      border-top: 1px solid rgba(64, 72, 93, 0.3);
+    }
+
+    .filter-bar,
+    .gallery-section {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .stitch-design-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 260px;
+    }
+
+    .stitch-design-card-lg,
+    .stitch-design-card-tall,
+    .stitch-design-card-md,
+    .stitch-design-card-wide,
+    .stitch-design-card-wide-bottom,
+    .stitch-design-card-small {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .stitch-design-cta {
+      padding: 40px 24px;
+    }
+
+    .filter-bar {
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>
+
 <script>
-  /* ---------- CAROUSEL ---------- */
-  (function() {
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    if (!track) return;
-
-    const slides = track.querySelectorAll('.carousel-slide');
-    const total = slides.length;
-    let current = 0;
-    let autoTimer = null;
-
-    // Build dots
-    slides.forEach(function(_, i) {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.addEventListener('click', function() { goTo(i); });
-      dotsContainer.appendChild(dot);
-    });
-
-    function updateSlide() {
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    function nextSlide() { goTo((current + 1) % total); }
-    function prevSlide() { goTo((current - 1 + total) % total); }
-    function goTo(index) {
-      current = index;
-      updateSlide();
-      resetAuto();
-    }
-    function resetAuto() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(nextSlide, 4000);
-    }
-
-    autoTimer = setInterval(nextSlide, 4000);
-
-    let startX = 0;
-    track.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-    track.addEventListener('touchend', function(e) {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-    }, { passive: true });
-
-    let isDragging = false;
-    track.addEventListener('mousedown', function(e) {
-      startX = e.clientX;
-      isDragging = true;
-      e.preventDefault();
-    });
-    track.addEventListener('mouseup', function(e) {
-      if (!isDragging) return;
-      const diff = startX - e.clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-      isDragging = false;
-    });
-    track.addEventListener('mouseleave', function() { isDragging = false; });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-
-    track.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
-    track.addEventListener('mouseleave', function() { autoTimer = setInterval(nextSlide, 4000); });
-  })();
-
   /* ---------- GLIGHTBOX ---------- */
   document.addEventListener('DOMContentLoaded', function initGL() {
     if (typeof GLightbox === 'undefined') {
@@ -256,16 +730,21 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     const filterBar = document.querySelector('.filter-bar');
     if (!filterBar) return;
     const btns = filterBar.querySelectorAll('.filter-btn');
-    const grid = document.querySelector('.gallery-grid');
-    if (!grid) return;
+    const cards = document.querySelectorAll('.stitch-design-card');
+    if (!cards.length) return;
+
     btns.forEach(function(btn) {
       btn.addEventListener('click', function() {
         const filter = btn.dataset.filter;
         btns.forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        grid.querySelectorAll('.gallery-item').forEach(function(item) {
-          const cat = item.dataset.category || '';
-          item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        cards.forEach(function(card) {
+          const cat = (card as HTMLElement).dataset.category || '';
+          if (filter === 'all' || cat === filter) {
+            (card as HTMLElement).style.display = '';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
         });
       });
     });
