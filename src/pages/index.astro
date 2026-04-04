@@ -455,6 +455,34 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 
   <!-- Footer slot -->
   <Footer slot="footer" variant="full" />
+
+  <!-- JSON-LD Person Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rangga Danuarta",
+    "jobTitle": "Visual Storyteller",
+    "description": "Fotografer, Videografer, Brand Designer, dan Web Developer berbasis di Depok, Indonesia",
+    "url": "https://for-portfolio-mu.vercel.app",
+    "image": "https://for-portfolio-mu.vercel.app/assets/foto/about rangga.jpg",
+    "email": "frameofrangga@gmail.com",
+    "telephone": "+62895321693131",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Depok",
+      "addressCountry": "ID"
+    },
+    "sameAs": [
+      "https://instagram.com/frameofrangga",
+      "https://www.tiktok.com/@madebyrangga"
+    ],
+    "knowsAbout": [
+      "Photography", "Videography", "Brand Design",
+      "Web Development", "Visual Storytelling"
+    ]
+  }
+  </script>
 </BaseLayout>
 
 <script>
