@@ -17,95 +17,81 @@ import { waLink } from '../utils/whatsapp.js';
   <!-- Navbar slot -->
   <Navbar slot="navbar" activePage="home" />
 
-  <!-- HERO -->
-  <header class="hero" id="hero" transition:animate="fade">
-    <div class="hero-bg-glow" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <!-- Left: Copy -->
-      <div class="hero-content fade-up">
-        <span class="hero-badge">
-          <i class="fas fa-star"></i> Visual Storyteller
-        </span>
-        <h1 class="hero-headline">
-          Frame<br>Of<br>
-          <span class="text-glow">Rangga</span>
-        </h1>
-        <p class="hero-sub">
-          Menciptakan karya visual yang bercerita dan berkarakter. Mari kita bangun narasi visual dan brand presence yang kuat.
-        </p>
-        <div class="hero-cta">
-          <a href="/design" class="btn btn-primary">
-            <i class="fas fa-folder-open"></i> See Projects
-          </a>
-          <a href="#contact" class="btn btn-ghost">
-            <i class="fas fa-paper-plane"></i> Contact
-          </a>
-        </div>
-      </div>
+  <!-- HERO — Stitch Nocturnal Design -->
+  <header class="stitch-hero" id="hero" transition:animate="fade">
+    <!-- Background glow blobs (desktop) -->
+    <div class="stitch-hero-glow-r" aria-hidden="true"></div>
+    <div class="stitch-hero-glow-l" aria-hidden="true"></div>
 
-      <!-- Right: Portrait -->
-      <div class="hero-portrait fade-up">
-        <div class="hero-portrait-wrap">
-          <img
-            src="/assets/foto/foto cover halaman utama.jpg"
-            alt="Rangga Danuarta - Frame Of Rangga"
-            loading="eager"
-            fetchpriority="high"
-            onerror="this.style.display='none'"
-          />
-          <div class="hero-portrait-glow" aria-hidden="true"></div>
-        </div>
-        <div class="hero-experience-badge" aria-label="Experience badge">
-          <strong>4+</strong>
-          <span>Years<br>Experience</span>
-        </div>
-      </div>
+    <!-- Background image -->
+    <div class="stitch-hero-bg" aria-hidden="true">
+      <img
+        src="/assets/foto/foto cover halaman utama.jpg"
+        alt=""
+        class="stitch-hero-bg-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="stitch-hero-bg-overlay"></div>
     </div>
 
-    <!-- Preview Categories -->
-    <div class="hero-previews">
-      <p class="preview-section-label">Explore Categories</p>
-      <div class="preview-grid fade-up">
-        <a href="/foto" class="preview-card">
-          <img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Photography portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-overlay">
-            <div class="preview-overlay-content">
-              <i class="fas fa-camera"></i>
-              <span class="preview-overlay-title">Photography</span>
-              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+    <!-- Hero grid: text left, portrait right -->
+    <div class="stitch-hero-grid">
+      <!-- Text Content -->
+      <div class="stitch-hero-content">
+        <!-- Badge -->
+        <span class="stitch-badge">
+          Visual Storyteller
+        </span>
+        <!-- H1 -->
+        <h1 class="stitch-hero-title">
+          Frame of<br />
+          <span class="stitch-hero-title-accent">Rangga</span>
+        </h1>
+        <!-- Description + Stats -->
+        <div class="stitch-hero-desc-row">
+          <p class="stitch-hero-desc">
+            Crafting visual narratives through the lens of cinematic precision and editorial depth. Creative Direction for the digital age.
+          </p>
+          <!-- Stats row -->
+          <div class="stitch-hero-stats">
+            <div class="stitch-stat">
+              <div class="stitch-stat-value">08+</div>
+              <div class="stitch-stat-label">Years Exp.</div>
+            </div>
+            <div class="stitch-stat">
+              <div class="stitch-stat-value">140</div>
+              <div class="stitch-stat-label">Projects</div>
+            </div>
+            <div class="stitch-stat">
+              <div class="stitch-stat-value">12</div>
+              <div class="stitch-stat-label">Awards</div>
             </div>
           </div>
-        </a>
-        <a href="/video" class="preview-card">
-          <img src="/assets/thumbnails/ss keyboard.png" alt="Video portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-overlay">
-            <div class="preview-overlay-content">
-              <i class="fas fa-play"></i>
-              <span class="preview-overlay-title">Video</span>
-              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Portrait -->
+      <div class="stitch-hero-portrait">
+        <div class="stitch-hero-portrait-inner">
+          <img
+            src="/assets/foto/foto cover halaman utama.jpg"
+            alt="Rangga Danuarta — Frame Of Rangga"
+            class="stitch-hero-portrait-img"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <!-- Floating badge -->
+          <div class="stitch-hero-float-badge">
+            <div class="stitch-float-badge-icon">
+              <span class="material-symbols-outlined stitch-icon-filled">verified</span>
+            </div>
+            <div>
+              <p class="stitch-float-badge-sub">Visual Storyteller</p>
+              <p class="stitch-float-badge-name">Rangga Danuarta</p>
             </div>
           </div>
-        </a>
-        <a href="/design" class="preview-card">
-          <img src="/assets/design/brand/desain elektronik.png" alt="Design portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-overlay">
-            <div class="preview-overlay-content">
-              <i class="fas fa-palette"></i>
-              <span class="preview-overlay-title">Design</span>
-              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-        <a href="/website" class="preview-card">
-          <img src="/assets/thumbnails/web1.png" alt="Web Development portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-overlay">
-            <div class="preview-overlay-content">
-              <i class="fas fa-code"></i>
-              <span class="preview-overlay-title">Web Dev</span>
-              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </header>
@@ -369,43 +355,354 @@ import { waLink } from '../utils/whatsapp.js';
 
 <style>
   /* =============================================
-     HOME PAGE — Mobile & iPad Responsive
+     STITCH HERO — Mobile-first responsive
      ============================================= */
 
-  /* iPad: hero 2-column stays, adjust spacing */
-  @media (max-width: 900px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      padding: 32px 24px;
-      text-align: center;
+  /* ---- BASE (MOBILE DEFAULT) ---- */
+  .stitch-hero {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 24px 48px;
+  }
+
+  /* Background glow blobs */
+  .stitch-hero-glow-r {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(193, 128, 255, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .stitch-hero-glow-l {
+    position: absolute;
+    bottom: -5%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(163, 166, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Background image */
+  .stitch-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .stitch-hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: grayscale(60%);
+  }
+
+  .stitch-hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 14, 32, 0.6) 0%,
+      rgba(6, 14, 32, 0.2) 40%,
+      rgba(6, 14, 32, 0.4) 100%
+    );
+  }
+
+  /* Hero grid: single column on mobile */
+  .stitch-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  /* Content */
+  .stitch-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Badge pill */
+  .stitch-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.12);
+    color: var(--secondary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  /* H1 */
+  .stitch-hero-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(52px, 14vw, 96px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -2px;
+    color: var(--on-surface);
+  }
+
+  .stitch-hero-title-accent {
+    color: var(--accent-primary);
+    font-style: italic;
+  }
+
+  /* Desc row */
+  .stitch-hero-desc-row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-top: 1px solid rgba(64, 72, 93, 0.2);
+    padding-top: 24px;
+  }
+
+  .stitch-hero-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--on-surface-variant);
+    max-width: 480px;
+  }
+
+  /* Stats */
+  .stitch-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .stitch-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stitch-stat-value {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--on-surface);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .stitch-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+  }
+
+  /* Portrait */
+  .stitch-hero-portrait {
+    display: flex;
+    justify-content: center;
+  }
+
+  .stitch-hero-portrait-inner {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .stitch-hero-portrait-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 24px;
+    display: block;
+    filter: grayscale(30%);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Floating badge */
+  .stitch-hero-float-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(25, 37, 64, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(64, 72, 93, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stitch-float-badge-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(163, 166, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stitch-icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: var(--accent-primary);
+    font-size: 20px;
+  }
+
+  .stitch-float-badge-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 2px;
+  }
+
+  .stitch-float-badge-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--on-surface);
+  }
+
+  /* ---- Material Symbols shared ---- */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+  /* ---- MEDIA QUERY: TABLET (768px+) ---- */
+  @media (min-width: 768px) {
+    .stitch-hero {
+      padding: 100px 48px 64px;
     }
-    .hero-content {
-      align-items: center;
+
+    .stitch-hero-title {
+      font-size: clamp(72px, 12vw, 120px);
     }
-    .hero-sub {
-      max-width: 100%;
+
+    .stitch-hero-desc-row {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 48px;
     }
-    .hero-cta {
-      justify-content: center;
+
+    .stitch-hero-stats {
+      gap: 32px;
     }
-    .hero-portrait {
-      max-width: 360px;
-      margin: 0 auto;
+
+    .stitch-stat-value {
+      font-size: 42px;
+    }
+
+    .stitch-hero-portrait-inner {
+      max-width: 400px;
+    }
+
+    .stitch-hero-float-badge {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
     }
   }
 
+  /* ---- MEDIA QUERY: DESKTOP (1024px+) ---- */
+  @media (min-width: 1024px) {
+    .stitch-hero {
+      padding: 120px 64px 80px;
+      min-height: 100vh;
+    }
+
+    /* Two-column grid */
+    .stitch-hero-grid {
+      grid-template-columns: 7fr 5fr;
+      gap: 64px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(80px, 8vw, 128px);
+      letter-spacing: -3px;
+    }
+
+    .stitch-hero-desc-row {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 64px;
+    }
+
+    .stitch-hero-desc {
+      max-width: 520px;
+      font-size: 16px;
+    }
+
+    .stitch-hero-stats {
+      gap: 40px;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .stitch-stat-value {
+      font-size: 48px;
+    }
+
+    .stitch-hero-portrait {
+      justify-content: flex-end;
+    }
+
+    .stitch-hero-portrait-inner {
+      max-width: 100%;
+    }
+
+    .stitch-hero-float-badge {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+
+    /* Glow positions for large screens */
+    .stitch-hero-glow-r {
+      width: 600px;
+      height: 600px;
+    }
+  }
+
+  /* ---- EXISTING PAGE RESPONSIVE ---- */
   @media (max-width: 768px) {
-    .hero {
-      min-height: auto;
-    }
-    .hero-headline {
-      font-size: clamp(48px, 12vw, 72px);
-    }
-    .preview-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
     .about-inner {
       grid-template-columns: 1fr;
       gap: 48px;
@@ -420,51 +717,6 @@ import { waLink } from '../utils/whatsapp.js';
   }
 
   @media (max-width: 480px) {
-    .hero-inner {
-      padding: 24px 20px 40px;
-    }
-    .hero-headline {
-      font-size: clamp(40px, 14vw, 60px);
-      letter-spacing: -1px;
-    }
-    .hero-badge {
-      font-size: 10px;
-      padding: 6px 12px;
-    }
-    .hero-portrait {
-      max-width: 280px;
-    }
-    .hero-experience-badge {
-      right: 0;
-      bottom: 16px;
-      padding: 10px 14px;
-    }
-    .hero-experience-badge strong {
-      font-size: 22px;
-    }
-    .preview-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .preview-card {
-      aspect-ratio: 1 / 1;
-    }
-    .preview-overlay {
-      opacity: 1;
-      background: linear-gradient(to top, rgba(15, 25, 48, 0.7) 0%, transparent 60%);
-    }
-    .preview-overlay-content {
-      padding: 12px;
-    }
-    .preview-overlay-content i {
-      font-size: 14px;
-    }
-    .preview-overlay-title {
-      font-size: 11px;
-    }
-    .preview-overlay-arrow {
-      display: none;
-    }
     .about-inner {
       padding: 0 20px;
       gap: 32px;
