@@ -3,17 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
-import { waLink } from '../utils/whatsapp.js';
-
-// Pre-compute WA links for define:vars (must be plain object, not function)
-const waLinksJson = JSON.stringify({
-  all:       waLink('foto_general'),
-  wedding:   waLink('foto_wedding'),
-  komersial: waLink('foto_komersial'),
-  automotive:waLink('foto_automotive'),
-  lifestyle: waLink('foto_lifestyle'),
-  fotografer:waLink('foto_fotografer'),
-});
 ---
 
 <BaseLayout
@@ -55,13 +44,6 @@ const waLinksJson = JSON.stringify({
       <button class="filter-btn" data-filter="fotografer">Fotografer</button>
     </div>
 
-    <!-- Floating WA CTA — changes based on active filter -->
-    <div class="wa-category-cta fade-up">
-      <a id="wa-cta-btn" href={waLink('foto_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
-        <i class="fab fa-whatsapp"></i> Tanya tentang foto ini
-      </a>
-    </div>
-
     <!-- Bento Grid Gallery — Stitch asymmetric layout -->
     <div class="stitch-bento-grid fade-up">
 
@@ -85,9 +67,6 @@ const waLinksJson = JSON.stringify({
           <h3 class="stitch-card-title">Wedding: Ultah Raden</h3>
           <p class="stitch-card-desc">Momen pernikahan yang diabadikan dengan cahaya natural dan komposisi sinematik.</p>
         </div>
-        <a href={waLink('foto_wedding')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
       <!-- Wedding 2 (col-span-4) -->
@@ -109,9 +88,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Wedding</span>
           <h3 class="stitch-card-title">Wedding: Anggie</h3>
         </div>
-        <a href={waLink('foto_wedding')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
       <!-- Wedding 3 (col-span-4) -->
@@ -133,9 +109,27 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Wedding</span>
           <h3 class="stitch-card-title">Wedding: Anggie Editorial</h3>
         </div>
-        <a href={waLink('foto_wedding')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+      </a>
+
+      <!-- Wedding 4 — Portrait (card baru) -->
+      <a class="stitch-card glightbox"
+         href="/assets/foto/wedding/anggie 1.jpg"
+         data-gallery="portfolio-gallery"
+         data-title="Wedding: Anggie"
+         data-category="wedding">
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/wedding/anggie 1.jpg"
+            alt="Wedding Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie</h3>
+        </div>
       </a>
 
       <!-- Automotive (col-span-4) -->
@@ -157,9 +151,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Automotive</span>
           <h3 class="stitch-card-title">Automotive: Fotografi Mobil</h3>
         </div>
-        <a href={waLink('foto_automotive')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
       <!-- Komersial (col-span-4) -->
@@ -181,9 +172,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Komersial</span>
           <h3 class="stitch-card-title">Komersial: Fashion Shoot</h3>
         </div>
-        <a href={waLink('foto_komersial')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
       <!-- Lifestyle (col-span-4) -->
@@ -205,9 +193,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Lifestyle</span>
           <h3 class="stitch-card-title">Lifestyle: CCM Rangga</h3>
         </div>
-        <a href={waLink('foto_lifestyle')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
       <!-- Fotografer (col-span-4) -->
@@ -229,20 +214,10 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-card-cat">Fotografer</span>
           <h3 class="stitch-card-title">Fotografer: Fotografi Gojek</h3>
         </div>
-        <a href={waLink('foto_fotografer')} target="_blank" rel="noopener noreferrer" class="stitch-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang foto ini">
-          <i class="fab fa-whatsapp"></i>
-        </a>
       </a>
 
     </div>
 
-    <!-- View Archive CTA — Stitch style -->
-    <div class="stitch-archive-cta fade-up">
-      <a href={waLink('foto_general')} target="_blank" rel="noopener noreferrer" class="stitch-archive-btn">
-        <span>Lihat Semua Karya</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
   </section>
 
   <PortfolioCTA />
@@ -334,10 +309,12 @@ const waLinksJson = JSON.stringify({
     color: #e9cdff;
   }
 
-  /* Bento Grid — 12-column asymmetric */
+  /* Bento Grid — 12-column asymmetric, align-items:start prevents empty gaps */
   .stitch-bento-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    align-items: start;
     gap: 20px;
     padding: 0 48px;
     max-width: 1280px;
@@ -358,7 +335,6 @@ const waLinksJson = JSON.stringify({
   .stitch-card {
     position: relative;
     border-radius: 16px;
-    overflow: hidden;
     background: var(--surface-container);
     border: 1px solid rgba(163, 166, 255, 0.06);
     cursor: pointer;
@@ -442,49 +418,6 @@ const waLinksJson = JSON.stringify({
     color: rgba(222, 229, 255, 0.7);
     line-height: 1.5;
     max-width: 320px;
-  }
-
-  /* Archive CTA */
-  .stitch-archive-cta {
-    display: flex;
-    justify-content: center;
-    margin-top: 64px;
-    padding-bottom: 40px;
-  }
-
-  .stitch-archive-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    border-radius: 9999px;
-    background: var(--surface-container-highest);
-    border: 1px solid rgba(163, 166, 255, 0.12);
-    color: var(--text-primary);
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .stitch-archive-btn:hover {
-    background: var(--surface-bright);
-    border-color: rgba(163, 166, 255, 0.3);
-    color: var(--accent-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  }
-
-  .stitch-archive-btn i {
-    transition: transform 0.3s ease;
-    font-size: 14px;
-  }
-
-  .stitch-archive-btn:hover i {
-    transform: translateX(4px);
   }
 
   /* Responsive — iPad (768px) */
@@ -574,10 +507,6 @@ const waLinksJson = JSON.stringify({
     .stitch-card-overlay {
       opacity: 1;
     }
-
-    .stitch-archive-cta {
-      margin-top: 40px;
-    }
   }
 
   @media (max-width: 480px) {
@@ -598,73 +527,6 @@ const waLinksJson = JSON.stringify({
     }
   }
 
-  /* ── Floating WA Category CTA ── */
-  .wa-category-cta {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 32px;
-  }
-
-  .btn-wa-category {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    border-radius: 9999px;
-    background: rgba(37, 211, 102, 0.15);
-    border: 1px solid rgba(37, 211, 102, 0.35);
-    color: #25d366;
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
-  }
-
-  .btn-wa-category:hover {
-    background: rgba(37, 211, 102, 0.25);
-    border-color: rgba(37, 211, 102, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.25);
-  }
-
-  .btn-wa-category i { font-size: 16px; }
-
-  /* ── Per-card WA hover button ── */
-  .stitch-card-wa-btn {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.9);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.25s ease;
-    z-index: 10;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  }
-
-  .stitch-card:hover .stitch-card-wa-btn {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* Always visible on touch (mobile) */
-  @media (max-width: 768px) {
-    .stitch-card-wa-btn {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 </style>
 
 <script>
@@ -707,23 +569,4 @@ const waLinksJson = JSON.stringify({
       });
     });
   })();
-</script>
-
-<!-- Floating WA CTA — switches message based on active filter tab -->
-<script define:vars={{ waLinksJson }}>
-  document.addEventListener('DOMContentLoaded', function() {
-    const filterBar = document.querySelector('.filter-bar');
-    const waCtaBtn = document.getElementById('wa-cta-btn');
-    if (!filterBar || !waCtaBtn) return;
-
-    const waLinks = JSON.parse(waLinksJson);
-    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const filter = btn.dataset.filter || 'all';
-        if (waLinks[filter]) {
-          waCtaBtn.href = waLinks[filter];
-        }
-      });
-    });
-  });
 </script>

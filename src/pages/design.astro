@@ -3,16 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
-import { waLink } from '../utils/whatsapp.js';
-
-// Pre-compute WA links for define:vars
-const waLinksJson = JSON.stringify({
-  all:        waLink('design_general'),
-  brand:      waLink('design_brand'),
-  social:     waLink('design_sosmed'),
-  poster:     waLink('design_poster'),
-  advertising:waLink('design_advertising'),
-});
 ---
 
 <BaseLayout
@@ -24,24 +14,17 @@ const waLinksJson = JSON.stringify({
 >
   <Navbar slot="navbar" activePage="design" />
 
-  <!-- PAGE HERO — Stitch Editorial Header -->
+  <!-- PAGE HERO — Centered -->
   <section class="page-hero stitch-hero" transition:animate="fade">
     <div class="page-hero-bg-glow" aria-hidden="true"></div>
-    <div class="stitch-editorial-header">
-      <!-- Left: Label + Heading -->
-      <div class="stitch-header-left">
-        <p class="stitch-header-label">Archive Vol. 04</p>
-        <h1 class="stitch-header-title">
-          Visual <span class="stitch-header-accent">Synthesis</span><br />
-          &amp; Brand Narrative
-        </h1>
-      </div>
-      <!-- Right: Description -->
-      <div class="stitch-header-desc">
-        <p>
-          Curated collection of identity systems, editorial layouts, and digital experiences defined by structural precision and creative intentionality.
-        </p>
-      </div>
+    <div class="stitch-hero-centered">
+      <h1 class="stitch-hero-title">
+        Visual <span class="stitch-hero-accent">Synthesis</span><br />
+        &amp; Brand Narrative
+      </h1>
+      <p class="stitch-hero-desc">
+        Curated collection of identity systems, editorial layouts, and digital experiences defined by structural precision and creative intentionality.
+      </p>
     </div>
   </section>
 
@@ -55,13 +38,6 @@ const waLinksJson = JSON.stringify({
       <button class="filter-btn" data-filter="social">Social Media</button>
       <button class="filter-btn" data-filter="poster">Poster</button>
       <button class="filter-btn" data-filter="advertising">Advertising</button>
-    </div>
-
-    <!-- Floating WA CTA — changes based on active filter -->
-    <div class="wa-category-cta fade-up">
-      <a id="wa-cta-btn" href={waLink('design_general')} target="_blank" rel="noopener noreferrer" class="btn-wa-category">
-        <i class="fab fa-whatsapp"></i> Tanya tentang desain ini
-      </a>
     </div>
 
     <!-- Bento Grid — 12-col, editorial layout -->
@@ -92,9 +68,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
-          <a href={waLink('design_advertising')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
@@ -123,9 +96,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
-          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
@@ -154,9 +124,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
-          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
@@ -180,9 +147,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
-          <a href={waLink('design_brand')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
@@ -211,9 +175,6 @@ const waLinksJson = JSON.stringify({
           <span class="stitch-design-card-link">
             View Case Study <i class="fas fa-arrow-right"></i>
           </span>
-          <a href={waLink('design_sosmed')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
@@ -237,32 +198,9 @@ const waLinksJson = JSON.stringify({
             <p class="stitch-design-card-title">Modernist Expo</p>
             <span class="stitch-design-card-meta">Exhibition Design</span>
           </div>
-          <a href={waLink('design_poster')} target="_blank" rel="noopener noreferrer" class="design-card-wa-btn" onclick="event.stopPropagation()" title="Tanya tentang desain ini">
-            <i class="fab fa-whatsapp"></i>
-          </a>
         </div>
       </a>
 
-    </div>
-
-    <!-- Bottom CTA — Stitch style -->
-    <div class="stitch-design-cta fade-up">
-      <div class="stitch-design-cta-inner">
-        <h2 class="stitch-design-cta-title">
-          Ready to start a <em class="stitch-design-cta-accent">narrative?</em>
-        </h2>
-        <p class="stitch-design-cta-desc">
-          I specialize in helping brands find their unique visual voice through intentional design and strategic storytelling. Currently accepting new projects.
-        </p>
-        <div class="stitch-design-cta-buttons">
-          <a href={waLink('design_general')} target="_blank" rel="noopener noreferrer" class="stitch-cta-primary">
-            Start Project
-          </a>
-          <a href="#" class="stitch-cta-secondary">
-            Download CV
-          </a>
-        </div>
-      </div>
     </div>
 
   </section>
@@ -276,35 +214,20 @@ const waLinksJson = JSON.stringify({
      Matches: stitch/design_showcase_redesign/code.html
      ============================================= */
 
-  /* Hero / Editorial Header */
+  /* Hero — Centered single column */
   .stitch-hero {
     padding: 140px 48px 80px;
     max-width: 1280px;
     margin: 0 auto;
+    text-align: center;
   }
 
-  .stitch-editorial-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 40px;
+  .stitch-hero-centered {
+    max-width: 720px;
+    margin: 0 auto;
   }
 
-  .stitch-header-left {
-    flex: 1;
-  }
-
-  .stitch-header-label {
-    font-family: 'Manrope', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent-primary);
-    margin-bottom: 16px;
-  }
-
-  .stitch-header-title {
+  .stitch-hero-title {
     font-family: 'Manrope', sans-serif;
     font-size: clamp(40px, 6vw, 80px);
     font-weight: 800;
@@ -312,20 +235,19 @@ const waLinksJson = JSON.stringify({
     line-height: 1.05;
     color: var(--text-primary);
     text-shadow: 0 0 30px rgba(163, 166, 255, 0.2);
+    margin-bottom: 20px;
   }
 
-  .stitch-header-accent {
+  .stitch-hero-accent {
     color: var(--accent-secondary);
   }
 
-  .stitch-header-desc {
-    max-width: 260px;
-    padding-left: 28px;
-    border-left: 1px solid rgba(64, 72, 93, 0.4);
-    font-size: 13px;
+  .stitch-hero-desc {
+    font-size: 17px;
     line-height: 1.7;
     color: var(--text-secondary);
-    padding-bottom: 8px;
+    max-width: 560px;
+    margin: 0 auto;
   }
 
   /* Filter Bar */
@@ -581,156 +503,6 @@ const waLinksJson = JSON.stringify({
     text-transform: uppercase;
   }
 
-  /* =============================================
-     BOTTOM CTA SECTION
-     ============================================= */
-  .stitch-design-cta {
-    margin-top: 80px;
-    border-radius: 20px;
-    background: var(--surface-container-low);
-    border: 1px solid rgba(163, 166, 255, 0.06);
-    padding: 64px 48px;
-    text-align: center;
-  }
-
-  .stitch-design-cta-title {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    line-height: 1.15;
-  }
-
-  .stitch-design-cta-accent {
-    color: var(--accent-secondary);
-    font-style: italic;
-  }
-
-  .stitch-design-cta-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 500px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-  }
-
-  .stitch-design-cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .stitch-cta-primary {
-    display: inline-flex;
-    align-items: center;
-    padding: 14px 32px;
-    border-radius: 9999px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-container));
-    color: #0f00a4;
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(163, 166, 255, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .stitch-cta-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(163, 166, 255, 0.4);
-    opacity: 0.9;
-  }
-
-  .stitch-cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: 14px 32px;
-    border-radius: 9999px;
-    border: 1px solid rgba(64, 72, 93, 0.5);
-    color: var(--text-primary);
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .stitch-cta-secondary:hover {
-    background: var(--surface-bright);
-    border-color: rgba(163, 166, 255, 0.3);
-    transform: translateY(-3px);
-  }
-
-  /* =============================================
-     WHATSAPP CTA STYLES
-     ============================================= */
-  .wa-category-cta {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 0 16px;
-    margin-top: -8px;
-    margin-bottom: 24px;
-  }
-
-  .btn-wa-category {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 9999px;
-    background: rgba(37, 211, 102, 0.12);
-    border: 1px solid rgba(37, 211, 102, 0.25);
-    color: #25d366;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-
-  .btn-wa-category:hover {
-    background: rgba(37, 211, 102, 0.22);
-    border-color: rgba(37, 211, 102, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .btn-wa-category i { font-size: 16px; }
-
-  /* Card WA button — top-right, hover reveal */
-  .design-card-wa-btn {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.85);
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.25s ease, background 0.25s ease;
-    z-index: 10;
-  }
-
-  .design-card-wa-btn:hover {
-    background: #25d366;
-    transform: scale(1.1);
-  }
-
-  .stitch-design-card:hover .design-card-wa-btn {
-    opacity: 1;
-  }
-
   /* Responsive */
   @media (max-width: 1024px) {
     .stitch-design-grid {
@@ -757,19 +529,6 @@ const waLinksJson = JSON.stringify({
       padding: 120px 24px 60px;
     }
 
-    .stitch-editorial-header {
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .stitch-header-desc {
-      padding-left: 0;
-      border-left: none;
-      max-width: 100%;
-      padding-top: 16px;
-      border-top: 1px solid rgba(64, 72, 93, 0.3);
-    }
-
     .filter-bar,
     .gallery-section {
       padding-left: 24px;
@@ -791,10 +550,6 @@ const waLinksJson = JSON.stringify({
       grid-row: span 1;
     }
 
-    .stitch-design-cta {
-      padding: 40px 24px;
-    }
-
     .filter-bar {
       gap: 8px;
       overflow-x: auto;
@@ -811,13 +566,14 @@ const waLinksJson = JSON.stringify({
   @media (max-width: 600px) {
     .stitch-hero {
       padding: 88px 20px 40px;
+      text-align: center;
     }
 
-    .stitch-header-title {
+    .stitch-hero-title {
       font-size: clamp(28px, 10vw, 40px);
     }
 
-    .stitch-header-desc p {
+    .stitch-hero-desc {
       font-size: 14px;
     }
 
@@ -856,35 +612,11 @@ const waLinksJson = JSON.stringify({
     .stitch-design-card-link {
       font-size: 12px;
     }
-
-    .stitch-design-cta {
-      margin-top: 48px;
-      padding: 32px 20px;
-    }
-
-    .stitch-design-cta-title {
-      font-size: clamp(24px, 7vw, 32px);
-    }
-
-    .stitch-design-cta-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .stitch-design-cta-btns {
-      flex-direction: column;
-      width: 100%;
-    }
   }
 
   @media (max-width: 480px) {
     .stitch-hero {
       padding: 80px 20px 32px;
-    }
-
-    .stitch-header-label {
-      font-size: 10px;
     }
 
     .stitch-design-grid {
@@ -905,20 +637,6 @@ const waLinksJson = JSON.stringify({
     }
   }
 
-  /* Mobile always show card WA button */
-  @media (max-width: 768px) {
-    .design-card-wa-btn {
-      opacity: 1;
-    }
-
-    .stitch-design-overlay-hover .design-card-wa-btn {
-      top: 10px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      font-size: 14px;
-    }
-  }
 </style>
 
 <script>
@@ -961,23 +679,4 @@ const waLinksJson = JSON.stringify({
       });
     });
   })();
-</script>
-
-<script define:vars={{ waLinksJson }}>
-  /* ---------- TAB-SWITCHING WA CTA ---------- */
-  document.addEventListener('DOMContentLoaded', function() {
-    var waLinks = JSON.parse(waLinksJson);
-    var waCtaBtn = document.getElementById('wa-cta-btn');
-    if (!waCtaBtn) return;
-    var filterBar = document.querySelector('.filter-bar');
-    if (!filterBar) return;
-    filterBar.querySelectorAll('.filter-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var filter = btn.dataset.filter || 'all';
-        if (waLinks[filter]) {
-          waCtaBtn.href = waLinks[filter];
-        }
-      });
-    });
-  });
 </script>
