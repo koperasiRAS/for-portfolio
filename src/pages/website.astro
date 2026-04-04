@@ -22,12 +22,10 @@ import Footer from '../components/Footer.astro';
         High-Performance<br />
         <span class="web-stitch-title-accent"><em>Digital Ecosystems</em></span>
       </h1>
-      <!-- CTA Buttons -->
-      <div class="web-stitch-cta">
-        <a href="#projects" class="web-stitch-btn-primary">
-          Lihat Projects
-        </a>
-      </div>
+      <!-- Description -->
+      <p class="web-stitch-hero-sub">
+        Jasa pembuatan website profesional — portfolio, landing page, company profile, dan web app yang responsif, cepat, dan berorientasi pada pengalaman pengguna.
+      </p>
     </div>
   </section>
 
@@ -297,7 +295,8 @@ import Footer from '../components/Footer.astro';
   .web-stitch-hero-inner {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 0;
   }
 
@@ -318,34 +317,12 @@ import Footer from '../components/Footer.astro';
     font-weight: 300;
   }
 
-  /* CTA buttons — primary filled */
-  .web-stitch-cta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .web-stitch-btn-primary {
-    display: inline-flex;
-    align-items: center;
-    padding: 14px 32px;
-    border-radius: 9999px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-dim));
-    color: #0f00a4;
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(163, 166, 255, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .web-stitch-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(163, 166, 255, 0.4);
-    opacity: 0.9;
+  .web-stitch-hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   /* ---- PROJECTS SECTION ---- */

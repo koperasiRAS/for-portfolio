@@ -2495,7 +2495,9 @@ body.glightbox-open { overflow: hidden; }
     to   { opacity: 1; transform: translateY(0); }
   }
   .nav-links li a { width: 100%; padding: 11px 16px; }
-  .nav-toggle { display: flex; position: fixed; right: 20px; top: 0; }
+  /* Hide CTA on very small screens to avoid crowding */
+  .btn-nav-cta { display: none; }
+  .nav-toggle { display: flex; position: relative; margin-left: auto; top: auto; right: auto; padding: 12px; }
   .preview-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 8px; }
   .stat-card { padding: 14px 8px; }
@@ -2995,6 +2997,7 @@ body.glightbox-open { overflow: hidden; }
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
+/* ============================================================
    WEBSITE PAGE — Project Modal
    ============================================================ */
 .project-modal {
