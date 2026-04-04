@@ -3,9 +3,13 @@ export interface Props {
   icon: string;
   title: string;
   description: string;
+  whatsappKey?: string;
 }
 
-const { icon, title, description } = Astro.props;
+const { icon, title, description, whatsappKey } = Astro.props;
+
+import { waLink } from '../utils/whatsapp.js';
+const waUrl = whatsappKey ? waLink(whatsappKey) : waLink('general');
 ---
 
 <div class="svc-card fade-up">
@@ -16,7 +20,38 @@ const { icon, title, description } = Astro.props;
   </div>
   <h3 class="svc-title">{title}</h3>
   <p class="svc-desc">{description}</p>
+  {whatsappKey && (
+    <a href={waUrl} target="_blank" rel="noopener noreferrer" class="svc-wa-btn">
+      <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+    </a>
+  )}
   <div class="svc-arrow">
     <i class="fas fa-arrow-right"></i>
   </div>
 </div>
+
+<style>
+  .svc-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    color: #25d366;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+
+  .svc-wa-btn:hover {
+    background: rgba(37, 211, 102, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .svc-wa-btn i { font-size: 14px; }
+</style>

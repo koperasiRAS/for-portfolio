@@ -144,7 +144,7 @@ import { waLink } from '../utils/whatsapp.js';
             <span class="stat-label">Services</span>
           </div>
         </div>
-        <a href={waLink('general')} target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href={waLink('collab')} target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> Chat via WhatsApp
         </a>
       </div>
@@ -197,21 +197,25 @@ import { waLink } from '../utils/whatsapp.js';
           icon="fas fa-camera"
           title="Photography"
           description="Foto komersial, wedding, editorial, dan automotive dengan pendekatan storytelling yang kuat dan estetik yang tajam."
+          whatsappKey="foto_general"
         />
         <ServiceCard
           icon="fas fa-video"
           title="Videography"
           description="Produksi video mulai dari konsep hingga final cut. Cocok untuk konten brand, dokumentasi acara, dan video promosi."
+          whatsappKey="video_general"
         />
         <ServiceCard
           icon="fas fa-palette"
           title="Brand Design"
           description="Identitas visual, desain sosial media, poster, dan materi iklan yang membangun karakter brand secara konsisten."
+          whatsappKey="design_general"
         />
         <ServiceCard
           icon="fas fa-code"
           title="Web Development"
           description="Website portofolio, landing page, dan undangan digital yang responsif, cepat, dan berorientasi pada pengalaman pengguna."
+          whatsappKey="web_general"
         />
       </div>
     </div>
@@ -318,7 +322,7 @@ import { waLink } from '../utils/whatsapp.js';
         <span>atau hubungi langsung</span>
       </div>
       <div class="contact-buttons">
-        <a href={waLink('collab')} target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href={waLink('contact')} target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener" class="btn btn-ghost">
