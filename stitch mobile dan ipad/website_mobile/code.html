@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#dee5ff",
+                    "inverse-primary": "#494bd7",
+                    "on-primary": "#0f00a4",
+                    "surface": "#060e20",
+                    "inverse-surface": "#faf8ff",
+                    "surface-dim": "#060e20",
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "on-primary-container": "#0a0081",
+                    "surface-bright": "#1f2b49",
+                    "primary-container": "#9396ff",
+                    "on-surface-variant": "#a3aac4",
+                    "inverse-on-surface": "#4d556b",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "secondary-container": "#6f00be",
+                    "on-surface": "#dee5ff",
+                    "surface-variant": "#192540",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-container": "#000311",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "primary-fixed": "#9396ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "on-error-container": "#ffb2b9",
+                    "background": "#060e20",
+                    "error": "#ff6e84",
+                    "secondary-dim": "#9c48ea",
+                    "surface-container-highest": "#192540",
+                    "on-tertiary-fixed": "#00163b",
+                    "on-tertiary": "#001e4a",
+                    "surface-container": "#0f1930",
+                    "primary-dim": "#6063ee",
+                    "outline-variant": "#40485d",
+                    "secondary": "#c180ff",
+                    "on-error": "#490013",
+                    "tertiary-fixed-dim": "#73a2ff",
+                    "tertiary": "#699cff",
+                    "primary": "#a3a6ff",
+                    "surface-container-high": "#141f38",
+                    "outline": "#6d758c",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary-fixed-variant": "#00377b",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-low": "#091328",
+                    "on-secondary": "#33005b",
+                    "tertiary-fixed": "#8ab0ff",
+                    "surface-tint": "#a3a6ff",
+                    "primary-fixed-dim": "#8387ff",
+                    "error-container": "#a70138",
+                    "tertiary-dim": "#699cff",
+                    "error-dim": "#d73357",
+                    "tertiary-container": "#4388fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-glow {
+            box-shadow: 0 0 20px rgba(163, 166, 255, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 selection:text-primary-fixed">
+<!-- Navigation Shell (TopAppBar) -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_10px_40px_rgba(6,14,32,0.08)] flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#a3a6ff] hover:opacity-80 transition-opacity" data-icon="menu">menu</span>
+<span class="text-2xl font-['Manrope'] font-extrabold tracking-tighter text-[#a3a6ff]">Gallery</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Manrope'] font-bold tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors" href="#">Home</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors" href="#">Foto</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors" href="#">Video</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1" href="#">Website</a>
+</div>
+<span class="material-symbols-outlined text-[#a3a6ff] hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-6 overflow-hidden">
+<div class="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-[100px] -mr-36 -mt-36"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -ml-32 -mb-32"></div>
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-highest text-primary font-label text-xs font-bold tracking-widest uppercase mb-6">Development</span>
+<h1 class="font-headline text-[3.5rem] font-extrabold tracking-tighter leading-[1.1] mb-6">
+                High-Performance <br/>
+<span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Digital Ecosystems</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                Architecting lightning-fast web experiences where engineering precision meets editorial aesthetics.
+            </p>
+</div>
+</header>
+<!-- Project Showcase -->
+<main class="space-y-24 px-6 pb-24">
+<!-- Project 1: Vortex -->
+<section class="group relative">
+<div class="relative rounded-xl overflow-hidden bg-surface-container-low aspect-[4/5] mb-8">
+<img alt="Vortex Luxury Experience UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Dark sophisticated e-commerce dashboard with sleek typography, high-end jewelry imagery, and minimalist navigation on a glass-textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW6P4t6nMgDnx8Vbq9H_bQ84CFBa7bqDHzunlUheQljk4SEmdQ6zMi_2YF3WHQ3pjXgmPWXM0F1kF6MHgFN5cPn4_8eHP2JZyef58E0EaL9KWAq5IMs4zdFmY9WGNzZ_DAagq9pT1uZEwDU4m0XqNAfNQQP9rmGCB6qGZ_Qj5X8fkTcjbCUSh_Yq1COLN6xDK2v0vYs8tVnON9fJLa_hZmkORq3IrHivNZQkfaIwg4mmU9eZ2_-l4_rXn4hfoIB55H8I4-cNI5DLc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<!-- Performance Chip Floating -->
+<div class="absolute top-4 right-4 glass-effect bg-surface-container-highest/60 rounded-xl px-4 py-3 flex items-center gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lighthouse</span>
+<span class="text-xl font-headline font-extrabold text-[#00ff9d]">98/100</span>
+</div>
+<span class="material-symbols-outlined text-[#00ff9d]" data-icon="speed">speed</span>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl font-bold text-on-surface">Vortex Luxury Experience</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                    A high-end E-commerce engine optimized for conversion with ultra-low latency page transitions and a bespoke 3D product visualizer.
+                </p>
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Next.js</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Shopify API</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Tailwind CSS</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Three.js</span>
+</div>
+</div>
+</section>
+<!-- Project 2: Studio Lumina -->
+<section class="group relative">
+<div class="relative rounded-xl overflow-hidden bg-surface-container-low aspect-[4/5] mb-8">
+<img alt="Studio Lumina Portfolio UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Editorial style web design with large bold typography, asymmetric layout, and floating creative photography elements on a deep navy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGHr_QIqSM5011PJXyMno543fJ4akl_aoPp8g5NNUpAxadPYm4H3_XeqNVkf9q8LUqzxxu5-TI4UZGKfimw3ZBwIEM9U847zsTwfy_-DeLpgKdn7cClw0T85_Pe4et7hoEA-5UtfgCcgmqevO8WkoXX_W524Dx9cpKJqMMfbu7lNd14Ef0cN7iqQODkhojH42DDBwBOQAwOY4lYshY6uuvIFlhZi-XPl5BqMkXMnaOXXelpYlwPPAAw3xd9U5zGGjXOr3ivYBbNc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<!-- Performance Chip Floating -->
+<div class="absolute top-4 right-4 glass-effect bg-surface-container-highest/60 rounded-xl px-4 py-3 flex items-center gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lighthouse</span>
+<span class="text-xl font-headline font-extrabold text-[#00ff9d]">99/100</span>
+</div>
+<span class="material-symbols-outlined text-[#00ff9d]" data-icon="bolt">bolt</span>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-3xl font-bold text-on-surface">Studio Lumina Portfolio</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                    An editorial-grade creative portfolio featuring dynamic layout transitions and seamless content management for visual storytellers.
+                </p>
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Framer Motion</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Sanity CMS</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">TypeScript</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">Vercel Edge</span>
+</div>
+</div>
+</section>
+<!-- Tech Stack Bento Grid (Mobile Adaptation) -->
+<section class="space-y-6">
+<h2 class="font-headline text-2xl font-bold text-primary mb-8">Technical Foundation</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-xl space-y-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary" data-icon="terminal">terminal</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Modern Stack</h4>
+<p class="text-xs text-on-surface-variant">Next.js 14, React &amp; Node</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl space-y-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary" data-icon="analytics">analytics</span>
+<div>
+<h4 class="font-headline font-bold text-on-surface">SEO Logic</h4>
+<p class="text-xs text-on-surface-variant">Semantic Architecture</p>
+</div>
+</div>
+<div class="col-span-2 bg-gradient-to-br from-surface-container-highest to-surface-container-low p-6 rounded-xl flex items-center justify-between">
+<div class="space-y-1">
+<h4 class="font-headline font-bold text-on-surface">Pixel Perfection</h4>
+<p class="text-xs text-on-surface-variant">Responsive &amp; Fluid Dynamics</p>
+</div>
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="aspect_ratio">aspect_ratio</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="pt-12 text-center">
+<div class="p-8 rounded-2xl bg-surface-container overflow-hidden relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-tertiary"></div>
+<h2 class="font-headline text-2xl font-bold mb-4">Start your digital transformation.</h2>
+<p class="text-on-surface-variant mb-8 text-sm">Building experiences that outperform the competition.</p>
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold tracking-tight primary-glow hover:scale-105 transition-transform active:scale-95 duration-100">
+                    GET IN TOUCH
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#000000] w-full py-12 px-6 mt-auto border-t border-[#192540]/15 flex flex-col gap-6 items-center">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-5xl gap-6">
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[12px] uppercase tracking-widest text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">Instagram</a>
+<a class="font-['Inter'] text-[12px] uppercase tracking-widest text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-[12px] uppercase tracking-widest text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">Behance</a>
+</div>
+<p class="font-['Inter'] text-[12px] uppercase tracking-widest text-[#a3aac4]">© 2024 Gallery Editorial. All rights reserved.</p>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-effect bg-surface/80 border-t border-outline-variant/10 py-3 px-8 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-[#a3aac4]">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#a3aac4]">
+<span class="material-symbols-outlined text-2xl" data-icon="photo_camera">photo_camera</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Foto</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#a3a6ff]">
+<span class="material-symbols-outlined text-2xl" data-icon="language" data-weight="fill" style="font-variation-settings: 'FILL' 1;">language</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Website</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#a3aac4]">
+<span class="material-symbols-outlined text-2xl" data-icon="palette">palette</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Design</span>
+</div>
+</nav>
+<!-- FAB -->
+<div class="md:hidden fixed bottom-24 right-6 z-40">
+<button class="w-14 h-14 rounded-full bg-gradient-to-r from-secondary to-secondary-dim shadow-xl shadow-secondary/20 flex items-center justify-center text-on-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+</body></html>

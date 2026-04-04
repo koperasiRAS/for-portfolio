@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@200;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#dee5ff",
+            "inverse-primary": "#494bd7",
+            "on-primary": "#0f00a4",
+            "surface": "#060e20",
+            "inverse-surface": "#faf8ff",
+            "surface-dim": "#060e20",
+            "on-secondary-fixed-variant": "#7511c3",
+            "on-primary-container": "#0a0081",
+            "surface-bright": "#1f2b49",
+            "primary-container": "#9396ff",
+            "on-surface-variant": "#a3aac4",
+            "inverse-on-surface": "#4d556b",
+            "on-secondary-fixed": "#4f0089",
+            "on-primary-fixed-variant": "#0e009d",
+            "secondary-container": "#6f00be",
+            "on-surface": "#dee5ff",
+            "surface-variant": "#192540",
+            "surface-container-lowest": "#000000",
+            "on-tertiary-container": "#000311",
+            "secondary-fixed-dim": "#dbb4ff",
+            "primary-fixed": "#9396ff",
+            "secondary-fixed": "#e5c6ff",
+            "on-error-container": "#ffb2b9",
+            "background": "#060e20",
+            "error": "#ff6e84",
+            "secondary-dim": "#9c48ea",
+            "surface-container-highest": "#192540",
+            "on-tertiary-fixed": "#00163b",
+            "on-tertiary": "#001e4a",
+            "surface-container": "#0f1930",
+            "primary-dim": "#6063ee",
+            "outline-variant": "#40485d",
+            "secondary": "#c180ff",
+            "on-error": "#490013",
+            "tertiary-fixed-dim": "#73a2ff",
+            "tertiary": "#699cff",
+            "primary": "#a3a6ff",
+            "surface-container-high": "#141f38",
+            "outline": "#6d758c",
+            "on-primary-fixed": "#000000",
+            "on-tertiary-fixed-variant": "#00377b",
+            "on-secondary-container": "#e9cdff",
+            "surface-container-low": "#091328",
+            "on-secondary": "#33005b",
+            "tertiary-fixed": "#8ab0ff",
+            "surface-tint": "#a3a6ff",
+            "primary-fixed-dim": "#8387ff",
+            "error-container": "#a70138",
+            "tertiary-dim": "#699cff",
+            "error-dim": "#d73357",
+            "tertiary-container": "#4388fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-nav {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .masonry-item:nth-child(even) {
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen">
+<!-- Shared Component: TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(10,14,32,0.8)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#a3a6ff]">Gallery</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] uppercase tracking-widest text-sm font-semibold">
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Foto</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Video</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Design</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Website</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-6 py-2 rounded-full font-headline font-bold text-sm hover:opacity-90 transition-all scale-95 active:scale-90">
+        Contact
+      </button>
+</div>
+</nav>
+<main class="pt-40 px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-24">
+<h1 class="font-headline text-[5rem] font-extrabold tracking-tighter leading-none mb-6">
+<span class="text-primary">Photo</span>graphy
+      </h1>
+<p class="font-body text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+        A curated selection of architectural precision and nocturnal atmospheres. Exploring the intersection of light, shadow, and the built environment.
+      </p>
+</header>
+<!-- Filter Chips -->
+<div class="flex gap-4 mb-20 overflow-x-auto pb-4 no-scrollbar">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-headline font-semibold text-sm whitespace-nowrap shadow-lg shadow-secondary/10">
+        All Work
+      </button>
+<button class="bg-surface-container-highest text-on-surface-variant hover:text-on-surface px-8 py-3 rounded-full font-headline font-semibold text-sm whitespace-nowrap transition-colors">
+        Architecture
+      </button>
+<button class="bg-surface-container-highest text-on-surface-variant hover:text-on-surface px-8 py-3 rounded-full font-headline font-semibold text-sm whitespace-nowrap transition-colors">
+        Nocturnal
+      </button>
+<button class="bg-surface-container-highest text-on-surface-variant hover:text-on-surface px-8 py-3 rounded-full font-headline font-semibold text-sm whitespace-nowrap transition-colors">
+        Portrait
+      </button>
+<button class="bg-surface-container-highest text-on-surface-variant hover:text-on-surface px-8 py-3 rounded-full font-headline font-semibold text-sm whitespace-nowrap transition-colors">
+        Abstract
+      </button>
+</div>
+<!-- Two-Column Masonry Grid -->
+<section class="masonry-grid pb-32">
+<!-- Item 1 -->
+<article class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Modern skyscraper" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" data-alt="Monolithic modern skyscraper reaching into a clear blue sky with sharp geometric shadows and high-contrast architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHunvPKX7NByDn053ZU0HQSvECEfSq0Fso2rEPvh9dtckKzjF4ftaIUV3S7NnCb2FIzIRqkIugeEhuwe3Ruysg6Xnq2QMemXI8xjmszN_x5H8HuSC9w7UHhxx2z0pGGIu_pSap9fljzbj-VtCjMHqNUkTMGlBRHg9j0TM4JHO3pXk5gzlWOKgxmipdwktwEihcgLB5XN4MTvnOAKbIIruGLYPWESnEiTtfG_WVvOJkVZwA_rpHRozDretLt6afMQEGXkyo-JTzbw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Architecture</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">The Monolith</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">New York, Financial District</p>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="City at night" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" data-alt="Nocturnal cityscape of Tokyo at night with glowing blue and purple neon signs reflecting on wet asphalt streets after rain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrlx0v-KUkzG1iaSIH5ujP3-c3tBH50VQOzXHwxoTtN7hI-SnLnTyObX1p3PDjRZgcRO7Tw_yYd1nzto-ICZMfNqA-XY1SOUe8t7tymxswZSvC-ZLb70U7Y0geaTofCXfyqjujpMRu-g55mkxzG3cnc3I1Vr6HwIZnp9gjb1-nHpUFdYTrI-Bawt4aVpDgY0oLIEOQlVaOqEzyoKnVSfc7cI3oZ8b9sm5qMMg258Og65N-8jGZ0GewqnNfmMzmL1lxzdfIkBa4wY"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Nocturnal</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Neon Pulse</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Shinjuku, Tokyo</p>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[1/1] overflow-hidden">
+<img alt="Abstract light" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" data-alt="Abstract photography showing blurred light trails in deep violet and azure blue against a pitch black background, minimalist composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmPcJo4ZLubxQJZI0ZA6nxOymOhKYZ09ZmIJG_cEMkWHT92Rn8NWs0JgWoW6LWtRRJuLFOVR2hgK3ylAkJTdKpOxMtYzP2PtfI1kTsYyrTzzHoAIaqdJFZdj9Ci7ujEb-MPRbqfkKmMk_5bjak_8PPmdkxE3xG3BWgzgbk_JVwRC2uVT_fFR_iDM4dpb1bAYToFO3YCsU2Uj8--lmkHuHbKGORPYw2vcFc8BxH0w7SqkU1-yyEsc1suyW0AMLwn3JdoEZ_kwNGmeU"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Abstract</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Kinetic Flow</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Studio Experiment No. 42</p>
+</div>
+</article>
+<!-- Item 4 -->
+<article class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Modern museum" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" data-alt="Interior of a minimalist contemporary art museum with dramatic concrete curves, soft skylight, and deep indigo shadows in the corners" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMv3V_eQf6U9MUkjx7UqF7NtrMO74dPYCI14yVZ1gDjJhtJ5qkVA90iJnIi0iFn_T42Jyyq612Yd1KA89RKvsEmC8lW0AC3wPy6rW_T8ER2UxdaMMQ4GlM5ZzjfCfV_zqpP2afP3aqxKLqY59TwxqnLCO7No_s5H1JUyUwETTr7iJm36Tbd1znBKgFQLeRLJMvnMtOSceakrv2nfUGQc7S7WEFNQelP4PmnKKMsB7aQlPSN03PeT-DWwkiKUVhYmYO5Jux_lD7bB4"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Architecture</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Silent Curves</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Bilbao, Spain</p>
+</div>
+</article>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="w-full py-20 mt-32 bg-[#000000] border-t border-[#192540]/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] text-xs tracking-tight text-[#a3aac4]">
+        © 2024 Nocturnal Gallery. All rights reserved.
+      </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Instagram</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Behance</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Email</a>
+</div>
+</div>
+</footer>
+<!-- Fixed Action Button (Contextual for Home/Browse) -->
+<button class="fixed bottom-12 right-12 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary text-on-primary-fixed shadow-2xl shadow-primary/20 flex items-center justify-center scale-100 hover:scale-110 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</button>
+</body></html>

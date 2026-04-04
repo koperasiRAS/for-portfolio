@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#dee5ff",
+                    "inverse-primary": "#494bd7",
+                    "on-primary": "#0f00a4",
+                    "surface": "#060e20",
+                    "inverse-surface": "#faf8ff",
+                    "surface-dim": "#060e20",
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "on-primary-container": "#0a0081",
+                    "surface-bright": "#1f2b49",
+                    "primary-container": "#9396ff",
+                    "on-surface-variant": "#a3aac4",
+                    "inverse-on-surface": "#4d556b",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "secondary-container": "#6f00be",
+                    "on-surface": "#dee5ff",
+                    "surface-variant": "#192540",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-container": "#000311",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "primary-fixed": "#9396ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "on-error-container": "#ffb2b9",
+                    "background": "#060e20",
+                    "error": "#ff6e84",
+                    "secondary-dim": "#9c48ea",
+                    "surface-container-highest": "#192540",
+                    "on-tertiary-fixed": "#00163b",
+                    "on-tertiary": "#001e4a",
+                    "surface-container": "#0f1930",
+                    "primary-dim": "#6063ee",
+                    "outline-variant": "#40485d",
+                    "secondary": "#c180ff",
+                    "on-error": "#490013",
+                    "tertiary-fixed-dim": "#73a2ff",
+                    "tertiary": "#699cff",
+                    "primary": "#a3a6ff",
+                    "surface-container-high": "#141f38",
+                    "outline": "#6d758c",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary-fixed-variant": "#00377b",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-low": "#091328",
+                    "on-secondary": "#33005b",
+                    "tertiary-fixed": "#8ab0ff",
+                    "surface-tint": "#a3a6ff",
+                    "primary-fixed-dim": "#8387ff",
+                    "error-container": "#a70138",
+                    "tertiary-dim": "#699cff",
+                    "error-dim": "#d73357",
+                    "tertiary-container": "#4388fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_10px_40px_rgba(6,14,32,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#a3a6ff] hover:opacity-80 transition-opacity active:scale-95 active:duration-100">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-['Manrope'] font-extrabold tracking-tighter text-[#a3a6ff]">Gallery</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#a3a6ff] hover:opacity-80 transition-opacity active:scale-95 active:duration-100">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-6 mb-12">
+<h2 class="font-headline text-[3.5rem] font-extrabold tracking-tight leading-none mb-6 text-on-surface">
+                Photography
+            </h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
+                A curated collection of nocturnal narratives and architectural precision, captured through the lens of modern minimalism.
+            </p>
+</section>
+<!-- Filter Chips (Scrollable) -->
+<section class="px-6 mb-10 overflow-x-auto no-scrollbar flex gap-3 whitespace-nowrap">
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary font-semibold text-sm transition-all shadow-[0_0_20px_rgba(163,166,255,0.2)]">
+                All Work
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm hover:bg-surface-bright transition-all">
+                Architecture
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm hover:bg-surface-bright transition-all">
+                Nocturnal
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm hover:bg-surface-bright transition-all">
+                Portrait
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium text-sm hover:bg-surface-bright transition-all">
+                Abstract
+            </button>
+</section>
+<!-- Photography Masonry List (Vertical) -->
+<section class="px-6 flex flex-col gap-8">
+<!-- Project Card 1: Architectural -->
+<article class="relative group">
+<div class="rounded-xl overflow-hidden aspect-[4/5] relative bg-surface-container">
+<img alt="Architectural precision" class="w-full h-full object-cover" data-alt="Modern skyscraper with sharp geometric glass facets reflecting a deep blue twilight sky with minimalist industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_SLY3vUDKALv3MkgQJs2vF3Xk5OgJfqxNdfDEfBQuFwre23wiRRrVRnqxxsLTujKlJlfY9lDO1d5jNJw4az2LzwaGT30qSnM4x3_CC72q6qeTaEuh6uLT3VWEs3nR4sxRu3Docnz09Vr5Q09qzaug0bHjLuy5hDdJf4V6aikSMKKCfV5KkzDsYrrx6X-rLCd7tMTapBXRHOTd4Y07mJbtyaUz-vh_XupRyGpOVGyGzlmT-AYbjCy_KzPCm-f6jW_gTE_vWqiIRKE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-widest uppercase">Architecture</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Linear Monolith</h3>
+<p class="font-body text-sm text-on-surface-variant">The intersection of glass and morning shadow.</p>
+</div>
+</article>
+<!-- Project Card 2: Nocturnal -->
+<article class="relative group">
+<div class="rounded-xl overflow-hidden aspect-[1/1] relative bg-surface-container">
+<img alt="Nocturnal city" class="w-full h-full object-cover" data-alt="Distant aerial view of a sprawling metropolis at night with glowing blue and amber lights under a deep indigo sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAZghh0S-oQtuSENOxgMt8TshsWqV_uM-m5mQFWjvLDK9WhDbzHUphQ_65rwrBRJsUTj1ZHp9fcjwNx-LYTOHk8O2jBfOBbZQLB2Lt8gVoJ7xji0GYgX3upR8F7F80LvwdVW3yZp_SqF7zRB9iiTFC-ttOykg5CfYmzMH0lfPMZMTHCO1p9ATEeI2Ks-3qb7-IM6Bxjxc8ne7k6p-YGt55E632z2O627nZHQcM9VqnOx9rLgQ71ToitaSzh-FoCL42xzX9qVrRPUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-widest uppercase">Nocturnal</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Midnight Arteries</h3>
+<p class="font-body text-sm text-on-surface-variant">Exploring the silence of the urban sprawl.</p>
+</div>
+</article>
+<!-- Project Card 3: Abstract -->
+<article class="relative group">
+<div class="rounded-xl overflow-hidden aspect-[4/5] relative bg-surface-container">
+<img alt="Abstract light" class="w-full h-full object-cover" data-alt="Abstract fluid patterns of dark blue and purple light ripples with soft grain texture and mysterious depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAPpg0mo1ISqqeYUe2JnB00_D0RjihubB7kBZHlNpeL_AkvJtIFRYoAxLjzyMZl2l8ElVBCMk7g-NFDGbVVv06BuGBdnwzDUgmGhdERUzpBYhTalMcqyYd8yjT66fvluQVbf-UsIdnvAq25czHeTl9dptdPlj-xi6f6o116-lhcfYQLBgT3Ci8yUJIQLqjbslprnjeAPvteu7I33OGQY_5Y_O0F8cWuUKR8axiWfTbRCpaX-PK80XQ8ZOPZg8T3KhmPtpDWHOobPI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-widest uppercase">Abstract</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Void Echoes</h3>
+<p class="font-body text-sm text-on-surface-variant">Visual representations of rhythmic silence.</p>
+</div>
+</article>
+<!-- Project Card 4: Architecture -->
+<article class="relative group">
+<div class="rounded-xl overflow-hidden aspect-[3/2] relative bg-surface-container">
+<img alt="Concrete detail" class="w-full h-full object-cover" data-alt="Close-up of a raw concrete spiral staircase with dramatic shadows casting sharp rhythmic patterns across the stone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj-anlPxyes4mFotJvKzNoxrPgohp8mduW11fPOSiCtNZEd_n0mSA9icOrXGQEMrVjlfAwV7EEL1CP4pRMlMmT_sQmLCRzBTqwE6uuRKzpyIEQFEvuXVpMYWNlNaGLD79bN_cQENJQIr0rniovOKef7YgqrU3czC17Wsm1pcE-nSzKg3wLbtGHl9Eaa09Eo6TGG0Mpt_itjV71Dvo6FU0iFC1sf69i4Z6rdK0fQIUQD_Jt_xfP4tVvonoDrrmOYIayYN48VBZa5iQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-widest uppercase">Architecture</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Spiral Descent</h3>
+<p class="font-body text-sm text-on-surface-variant">Brutalist aesthetics in the golden hour light.</p>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0f1930]/80 backdrop-blur-2xl px-6 py-4 flex justify-between items-center shadow-2xl md:hidden">
+<button class="flex flex-col items-center gap-1 text-[#a3aac4] hover:text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-body uppercase tracking-tighter">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#c180ff] font-bold">
+<span class="material-symbols-outlined" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<span class="text-[10px] font-medium font-body uppercase tracking-tighter">Foto</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a3aac4] hover:text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+<span class="text-[10px] font-medium font-body uppercase tracking-tighter">Video</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a3aac4] hover:text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+<span class="text-[10px] font-medium font-body uppercase tracking-tighter">Design</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a3aac4] hover:text-[#a3a6ff]">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+<span class="text-[10px] font-medium font-body uppercase tracking-tighter">Website</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 bg-[#000000] border-t border-[#192540]/30 mb-20">
+<div class="flex flex-col items-center gap-6 text-center">
+<p class="font-['Inter'] text-[12px] uppercase tracking-widest text-[#a3aac4]">
+                © 2024 Gallery Editorial. All rights reserved.
+            </p>
+<div class="flex gap-8">
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">Instagram</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">LinkedIn</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] hover:underline decoration-[#699cff] underline-offset-4 transition-all duration-200" href="#">Behance</a>
+</div>
+</div>
+</footer>
+</body></html>

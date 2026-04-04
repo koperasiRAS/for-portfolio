@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#dee5ff",
+                    "inverse-primary": "#494bd7",
+                    "on-primary": "#0f00a4",
+                    "surface": "#060e20",
+                    "inverse-surface": "#faf8ff",
+                    "surface-dim": "#060e20",
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "on-primary-container": "#0a0081",
+                    "surface-bright": "#1f2b49",
+                    "primary-container": "#9396ff",
+                    "on-surface-variant": "#a3aac4",
+                    "inverse-on-surface": "#4d556b",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "secondary-container": "#6f00be",
+                    "on-surface": "#dee5ff",
+                    "surface-variant": "#192540",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-container": "#000311",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "primary-fixed": "#9396ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "on-error-container": "#ffb2b9",
+                    "background": "#060e20",
+                    "error": "#ff6e84",
+                    "secondary-dim": "#9c48ea",
+                    "surface-container-highest": "#192540",
+                    "on-tertiary-fixed": "#00163b",
+                    "on-tertiary": "#001e4a",
+                    "surface-container": "#0f1930",
+                    "primary-dim": "#6063ee",
+                    "outline-variant": "#40485d",
+                    "secondary": "#c180ff",
+                    "on-error": "#490013",
+                    "tertiary-fixed-dim": "#73a2ff",
+                    "tertiary": "#699cff",
+                    "primary": "#a3a6ff",
+                    "surface-container-high": "#141f38",
+                    "outline": "#6d758c",
+                    "on-primary-fixed": "#000000",
+                    "on-tertiary-fixed-variant": "#00377b",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-low": "#091328",
+                    "on-secondary": "#33005b",
+                    "tertiary-fixed": "#8ab0ff",
+                    "surface-tint": "#a3a6ff",
+                    "primary-fixed-dim": "#8387ff",
+                    "error-container": "#a70138",
+                    "tertiary-dim": "#699cff",
+                    "error-dim": "#d73357",
+                    "tertiary-container": "#4388fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(10,14,32,0.8)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#a3a6ff]">Gallery</div>
+<!-- Tablet Horizontal Navigation -->
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] uppercase tracking-widest text-sm font-semibold">
+<a class="text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1 transition-all duration-300" href="#">Home</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Foto</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Video</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Design</a>
+<a class="text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Website</a>
+</div>
+<button class="text-[#a3a6ff] font-['Manrope'] uppercase tracking-widest text-sm font-semibold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">
+                Contact
+            </button>
+</div>
+</nav>
+<main class="min-h-screen pt-32 pb-20 px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section: Tablet Two-Column Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- Left Column: Branding, Typography & Stats -->
+<div class="flex flex-col gap-10">
+<div class="space-y-4">
+<span class="inline-block px-4 py-1 rounded-full bg-surface-container-highest text-secondary text-xs font-semibold tracking-widest uppercase">Creative Direction</span>
+<h1 class="text-[5rem] font-black font-headline leading-[0.9] tracking-tighter text-on-surface">
+                        Frame Of<br/>
+<span class="text-primary">Rangga</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                        Capturing the intersection of architectural precision and emotional depth. A visual journey through nocturnal landscapes and minimalist design.
+                    </p>
+</div>
+<!-- CTA -->
+<div>
+<button class="bg-gradient-to-r from-primary to-primary-dim text-on-primary-fixed font-headline font-extrabold uppercase tracking-widest px-10 py-5 rounded-full shadow-[0_0_30px_rgba(163,166,255,0.2)] hover:scale-105 transition-transform">
+                        See All Projects
+                    </button>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-6 pt-10 border-t border-outline-variant/20">
+<div>
+<div class="text-3xl font-black text-on-surface font-headline">12+</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Years Exp</div>
+</div>
+<div>
+<div class="text-3xl font-black text-on-surface font-headline">240</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Projects</div>
+</div>
+<div>
+<div class="text-3xl font-black text-on-surface font-headline">15</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Awards</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Monochromatic Portrait -->
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="Monochromatic high-contrast editorial portrait of a creative professional named Rangga, cinematic lighting, moody shadows, dark navy backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlSa2rtnuyTa2eumN6Rey-G192Jvt_q400iUNuVvtTzt-ejDr2up_q2ROxSzD8Z_7uZWfMerv_izdCFaCrZA9WAZYWacK23bMxpOuj6zmlnwOY3pZvnoyV2WSrfZHw1OBhs7aJogf5eAVtPyvAY_SQPToxptbunKiwdm3M-OPNKVosFCCBVuE6t9uoOxazyglLQH8FEiuvzMeLpA70JWp-UmZEkjuBj1YYN4wlN-dYRJQj9vKlvuWrOajhcB_5WWX6QSeVCRcLYDs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Floating Detail Tag -->
+<div class="absolute -bottom-6 -left-6 bg-surface-bright/80 backdrop-blur-xl p-6 rounded-xl border border-outline-variant/10 shadow-xl">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-xs font-headline font-bold tracking-widest uppercase text-on-surface">Artist In Residence</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Section: Featured Bento Grid -->
+<div class="mt-40 space-y-12">
+<div class="flex justify-between items-end">
+<div class="space-y-2">
+<h2 class="text-3xl font-black font-headline text-on-surface">Selected Works</h2>
+<p class="text-on-surface-variant">Handpicked digital experiences and visuals.</p>
+</div>
+<div class="text-primary flex items-center gap-2 cursor-pointer group">
+<span class="text-sm font-bold uppercase tracking-widest">Explore Index</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="grid grid-cols-12 grid-rows-2 gap-6 h-[600px]">
+<div class="col-span-8 row-span-2 relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Modern brutalist architecture at night with glowing interior lights and deep blue sky reflection on glass surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjgW93J1BexmJFxu0PDqlFx83-ODz7h9BNYOtVcMQfS5Ri92LmLQ-xmwBtiCStdNR-o_YWKnsTlOIej1jCn8l8T4B0XQ_sNBjupN6Dt2EATImEgqntCFd3WYi4FtpsjdZIp9Uh8Dj19fFKzNPmUfv5F7FgJeca73wbHgQErfvIZzTVfwOTJX2A7uSxdb4jO-NBdH9ftr7pE3A6CLHO8XEVKTbasl5AuUm0KMNmhh1I0-i5Cx4aVDSoOFldUaOJVE2iw-RuLJCQ3WM"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-background to-transparent">
+<span class="text-[10px] uppercase font-bold tracking-[0.3em] text-secondary">Website Design</span>
+<h3 class="text-2xl font-bold font-headline mt-2">The Monolith Studio</h3>
+</div>
+</div>
+<div class="col-span-4 row-span-1 relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract minimal composition of smooth geometric shapes in deep violet and indigo lighting with metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw3VeGSkuxJDn4EyA6QEYl1e0roxPWk6JE5aWxf3kJzEGYha4tkz1bI-BXddgrWa50qmNO2XaOKqRkpWPHHgrQS_8ebXYtl_mjZsLmORv7llnN-kWQOnAYy2-16zG-Ey735mHoWAcZtuIiJtnxKDPhErar1Wqw1F14dhMxon_KnOLohh5aEDhr46hL-GbP8B0mhzE5AKR4tRJpzKeHYLTwDx3ZkfttJ0YkR4oM1PfdJ8-5fPueDnHMC7T1B1_Accr7UD6HbFHlUSc"/>
+<div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-background to-transparent">
+<span class="text-[10px] uppercase font-bold tracking-[0.3em] text-primary">Video Art</span>
+<h3 class="text-xl font-bold font-headline mt-1">Ethereal Motion</h3>
+</div>
+</div>
+<div class="col-span-4 row-span-1 relative group overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Macro photography of lens flare and light particles in a dark room with purple neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCszxYqSuc0BXyCCatpUaWNeRDPux-WxX8vmGW2OJkQjnJe3tK9mLd0Ci5j0IX8u9VFB3PyQdb_ZJ9jPsItB_bR7NjoEtbPWmL1o4gpmLrvCVYfbXlzIagQWZMDp6wCys_UYElbN8EA042Na5gltS8jZwcWJaaNqRYMGVysn-7Ai4ea3l_qWvCVn1oLY8oIoCz918lX6GmQUEfaP5WioWKiuuEs94QKI0VV_e-e-ugIASnvwBSfz9XpNaMRiMIIrGUJ6Z5kFSlHgE8"/>
+<div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-background to-transparent">
+<span class="text-[10px] uppercase font-bold tracking-[0.3em] text-tertiary">Photography</span>
+<h3 class="text-xl font-bold font-headline mt-1">Light Fragments</h3>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 mt-32 border-t border-[#192540]/30 bg-[#000000]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] text-xs tracking-tight text-[#a3aac4]">
+                © 2024 Nocturnal Gallery. All rights reserved.
+            </div>
+<div class="flex gap-10">
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Instagram</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Behance</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Email</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

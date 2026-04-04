@@ -304,7 +304,7 @@ textarea:focus-visible {
   background: rgba(6, 3, 14, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 9999;
+  z-index: 10000;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -312,6 +312,7 @@ textarea:focus-visible {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  z-index: -1;
 }
 
 .loader-content {
@@ -414,6 +415,11 @@ textarea:focus-visible {
   border-bottom: 1px solid rgba(25, 37, 64, 0.8);
   box-shadow: 0 10px 40px -15px rgba(10, 14, 32, 0.8);
   transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
+  pointer-events: auto;
+}
+
+.navbar * {
+  pointer-events: auto;
 }
 
 .navbar.scrolled {
@@ -491,88 +497,6 @@ textarea:focus-visible {
 }
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* ---------- BOTTOM NAVIGATION BAR (Mobile Only) ---------- */
-.bottom-nav {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9998;
-  background: rgba(6, 14, 32, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(64, 72, 93, 0.3);
-  padding: 8px 0;
-  padding-bottom: max(8px, env(safe-area-inset-bottom));
-}
-
-.bottom-nav-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.bottom-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 8px 4px;
-  text-decoration: none;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-  min-height: 52px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.bottom-nav-item i {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.bottom-nav-item span {
-  font-family: 'Manrope', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.bottom-nav-item.active {
-  color: var(--accent-primary);
-}
-
-.bottom-nav-item:hover {
-  color: var(--accent-primary);
-}
-
-/* Active dot indicator */
-.bottom-nav-item.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 2px;
-  background: var(--accent-primary);
-  border-radius: 0 0 2px 2px;
-}
-
-/* Show bottom nav on mobile only — syncs with hamburger at 640px */
-@media (max-width: 640px) {
-  .bottom-nav {
-    display: block;
-  }
-  body {
-    padding-bottom: 72px;
-  }
 }
 
 /* ---------- THEME TOGGLE ---------- */

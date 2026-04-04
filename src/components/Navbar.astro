@@ -40,21 +40,24 @@ const navLinks = [
 </nav>
 
 <script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
 
-  if (navToggle && navLinks) {
-    // Toggle hamburger ↔ X
-    navToggle.addEventListener('click', () => {
+    if (!navToggle || !navLinks) return;
+
+    // ---- Hamburger toggle ----
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
       const isOpen = navLinks.classList.toggle('open');
       navToggle.classList.toggle('active', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    // ---- Close on nav link click ----
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
         navLinks.classList.remove('open');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -62,8 +65,8 @@ const navLinks = [
       });
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
+    // ---- Close on outside click ----
+    document.addEventListener('click', function(e) {
       const navbar = document.getElementById('navbar');
       if (navbar && !navbar.contains(e.target as Node)) {
         navLinks.classList.remove('open');
@@ -72,34 +75,47 @@ const navLinks = [
         document.body.style.overflow = '';
       }
     });
-  }
 
-  // Theme toggle
-  const themeToggle = document.getElementById('themeToggle');
-  function applyTheme(isLight: boolean) {
-    const icon = themeToggle ? themeToggle.querySelector('i') : null;
-    if (isLight) {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('for-theme', 'light');
-      if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('for-theme', 'dark');
-      if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
-    }
-  }
-  // Sync icon with current saved theme on load
-  (function syncIcon() {
-    const saved = localStorage.getItem('for-theme');
-    if (saved === 'light' && themeToggle) {
-      const icon = themeToggle.querySelector('i');
-      if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-    }
-  })();
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isLight = document.documentElement.getAttribute('data-theme') !== 'light';
-      applyTheme(isLight);
+    // ---- Close on Escape key ----
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        navToggle.focus();
+      }
     });
-  }
+
+    // ---- Theme toggle ----
+    const themeToggle = document.getElementById('themeToggle');
+    function applyTheme(isLight: boolean) {
+      const icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (isLight) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('for-theme', 'light');
+        if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('for-theme', 'dark');
+        if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
+      }
+    }
+
+    // Sync icon with saved theme on load
+    (function syncIcon() {
+      const saved = localStorage.getItem('for-theme');
+      if (saved === 'light' && themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+      }
+    })();
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        const isLight = document.documentElement.getAttribute('data-theme') !== 'light';
+        applyTheme(isLight);
+      });
+    }
+  });
 </script>
