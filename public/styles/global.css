@@ -891,68 +891,52 @@ h1 .accent {
   margin-bottom: 28px;
 }
 
-.brands-grid {
+/* Logo strip — image-based */
+.logo-strip {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
-}
-
-.brand-item {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-full);
-  padding: 8px 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: transform var(--transition-spring), color var(--transition-fast);
-}
-
-.brand-item:hover {
-  transform: translateY(-2px);
-  color: var(--text-secondary);
-}
-
-/* ---------- BRAND LOGO BADGES ---------- */
-.brand-logo-badge {
-  display: flex;
-  flex-direction: column;
+  gap: 24px;
   align-items: center;
-  gap: 4px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: 16px 20px;
-  min-width: 88px;
-  cursor: default;
-  transition: transform var(--transition-spring), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  justify-content: center;
 }
 
-.brand-logo-badge:hover {
-  transform: translateY(-4px);
-  border-color: rgba(127, 0, 255, 0.2);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+.logo-item {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.brand-logo-letter {
-  font-size: 26px;
-  font-weight: 800;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
+.logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
-.brand-logo-name {
-  font-size: 9px;
-  font-weight: 600;
+.logo-item img:hover { opacity: 1; }
+
+.logo-fallback {
+  font-size: 12px;
+  font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.5px;
-  text-align: center;
-  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .logo-item { width: 90px; height: 45px; }
+  .logo-strip { gap: 16px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo-item { width: 70px; height: 35px; }
+  .logo-strip { gap: 12px; }
 }
 
 /* ---------- SERVICES ---------- */
@@ -2034,6 +2018,90 @@ footer {
   color: #c88aff;
   margin-bottom: 6px;
   display: inline-block;
+}
+
+/* ---------- CAROUSEL (foto page) ---------- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-dot.active {
+  background: #7f00ff;
+  transform: scale(1.3);
+}
+
+/* ---------- PORTRAIT GALLERY GRID (foto page) ---------- */
+.gallery-grid-portrait {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-portrait-wrap {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.gallery-portrait-wrap .gallery-item {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  aspect-ratio: unset;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .gallery-grid-portrait {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .gallery-grid-portrait {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Consistent Portfolio CTA */

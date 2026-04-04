@@ -14,7 +14,6 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
   ogDescription="Koleksi foto komersial, wedding, automotive, dan editorial oleh Rangga Danuarta."
   ogUrl="https://web-portfolio-gray-ten.vercel.app/foto"
   hasGlightbox={true}
-  hasSwiper={true}
 >
   <Navbar slot="navbar" activePage="foto" />
 
@@ -25,19 +24,29 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 
     <!-- Carousel -->
     <div class="fade-up">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/wedding/anggie 2 landscape.jpg" alt="Portrait Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/wedding/anggie 4 landscape.jpg" alt="Editorial Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Brand Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/fotografer/fotografi mobil.jpg" alt="Automotive Photography" loading="lazy" width="1200" height="800" /></div>
-          <div class="swiper-slide"><img src="/assets/foto/fotografer/ccm rangga.jpg" alt="Lifestyle Photography" loading="lazy" width="1200" height="800" /></div>
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/wedding/anggie 2 landscape.jpg" alt="Portrait Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/wedding/anggie 4 landscape.jpg" alt="Editorial Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Brand Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/fotografer/fotografi mobil.jpg" alt="Automotive Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/fotografer/ccm rangga.jpg" alt="Lifestyle Photography" loading="lazy" />
+          </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- Dots -->
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
 
@@ -52,63 +61,75 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     </div>
 
     <!-- Gallery Grid -->
-    <div class="gallery-grid fade-up">
+    <div class="gallery-grid gallery-grid-portrait fade-up">
 
       <!-- Wedding -->
-      <GalleryItem
-        src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
-        alt="Wedding Photography"
-        title="Wedding: Ultah Raden"
-        category="wedding"
-        href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
-        gallery="portfolio-gallery"
-      />
-      <GalleryItem
-        src="/assets/foto/wedding/anggie 2 landscape.jpg"
-        alt="Portrait Photography"
-        title="Wedding: Anggie"
-        category="wedding"
-        href="/assets/foto/wedding/anggie 2 landscape.jpg"
-        gallery="portfolio-gallery"
-      />
-      <GalleryItem
-        src="/assets/foto/wedding/anggie 4 landscape.jpg"
-        alt="Editorial Photography"
-        title="Wedding: Anggie Editorial"
-        category="wedding"
-        href="/assets/foto/wedding/anggie 4 landscape.jpg"
-        gallery="portfolio-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+          alt="Wedding Photography"
+          title="Wedding: Ultah Raden"
+          category="wedding"
+          href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+          gallery="portfolio-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/wedding/anggie 2 landscape.jpg"
+          alt="Portrait Photography"
+          title="Wedding: Anggie"
+          category="wedding"
+          href="/assets/foto/wedding/anggie 2 landscape.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/wedding/anggie 4 landscape.jpg"
+          alt="Editorial Photography"
+          title="Wedding: Anggie Editorial"
+          category="wedding"
+          href="/assets/foto/wedding/anggie 4 landscape.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
 
       <!-- Automotive -->
-      <GalleryItem
-        src="/assets/foto/fotografer/fotografi mobil.jpg"
-        alt="Automotive Photography"
-        title="Automotive: Fotografi Mobil"
-        category="automotive"
-        href="/assets/foto/fotografer/fotografi mobil.jpg"
-        gallery="portfolio-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/fotografer/fotografi mobil.jpg"
+          alt="Automotive Photography"
+          title="Automotive: Fotografi Mobil"
+          category="automotive"
+          href="/assets/foto/fotografer/fotografi mobil.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
 
       <!-- Lifestyle -->
-      <GalleryItem
-        src="/assets/foto/fotografer/ccm rangga.jpg"
-        alt="Lifestyle Photography"
-        title="Lifestyle: CCM Rangga"
-        category="lifestyle"
-        href="/assets/foto/fotografer/ccm rangga.jpg"
-        gallery="portfolio-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/fotografer/ccm rangga.jpg"
+          alt="Lifestyle Photography"
+          title="Lifestyle: CCM Rangga"
+          category="lifestyle"
+          href="/assets/foto/fotografer/ccm rangga.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
 
       <!-- Fotografer -->
-      <GalleryItem
-        src="/assets/foto/fotografer/fotografi gojek.jpg"
-        alt="Brand Photography"
-        title="Fotografer: Fotografi Gojek"
-        category="fotografer"
-        href="/assets/foto/fotografer/fotografi gojek.jpg"
-        gallery="portfolio-gallery"
-      />
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/fotografer/fotografi gojek.jpg"
+          alt="Brand Photography"
+          title="Fotografer: Fotografi Gojek"
+          category="fotografer"
+          href="/assets/foto/fotografer/fotografi gojek.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
 
     </div>
   </section>
@@ -119,6 +140,85 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 </BaseLayout>
 
 <script>
+  /* ---------- CAROUSEL ---------- */
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    if (!track) return;
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let current = 0;
+    let autoTimer = null;
+
+    // Build dots
+    slides.forEach(function(_, i) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      dot.addEventListener('click', function() { goTo(i); });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateSlide() {
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function nextSlide() { goTo((current + 1) % total); }
+    function prevSlide() { goTo((current - 1 + total) % total); }
+    function goTo(index) {
+      current = index;
+      updateSlide();
+      resetAuto();
+    }
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(nextSlide, 4000);
+    }
+
+    // Auto-slide
+    autoTimer = setInterval(nextSlide, 4000);
+
+    // Touch — mobile swipe
+    let startX = 0;
+    track.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+    }, { passive: true });
+
+    // Mouse drag — desktop
+    let isDragging = false;
+    track.addEventListener('mousedown', function(e) {
+      startX = e.clientX;
+      isDragging = true;
+      e.preventDefault();
+    });
+    track.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+      isDragging = false;
+    });
+    track.addEventListener('mouseleave', function() { isDragging = false; });
+
+    // Keyboard
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Pause on hover
+    track.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+    track.addEventListener('mouseleave', function() { autoTimer = setInterval(nextSlide, 4000); });
+  })();
+
+  /* ---------- GLIGHTBOX ---------- */
   document.addEventListener('DOMContentLoaded', function initGL() {
     if (typeof GLightbox === 'undefined') {
       setTimeout(initGL, 100);
@@ -133,7 +233,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     });
   });
 
-  /* ---------- CATEGORY FILTER (standalone, not dependent on script.js) ---------- */
+  /* ---------- CATEGORY FILTER ---------- */
   (function() {
     const filterBar = document.querySelector('.filter-bar');
     if (!filterBar) return;

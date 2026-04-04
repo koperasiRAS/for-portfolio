@@ -107,12 +107,12 @@ import TestimonialCard from '../components/TestimonialCard.astro';
     <div class="about-inner">
       <div class="about-text fade-up">
         <span class="section-label">About</span>
-        <h2 class="section-title">Kenalan, Yuk</h2>
+        <h2 class="section-title">About Me</h2>
         <p class="about-bio">
-          Saya Rangga Danuarta - seorang visual storyteller yang percaya setiap brand punya cerita unik. Tugas saya? Mengubah cerita itu jadi karya visual yang gak cuma indah dipandang, tapi juga punya dampak.
+          Saya Rangga Danuarta, seorang Visual Storyteller dan Creative Professional berbasis di Depok, Indonesia. Dengan pengalaman lebih dari 4 tahun di bidang fotografi, videografi, brand design, dan web development, saya berdedikasi untuk menghadirkan karya visual yang tidak hanya estetis, tetapi juga berdampak nyata bagi brand dan bisnis klien.
         </p>
         <p class="about-bio" style="margin-top:12px;">
-          Mulai dari riset, konsep, eksekusi, sampai final delivery - saya handle semuanya dengan perhatian ke detail dan dedikasi penuh. Karena karya yang baik itu lahir dari proses yang serius.
+          Setiap project dikerjakan dengan pendekatan yang terstruktur: mulai dari riset mendalam, pengembangan konsep, eksekusi teknis, hingga final delivery yang memenuhi standar kualitas tertinggi. Saya percaya bahwa visual yang kuat adalah fondasi dari komunikasi brand yang efektif.
         </p>
         <div class="about-stats">
           <div class="stat-card">
@@ -120,7 +120,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
             <span class="stat-label">Years</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-number" data-target="30">0</span>
             <span class="stat-label">Projects</span>
           </div>
           <div class="stat-card">
@@ -137,9 +137,8 @@ import TestimonialCard from '../components/TestimonialCard.astro';
       </div>
 
       <div class="about-photo fade-up">
-        <div class="about-photo-card">
-          <div class="glass" aria-hidden="true"></div>
-          <img src="/assets/foto/about rangga.jpg" alt="Rangga Danuarta" loading="lazy" width="600" height="700" onerror="this.style.display='none'" />
+        <div class="about-photo-card" style="aspect-ratio: 4 / 5; width: 100%; max-width: 400px; overflow: hidden; border-radius: 12px;">
+          <img src="/assets/foto/about rangga.jpg" alt="Rangga Danuarta" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'" />
         </div>
       </div>
     </div>
@@ -152,30 +151,36 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   <section class="brands" id="brands" transition:animate="fade">
     <div class="brands-inner fade-up">
       <p class="brands-label">Trusted by brands &amp; clients</p>
-      <div class="brands-grid">
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">T</span>
-          <span class="brand-logo-name">Tokopedia</span>
+      <div class="logo-strip">
+        <div class="logo-item">
+          <img src="/assets/logos/tokopedia.png" alt="Tokopedia" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">Tokopedia</span>
         </div>
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">K</span>
-          <span class="brand-logo-name">KitaBisa.com</span>
+        <div class="logo-item">
+          <img src="/assets/logos/kitabisa.png" alt="KitaBisa" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">KitaBisa</span>
         </div>
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">S</span>
-          <span class="brand-logo-name">Shopee</span>
+        <div class="logo-item">
+          <img src="/assets/logos/shopee.png" alt="Shopee" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">Shopee</span>
         </div>
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">B</span>
-          <span class="brand-logo-name">Bank Qurban</span>
+        <div class="logo-item">
+          <img src="/assets/logos/bankqurban.png" alt="Bank Qurban" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">Bank Qurban</span>
         </div>
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">S</span>
-          <span class="brand-logo-name">Shinepartner</span>
+        <div class="logo-item">
+          <img src="/assets/logos/shinepartner.png" alt="Shinepartner" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">Shinepartner</span>
         </div>
-        <div class="brand-logo-badge">
-          <span class="brand-logo-letter">M</span>
-          <span class="brand-logo-name">Mandiri</span>
+        <div class="logo-item">
+          <img src="/assets/logos/mandiri.png" alt="Mandiri" loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-fallback" style="display:none;">Mandiri</span>
         </div>
       </div>
     </div>
@@ -233,21 +238,9 @@ import TestimonialCard from '../components/TestimonialCard.astro';
           <p class="skills-group-label">Creative Tools</p>
           <div class="skills-pills">
             <div class="skill-pill">
-              <span class="skill-name" title="Proficiency: 5/5">Adobe Photoshop</span>
-              <span class="skill-dots" aria-label="5 of 5">
-                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span>
-              </span>
-            </div>
-            <div class="skill-pill">
               <span class="skill-name" title="Proficiency: 5/5">Adobe Premiere Pro</span>
               <span class="skill-dots" aria-label="5 of 5">
                 <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span>
-              </span>
-            </div>
-            <div class="skill-pill">
-              <span class="skill-name" title="Proficiency: 3/5">Adobe After Effects</span>
-              <span class="skill-dots" aria-label="3 of 5">
-                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span><span class="skill-dot"></span>
               </span>
             </div>
             <div class="skill-pill">
@@ -263,15 +256,21 @@ import TestimonialCard from '../components/TestimonialCard.astro';
               </span>
             </div>
             <div class="skill-pill">
-              <span class="skill-name" title="Proficiency: 4/5">Capcut</span>
+              <span class="skill-name" title="Proficiency: 4/5">Canva</span>
               <span class="skill-dots" aria-label="4 of 5">
                 <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
               </span>
             </div>
             <div class="skill-pill">
-              <span class="skill-name" title="Proficiency: 5/5">Lightroom</span>
-              <span class="skill-dots" aria-label="5 of 5">
-                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span>
+              <span class="skill-name" title="Proficiency: 4/5">CapCut</span>
+              <span class="skill-dots" aria-label="4 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
+              </span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name" title="Proficiency: 4/5">Snapseed</span>
+              <span class="skill-dots" aria-label="4 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
               </span>
             </div>
           </div>
@@ -312,7 +311,31 @@ import TestimonialCard from '../components/TestimonialCard.astro';
               </span>
             </div>
             <div class="skill-pill">
-              <span class="skill-name" title="Proficiency: 4/5">Netlify</span>
+              <span class="skill-name" title="Proficiency: 4/5">Vercel</span>
+              <span class="skill-dots" aria-label="4 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
+              </span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name" title="Proficiency: 3/5">Cursor</span>
+              <span class="skill-dots" aria-label="3 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span><span class="skill-dot"></span>
+              </span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name" title="Proficiency: 4/5">Antigravity</span>
+              <span class="skill-dots" aria-label="4 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
+              </span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name" title="Proficiency: 4/5">Google Gemini</span>
+              <span class="skill-dots" aria-label="4 of 5">
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
+              </span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name" title="Proficiency: 4/5">Laragon</span>
               <span class="skill-dots" aria-label="4 of 5">
                 <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot"></span>
               </span>
