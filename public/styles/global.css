@@ -18,72 +18,128 @@
 
 /* ---------- CSS VARIABLES (DARK THEME — DEFAULT) ---------- */
 :root {
-  --bg-primary: #050305;
-  --bg-secondary: #0b0018;
+  /* === STITCH DESIGN SYSTEM: Nocturnal Dark === */
 
-  --accent-primary: #7f00ff;
-  --accent-secondary: #00aaff;
-  --accent-glow: rgba(127, 0, 255, 0.2);
-  --accent-secondary-glow: rgba(0, 170, 255, 0.2);
+  /* Backgrounds */
+  --bg-primary: #060e20;
+  --bg-secondary: #091328;
 
-  --gradient-primary: linear-gradient(135deg, #7f00ff, #00aaff);
-  --gradient-text: linear-gradient(135deg, #b45cff, #00aaff);
+  /* Surface containers (Material Design 3) */
+  --surface-container-lowest: #000000;
+  --surface-dim: #060e20;
+  --surface-container-low: #091328;
+  --surface-container: #0f1930;
+  --surface-container-high: #141f38;
+  --surface-container-highest: #192540;
+  --surface-bright: #1f2b49;
 
-  /* Subtle glass */
-  --glass-bg: rgba(255, 255, 255, 0.025);
-  --glass-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(255, 255, 255, 0.12);
-  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --glass-shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.5);
+  /* Primary Accent — Soft Indigo */
+  --accent-primary: #a3a6ff;
+  --accent-primary-dim: #6063ee;
+  --accent-primary-fixed: #9396ff;
+  --accent-primary-container: #9396ff;
 
-  --text-primary: #ffffff;
-  --text-secondary: #cfcbe0;
-  --text-muted: #9b98a8;
+  /* Secondary Accent — Purple/Violet */
+  --accent-secondary: #c180ff;
+  --accent-secondary-dim: #9c48ea;
+  --accent-secondary-fixed: #e5c6ff;
+  --accent-secondary-container: #6f00be;
 
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  /* Tertiary Accent — Blue */
+  --accent-tertiary: #699cff;
+  --accent-tertiary-fixed: #8ab0ff;
+  --accent-tertiary-container: #4388fd;
+
+  /* On-colors */
+  --on-primary: #0f00a4;
+  --on-primary-fixed: #000000;
+  --on-primary-container: #0a0081;
+  --on-secondary: #33005b;
+  --on-secondary-container: #e9cdff;
+  --on-tertiary: #001e4a;
+  --on-tertiary-container: #000311;
+
+  /* Text */
+  --text-primary: #dee5ff;
+  --text-secondary: #a3aac4;
+  --text-muted: #6d758c;
+
+  /* Borders */
+  --border-default: #6d758c;
+  --border-subtle: #40485d;
+
+  /* Error */
+  --color-error: #ff6e84;
+  --color-error-dim: #d73357;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #a3a6ff, #6063ee);
+  --gradient-text: linear-gradient(135deg, #a3a6ff, #c180ff);
+  --gradient-hero: radial-gradient(circle at 50% 50%, rgba(163, 166, 255, 0.08) 0%, rgba(6, 14, 32, 0) 70%);
+  --gradient-surface: linear-gradient(to bottom, rgba(6, 14, 32, 0) 0%, rgba(9, 19, 40, 0.8) 100%);
+
+  /* Glow */
+  --glow-primary: 0 0 30px rgba(163, 166, 255, 0.4);
+  --glow-secondary: 0 0 30px rgba(193, 128, 255, 0.4);
+
+  /* Glass */
+  --glass-bg: rgba(25, 37, 64, 0.4);
+  --glass-bg-hover: rgba(25, 37, 64, 0.6);
+  --glass-border: rgba(64, 72, 93, 0.1);
+  --glass-border-hover: rgba(64, 72, 93, 0.3);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --glass-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  /* Border radius (Stitch values) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
+  /* Blur */
   --blur-sm: blur(8px);
-  --blur-md: blur(12px);
-  --blur-lg: blur(20px);
+  --blur-md: blur(16px);
+  --blur-lg: blur(24px);
 
-  --transition-fast: 0.2s ease;
-  --transition-smooth: 0.35s ease;
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.3s ease;
+  --transition-slow: 0.5s ease;
   --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --max-w: 1200px;
-  --max-w-sm: 900px;
+  /* Layout */
+  --max-w: 1536px;
+  --max-w-sm: 1200px;
   --nav-h: 72px;
 }
 
 /* ---------- CSS VARIABLES (LIGHT THEME) ---------- */
+/* Keep Stitch dark theme; light theme stays minimal/optional */
 [data-theme="light"] {
-  --bg-primary: #f5f0ff;
-  --bg-secondary: #ede7f6;
+  --bg-primary: #e8ecf8;
+  --bg-secondary: #dde3f0;
 
-  --accent-primary: #7f00ff;
-  --accent-secondary: #0055cc;
-  --accent-glow: rgba(127, 0, 255, 0.15);
-  --accent-secondary-glow: rgba(0, 85, 204, 0.15);
+  --accent-primary: #6063ee;
+  --accent-secondary: #9c48ea;
+  --accent-tertiary: #4388fd;
 
-  --gradient-primary: linear-gradient(135deg, #7f00ff, #0055cc);
-  --gradient-text: linear-gradient(135deg, #7f00ff, #0055cc);
+  --gradient-primary: linear-gradient(135deg, #a3a6ff, #c180ff);
+  --gradient-text: linear-gradient(135deg, #6063ee, #9c48ea);
 
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-bg-hover: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(127, 0, 255, 0.1);
-  --glass-border-hover: rgba(127, 0, 255, 0.25);
-  --glass-shadow: 0 4px 20px rgba(127, 0, 255, 0.08);
-  --glass-shadow-hover: 0 12px 36px rgba(127, 0, 255, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(163, 166, 255, 0.15);
+  --glass-border-hover: rgba(163, 166, 255, 0.3);
 
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a4a6a;
-  --text-muted: #8a8aaa;
+  --text-primary: #0f1930;
+  --text-secondary: #3a4560;
+  --text-muted: #6d7a90;
+
+  --surface-container: #f0f3fa;
+  --surface-container-high: #e4e9f5;
+  --surface-container-highest: #dce3f0;
 }
 
 /* In light mode, dim the heavy dark gradient so body color shows */
@@ -110,7 +166,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100%;
@@ -120,11 +176,15 @@ body {
   line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+}
+
 img, video { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-::selection { background: rgba(127, 0, 255, 0.3); color: #fff; }
+::selection { background: rgba(163, 166, 255, 0.3); color: var(--text-primary); }
 
 /* ---------- FOCUS-VISIBLE — Keyboard navigation accessibility ---------- */
 :focus { outline: none; }
@@ -311,97 +371,31 @@ textarea:focus-visible {
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  overflow: visible;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(120, 0, 200, 0.08) 0%,
-      rgba(100, 0, 180, 0.04) 50%,
-      rgba(80, 0, 160, 0.06) 100%
-    ),
-    rgba(8, 2, 18, 0.55);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(140, 60, 220, 0.15);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 4px 30px rgba(100, 0, 180, 0.08);
-  transition: background var(--transition-smooth),
-              border-color var(--transition-smooth),
-              box-shadow var(--transition-smooth);
-  overflow: hidden;
-}
-
-/* Top shimmer line */
-.navbar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(160, 80, 255, 0.6) 30%,
-    rgba(180, 100, 255, 0.9) 50%,
-    rgba(160, 80, 255, 0.6) 70%,
-    transparent 100%
-  );
-  animation: navbar-shimmer 4s ease-in-out infinite;
-}
-
-/* Bottom glow */
-.navbar::after {
-  content: '';
-  position: absolute;
-  bottom: -1px; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(120, 0, 200, 0.3) 50%,
-    transparent 100%
-  );
-}
-
-@keyframes navbar-shimmer {
-  0% { opacity: 0.5; transform: scaleX(0.3); transform-origin: left; }
-  50% { opacity: 1; transform: scaleX(1); transform-origin: left; }
-  100% { opacity: 0.5; transform: scaleX(0.3); transform-origin: right; }
+  background: rgba(6, 14, 32, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(25, 37, 64, 0.8);
+  box-shadow: 0 10px 40px -15px rgba(10, 14, 32, 0.8);
+  transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .navbar.scrolled {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(120, 0, 200, 0.12) 0%,
-      rgba(100, 0, 180, 0.06) 50%,
-      rgba(80, 0, 160, 0.08) 100%
-    ),
-    rgba(8, 2, 18, 0.82);
-  border-bottom-color: rgba(140, 60, 220, 0.22);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 6px 40px rgba(100, 0, 180, 0.15),
-    0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-.navbar.scrolled::before {
-  opacity: 0.7;
+  background: rgba(6, 14, 32, 0.85);
+  box-shadow: 0 10px 40px -15px rgba(10, 14, 32, 0.9);
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 4px;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
 }
 
 .nav-links {
   display: flex;
-  gap: 4px;
+  gap: 32px;
   list-style: none;
   align-items: center;
 }
@@ -409,20 +403,25 @@ textarea:focus-visible {
 .nav-links li a {
   display: inline-flex;
   align-items: center;
-  padding: 7px 16px;
-  border-radius: var(--radius-xl);
+  padding: 6px 0;
   color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 13px;
-  transition: color var(--transition-fast), background var(--transition-fast);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color var(--transition-smooth);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
 }
 
-.nav-links li a:hover { color: var(--text-primary); background: var(--glass-bg); }
+.nav-links li a:hover {
+  color: var(--accent-primary);
+}
 
 .nav-links li a.active {
-  color: var(--text-primary);
-  background: rgba(127, 0, 255, 0.08);
-  border: 1px solid rgba(127, 0, 255, 0.12);
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
 }
 
 .nav-toggle {
@@ -440,7 +439,7 @@ textarea:focus-visible {
 .nav-toggle span {
   width: 22px;
   height: 2px;
-  background: var(--text-secondary);
+  background: var(--accent-primary);
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }

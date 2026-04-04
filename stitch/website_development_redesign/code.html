@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#141f38",
+                    "surface": "#060e20",
+                    "outline-variant": "#40485d",
+                    "primary": "#a3a6ff",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "tertiary-dim": "#699cff",
+                    "on-primary-container": "#0a0081",
+                    "primary-dim": "#6063ee",
+                    "secondary-dim": "#9c48ea",
+                    "on-secondary-container": "#e9cdff",
+                    "on-tertiary-fixed-variant": "#00377b",
+                    "on-primary": "#0f00a4",
+                    "surface-container": "#0f1930",
+                    "secondary-fixed": "#e5c6ff",
+                    "error-container": "#a70138",
+                    "tertiary-fixed": "#8ab0ff",
+                    "inverse-surface": "#faf8ff",
+                    "surface-container-low": "#091328",
+                    "tertiary": "#699cff",
+                    "secondary-container": "#6f00be",
+                    "tertiary-fixed-dim": "#73a2ff",
+                    "on-primary-fixed": "#000000",
+                    "tertiary-container": "#4388fd",
+                    "on-surface": "#dee5ff",
+                    "on-surface-variant": "#a3aac4",
+                    "surface-variant": "#192540",
+                    "surface-container-highest": "#192540",
+                    "surface-dim": "#060e20",
+                    "on-tertiary": "#001e4a",
+                    "secondary": "#c180ff",
+                    "on-background": "#dee5ff",
+                    "on-error": "#490013",
+                    "primary-fixed": "#9396ff",
+                    "background": "#060e20",
+                    "inverse-on-surface": "#4d556b",
+                    "on-tertiary-fixed": "#00163b",
+                    "inverse-primary": "#494bd7",
+                    "outline": "#6d758c",
+                    "surface-bright": "#1f2b49",
+                    "surface-container-lowest": "#000000",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "primary-container": "#9396ff",
+                    "error-dim": "#d73357",
+                    "surface-tint": "#a3a6ff",
+                    "error": "#ff6e84",
+                    "primary-fixed-dim": "#8387ff",
+                    "on-secondary": "#33005b",
+                    "on-error-container": "#ffb2b9",
+                    "on-tertiary-container": "#000311"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(10,14,32,0.8)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#a3a6ff] font-['Manrope']">Gallery</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Foto</a>
+<a class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Video</a>
+<a class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-300" href="#">Design</a>
+<a class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3a6ff] border-b-2 border-[#a3a6ff] pb-1" href="#">Website</a>
+</div>
+<button class="font-['Manrope'] uppercase tracking-widest text-sm font-semibold text-[#a3a6ff] hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform">Contact</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-6 md:px-12 mb-24 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between gap-8 border-b border-outline-variant/10 pb-12">
+<div class="max-w-2xl">
+<span class="text-secondary font-headline font-semibold tracking-[0.2em] uppercase text-xs mb-4 block">Web Craftsmanship</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-tight text-on-surface">
+                        High-Performance <br/>
+<span class="text-primary italic font-light">Digital Ecosystems</span>
+</h1>
+</div>
+<div class="flex gap-4">
+<button class="bg-gradient-to-tr from-primary to-primary-dim text-on-primary-container px-8 py-4 rounded-full font-headline font-bold text-sm tracking-widest uppercase shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
+                        Lihat Projects
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-full font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-bright transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">chat</span>
+                        Hubungi via WhatsApp
+                    </button>
+</div>
+</div>
+</section>
+<!-- Project Display Grid -->
+<section class="px-6 md:px-12 max-w-screen-2xl mx-auto space-y-32">
+<!-- Project One: Browser Frame Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 group">
+<div class="relative">
+<!-- Browser Frame Decor -->
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative rounded-xl overflow-hidden border border-outline-variant/20 shadow-2xl bg-surface-container">
+<!-- Browser Top Bar -->
+<div class="bg-surface-container-highest px-4 py-3 flex items-center gap-2 border-b border-outline-variant/20">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error-dim/50"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/50"></div>
+<div class="w-3 h-3 rounded-full bg-primary/50"></div>
+</div>
+<div class="mx-auto bg-surface-container-low px-4 py-1 rounded text-[10px] text-on-surface-variant font-mono tracking-tighter w-1/2 text-center opacity-60">
+                                    project-vortex.nocturnal.gallery
+                                </div>
+</div>
+<!-- Website Content Image -->
+<img alt="Minimalist tech landing page with glowing neon accents and geometric layouts" class="w-full aspect-video object-cover" data-alt="Screenshot of a high-end dark themed landing page featuring geometric architectural photography and neon purple highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAefTB_rpgSmBWgZe-14ppCpg8gW81mOUYPPkXjEUUTrUP3QTGHajfN8YLiewYbrdD5ed-7GhijmKNut0GOLfpEdVerZ6s9M8RoQ3ua0ofIO1g1a65wbrNIL9m1IhwZh87I62-Z88JQ6DYXgpBsBgF2j3pbhxN1k6sHBML_buSERq8sdsdpL2ewZoUS8Bc5-u7qLucuWlBw9k9mq9sQUlXSr8mlWnH-LoqWkFtIkL95VmRdcjx23dAr9L7a34TH9Yr-BUjUOuHRuQU"/>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-6">
+<div class="inline-flex px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">E-Commerce Architecture</div>
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight leading-none">Vortex Luxury Experience</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        A headless commerce solution built for high-conversion performance. Blending immersive editorial layouts with lightning-fast reactive state management.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<span class="text-[10px] font-semibold text-primary-dim uppercase tracking-widest border border-primary-dim/20 px-3 py-1 rounded-full">Next.js 14</span>
+<span class="text-[10px] font-semibold text-primary-dim uppercase tracking-widest border border-primary-dim/20 px-3 py-1 rounded-full">Tailwind CSS</span>
+<span class="text-[10px] font-semibold text-primary-dim uppercase tracking-widest border border-primary-dim/20 px-3 py-1 rounded-full">Sanity CMS</span>
+</div>
+</div>
+</div>
+<!-- Project Two: Inverse Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1 space-y-6 lg:text-right">
+<div class="inline-flex px-3 py-1 rounded-full bg-surface-container-highest text-tertiary text-[10px] font-bold tracking-[0.2em] uppercase">Creative Portfolio</div>
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight leading-none">Studio Lumina Portfolio</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        A bespoke gallery experience for a global architectural firm. Featuring horizontal scrolling triggers and smooth WebGL transitions.
+                    </p>
+<div class="flex flex-wrap gap-3 lg:justify-end">
+<span class="text-[10px] font-semibold text-tertiary-dim uppercase tracking-widest border border-tertiary-dim/20 px-3 py-1 rounded-full">Three.js</span>
+<span class="text-[10px] font-semibold text-tertiary-dim uppercase tracking-widest border border-tertiary-dim/20 px-3 py-1 rounded-full">GSAP</span>
+<span class="text-[10px] font-semibold text-tertiary-dim uppercase tracking-widest border border-tertiary-dim/20 px-3 py-1 rounded-full">Vercel</span>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 group">
+<div class="relative">
+<div class="absolute -inset-1 bg-gradient-to-l from-tertiary/20 to-primary/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative rounded-xl overflow-hidden border border-outline-variant/20 shadow-2xl bg-surface-container">
+<!-- Browser Top Bar -->
+<div class="bg-surface-container-highest px-4 py-3 flex items-center gap-2 border-b border-outline-variant/20">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error-dim/50"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/50"></div>
+<div class="w-3 h-3 rounded-full bg-primary/50"></div>
+</div>
+<div class="mx-auto bg-surface-container-low px-4 py-1 rounded text-[10px] text-on-surface-variant font-mono tracking-tighter w-1/2 text-center opacity-60">
+                                    studilo-lumina.arch
+                                </div>
+</div>
+<img alt="Clean architectural portfolio website with large high-resolution images of concrete buildings and minimalist typography" class="w-full aspect-video object-cover" data-alt="Screenshot of an architectural portfolio website with massive white-space, bold black typography, and high-contrast photography of concrete structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDD-S_4OLubQPac7SW6IOnAbIFBoDi8HQRqKyGtjQ4CGVh3ZEPNoG2NeEw-FOAaXn2OEINb-Cpq5-ca-3f9E_ZsihVaJtBWymPwmcUaCUe9SsWBixUTvGMqucYCrcoqnO_DvpWvHfB5MwlBsJ6QZ0Tr6ScmD24vCtTYGy4jRwfYrF7SqRyz_0gBHq6hg4zvuCF9ZoR9O_m-0S52DN5BGwR2nIDiXBdloposDTmxIMXbrfhcmeMceyEXu4NHYkQAVv5RHZ_kLTMJ5E"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Featured Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-panel rounded-3xl p-12 flex flex-col justify-center border border-outline-variant/10">
+<h3 class="text-3xl font-headline font-extrabold text-on-surface mb-6 tracking-tighter">Ready to scale your digital presence?</h3>
+<p class="text-on-surface-variant mb-8 text-lg">We don't just build websites; we engineer experiences that convert attention into authority.</p>
+<a class="flex items-center gap-3 text-primary font-bold tracking-widest uppercase text-sm group" href="#">
+                        Start a conversation
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-1 glass-panel rounded-3xl p-8 border border-outline-variant/10 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">speed</span>
+<div class="text-3xl font-headline font-black text-on-surface leading-none mb-1">98/100</div>
+<div class="text-[10px] font-headline uppercase tracking-widest text-on-surface-variant">Lighthouse Score</div>
+</div>
+<div class="md:col-span-1 glass-panel rounded-3xl p-8 border border-outline-variant/10 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">devices</span>
+<div class="text-3xl font-headline font-black text-on-surface leading-none mb-1">Fluid</div>
+<div class="text-[10px] font-headline uppercase tracking-widest text-on-surface-variant">Mobile Optimized</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 mt-32 border-t border-[#192540]/30 bg-[#000000]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] text-xs tracking-tight text-[#a3aac4]">
+                © 2024 Nocturnal Gallery. All rights reserved.
+            </div>
+<div class="flex gap-12">
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Instagram</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Behance</a>
+<a class="font-['Inter'] text-xs tracking-tight text-[#a3aac4] hover:text-[#a3a6ff] transition-colors duration-500" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>

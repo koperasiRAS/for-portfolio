@@ -15,7 +15,7 @@ const navLinks = [
 ---
 
 <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="logo">FOR</div>
+  <a href="/" class="nav-logo">FOR</a>
   <ul class="nav-links" id="navLinks">
     {navLinks.map(link => (
       <li>
@@ -28,6 +28,7 @@ const navLinks = [
       </li>
     ))}
   </ul>
+  <a href="#contact" class="btn-nav-cta">Contact</a>
   <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Ganti tema">
     <i class="fas fa-moon"></i>
   </button>
@@ -64,7 +65,7 @@ const navLinks = [
     // Close on outside click
     document.addEventListener('click', (e) => {
       const navbar = document.getElementById('navbar');
-      if (!navbar.contains(e.target)) {
+      if (navbar && !navbar.contains(e.target as Node)) {
         navLinks.classList.remove('open');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -75,7 +76,7 @@ const navLinks = [
 
   // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
-  function applyTheme(isLight) {
+  function applyTheme(isLight: boolean) {
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
     if (isLight) {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -102,4 +103,3 @@ const navLinks = [
     });
   }
 </script>
-
