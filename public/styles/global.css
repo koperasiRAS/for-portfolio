@@ -133,43 +133,6 @@
   --nav-h: 72px;
 }
 
-/* ---------- CSS VARIABLES (LIGHT THEME) ---------- */
-/* Keep Stitch dark theme; light theme stays minimal/optional */
-[data-theme="light"] {
-  --bg-primary: #e8ecf8;
-  --bg-secondary: #dde3f0;
-
-  --accent-primary: #6063ee;
-  --accent-secondary: #9c48ea;
-  --accent-tertiary: #4388fd;
-
-  --gradient-primary: linear-gradient(135deg, #a3a6ff, #c180ff);
-  --gradient-text: linear-gradient(135deg, #6063ee, #9c48ea);
-
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-hover: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(163, 166, 255, 0.15);
-  --glass-border-hover: rgba(163, 166, 255, 0.3);
-
-  --text-primary: #0f1930;
-  --text-secondary: #3a4560;
-  --text-muted: #6d7a90;
-
-  --surface-container: #f0f3fa;
-  --surface-container-high: #e4e9f5;
-  --surface-container-highest: #dce3f0;
-}
-
-/* In light mode, dim the heavy dark gradient so body color shows */
-[data-theme="light"] .bg-canvas {
-  opacity: 0.35;
-}
-[data-theme="light"] .bg-gradient {
-  background:
-    radial-gradient(ellipse 100% 60% at 50% -5%, rgba(180, 100, 255, 0.2) 0%, transparent 65%),
-    radial-gradient(ellipse 70% 50% at 80% 95%, rgba(100, 50, 200, 0.1) 0%, transparent 55%),
-    linear-gradient(160deg, #e8d8ff 0%, #ddd0f8 40%, #d8c8f5 100%) !important;
-}
 
 /* ---------- RESET & BASE ---------- */
 *, *::before, *::after {
@@ -497,26 +460,6 @@ textarea:focus-visible {
 }
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* ---------- THEME TOGGLE ---------- */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-size: 16px;
-  transition: color var(--transition-fast), background var(--transition-fast);
-  flex-shrink: 0;
-  margin-left: 8px;
-}
-
-.theme-toggle:hover {
-  color: var(--accent-primary);
-  background: var(--glass-bg-hover);
 }
 
 /* ---------- HERO — Stitch Design ---------- */

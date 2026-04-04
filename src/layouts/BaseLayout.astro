@@ -134,15 +134,6 @@ const isHome = pathname === '/';
   <link rel="stylesheet" href="/styles/global.css" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-  <!-- Theme init — runs before paint to prevent flash -->
-  <script is:inline>
-    (function() {
-      var saved = localStorage.getItem('for-theme');
-      if (saved === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
 </head>
 <body class={bodyClass}>
 

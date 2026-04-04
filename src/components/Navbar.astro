@@ -29,9 +29,6 @@ const navLinks = [
     ))}
   </ul>
   <a href="#contact" class="btn-nav-cta">Contact</a>
-  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Ganti tema">
-    <i class="fas fa-moon"></i>
-  </button>
   <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span>
     <span></span>
@@ -86,36 +83,5 @@ const navLinks = [
         navToggle.focus();
       }
     });
-
-    // ---- Theme toggle ----
-    const themeToggle = document.getElementById('themeToggle');
-    function applyTheme(isLight: boolean) {
-      const icon = themeToggle ? themeToggle.querySelector('i') : null;
-      if (isLight) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('for-theme', 'light');
-        if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('for-theme', 'dark');
-        if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
-      }
-    }
-
-    // Sync icon with saved theme on load
-    (function syncIcon() {
-      const saved = localStorage.getItem('for-theme');
-      if (saved === 'light' && themeToggle) {
-        const icon = themeToggle.querySelector('i');
-        if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-      }
-    })();
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', function() {
-        const isLight = document.documentElement.getAttribute('data-theme') !== 'light';
-        applyTheme(isLight);
-      });
-    }
   });
 </script>
