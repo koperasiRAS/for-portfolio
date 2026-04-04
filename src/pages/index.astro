@@ -82,6 +82,60 @@ import { waLink } from '../utils/whatsapp.js';
   <!-- Divider -->
   <div class="section-divider" aria-hidden="true"></div>
 
+  <!-- EXPLORE CATEGORIES -->
+  <section class="cat-section" id="categories" transition:animate="fade">
+    <div class="cat-inner">
+      <div class="cat-header fade-up">
+        <h2 class="cat-title">Explore Categories</h2>
+        <div class="cat-title-line"></div>
+      </div>
+      <div class="cat-grid">
+        <a href="/foto" class="cat-card cat-card-foto">
+          <img src="/assets/foto/foto cover halaman utama.jpg" alt="Photography portfolio" loading="lazy" />
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <span class="cat-card-label">Capturing Essence</span>
+            <h3 class="cat-card-title">Foto</h3>
+            <p class="cat-card-desc">Editorial and high-fashion photography focused on texture and silhouette.</p>
+          </div>
+          <div class="cat-card-arrow">
+            <span class="material-symbols-outlined">arrow_outward</span>
+          </div>
+        </a>
+        <a href="/video" class="cat-card cat-card-video">
+          <img src="/assets/video/thumbnails/thumbnail cover utama.jpg" alt="Videography portfolio" loading="lazy" />
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <span class="cat-card-label">Motion Theory</span>
+            <h3 class="cat-card-title">Video</h3>
+            <p class="cat-card-desc">Cinematic storytelling and commercial motion direction.</p>
+          </div>
+        </a>
+        <a href="/website" class="cat-card cat-card-website">
+          <img src="/assets/website/cover website portfolio rangga.jpg" alt="Web development portfolio" loading="lazy" />
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <span class="cat-card-label">Digital Canvas</span>
+            <h3 class="cat-card-title">Website</h3>
+            <p class="cat-card-desc">Immersive digital experiences built for performance and aesthetics.</p>
+          </div>
+        </a>
+        <a href="/design" class="cat-card cat-card-design">
+          <img src="/assets/design/cover design portfolio rangga.jpg" alt="Brand design portfolio" loading="lazy" />
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <span class="cat-card-label">Visual Systems</span>
+            <h3 class="cat-card-title">Design</h3>
+            <p class="cat-card-desc">Brand identity and visual communication systems that resonate.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider" aria-hidden="true"></div>
+
   <!-- ABOUT -->
   <section class="about" id="about" transition:animate="fade">
     <div class="about-inner">
@@ -648,6 +702,174 @@ import { waLink } from '../utils/whatsapp.js';
     .section-title {
       font-size: 28px;
     }
+  }
+
+  /* ---- CATEGORIES SECTION ---- */
+  .cat-section {
+    padding: 80px 0;
+    background: var(--surface-container);
+  }
+
+  .cat-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cat-header {
+    margin-bottom: 48px;
+  }
+
+  .cat-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--on-surface);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+
+  .cat-title-line {
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--secondary);
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .cat-card {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(163, 166, 255, 0.06);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+    border-color: rgba(163, 166, 255, 0.15);
+  }
+
+  .cat-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%);
+    transition: transform 0.7s ease, filter 0.4s ease;
+  }
+
+  .cat-card:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+  }
+
+  .cat-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 25, 48, 0.95) 0%, rgba(15, 25, 48, 0.3) 50%, transparent 100%);
+    z-index: 1;
+  }
+
+  .cat-card-content {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cat-card-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  .cat-card-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--on-surface);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .cat-card-desc {
+    font-size: 12px;
+    color: var(--on-surface-variant);
+    max-width: 240px;
+    line-height: 1.5;
+  }
+
+  .cat-card-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(163, 166, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(163, 166, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .cat-card:hover .cat-card-arrow {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .cat-card-arrow .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--accent-primary);
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .cat-section { padding: 100px 0; }
+    .cat-inner { padding: 0 48px; }
+    .cat-title { font-size: 42px; }
+    .cat-grid { gap: 20px; }
+    .cat-card-title { font-size: 32px; }
+    .cat-card-desc { font-size: 13px; }
+  }
+
+  /* Desktop — bento asymmetric grid */
+  @media (min-width: 1024px) {
+    .cat-section { padding: 120px 0; }
+    .cat-inner { padding: 0 64px; }
+    .cat-header { margin-bottom: 56px; }
+    .cat-title { font-size: 48px; }
+    .cat-grid {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 420px 300px;
+      gap: 20px;
+    }
+    .cat-card-foto  { grid-column: span 8; grid-row: 1; aspect-ratio: unset; }
+    .cat-card-video { grid-column: span 4; grid-row: 1; aspect-ratio: unset; }
+    .cat-card-website { grid-column: span 5; grid-row: 2; aspect-ratio: unset; }
+    .cat-card-design { grid-column: span 7; grid-row: 2; aspect-ratio: unset; }
   }
 </style>
 

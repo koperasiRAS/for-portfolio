@@ -36,17 +36,17 @@ const navLinks = [
   </button>
 </nav>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
+<script is:inline>
+  function initNavbar() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
 
     if (!navToggle || !navLinks) return;
 
     // ---- Hamburger toggle ----
     navToggle.addEventListener('click', function(e) {
       e.stopPropagation();
-      const isOpen = navLinks.classList.toggle('open');
+      var isOpen = navLinks.classList.toggle('open');
       navToggle.classList.toggle('active', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -64,8 +64,8 @@ const navLinks = [
 
     // ---- Close on outside click ----
     document.addEventListener('click', function(e) {
-      const navbar = document.getElementById('navbar');
-      if (navbar && !navbar.contains(e.target as Node)) {
+      var navbar = document.getElementById('navbar');
+      if (navbar && !navbar.contains(e.target)) {
         navLinks.classList.remove('open');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -83,5 +83,12 @@ const navLinks = [
         navToggle.focus();
       }
     });
-  });
+  }
+
+  // Run immediately if DOM is ready, otherwise wait for DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavbar);
+  } else {
+    initNavbar();
+  }
 </script>

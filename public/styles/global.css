@@ -2495,7 +2495,7 @@ body.glightbox-open { overflow: hidden; }
     to   { opacity: 1; transform: translateY(0); }
   }
   .nav-links li a { width: 100%; padding: 11px 16px; }
-  .nav-toggle { display: flex; }
+  .nav-toggle { display: flex; position: fixed; right: 20px; top: 0; }
   .preview-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 8px; }
   .stat-card { padding: 14px 8px; }
