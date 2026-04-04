@@ -36,52 +36,55 @@ const navLinks = [
   </button>
 </nav>
 
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
 <script is:inline>
   function setupMobileNav() {
-    console.log("setupMobileNav called!");
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
-    const navbar = document.getElementById('navbar');
+    let backdrop = document.getElementById('navBackdrop');
 
-    if (!toggle || !links) {
-      console.log("Navbar elements not found!");
-      return;
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'navBackdrop';
+      backdrop.className = 'nav-backdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(backdrop);
     }
 
-    // Remove any previous listener by cloning (just to be absolutely safe)
-    const newToggle = toggle.cloneNode(true);
-    if(toggle.parentNode) toggle.parentNode.replaceChild(newToggle, toggle);
+    if (!toggle || !links) return;
 
-    newToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      console.log("Hamburger clicked!");
-      const isOpen = links.classList.toggle('open');
-      newToggle.classList.toggle('active', isOpen);
-      newToggle.setAttribute('aria-expanded', isOpen.toString());
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+    const newToggle = toggle.cloneNode(true);
+    if (toggle.parentNode) toggle.parentNode.replaceChild(newToggle, toggle);
+
+    const openNav = () => {
+      links.classList.add('open');
+      newToggle.classList.add('active');
+      newToggle.setAttribute('aria-expanded', 'true');
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
 
     const closeNav = () => {
       links.classList.remove('open');
       newToggle.classList.remove('active');
       newToggle.setAttribute('aria-expanded', 'false');
+      backdrop.classList.remove('active');
       document.body.style.overflow = '';
     };
 
-    // Close on link click
+    newToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      links.classList.contains('open') ? closeNav() : openNav();
+    });
+
     links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', closeNav);
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (navbar && !navbar.contains(e.target) && links.classList.contains('open')) {
-        closeNav();
-      }
-    });
+    backdrop.addEventListener('click', closeNav);
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && links.classList.contains('open')) {
         closeNav();
@@ -90,7 +93,6 @@ const navLinks = [
     });
   }
 
-  // Handle both standard loads and Astro view transitions
   document.addEventListener('astro:page-load', setupMobileNav);
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupMobileNav);
