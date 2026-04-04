@@ -14,251 +14,177 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 >
   <Navbar slot="navbar" activePage="website" />
 
-  <!-- ====== WEB HERO ====== -->
-  <section class="web-hero" transition:animate="fade">
+  <!-- ====== STITCH HERO ====== -->
+  <section class="web-stitch-hero" transition:animate="fade">
     <div class="hero-bg-glow" aria-hidden="true"></div>
-    <div class="web-hero-inner">
+    <div class="web-stitch-hero-inner">
+      <!-- Label -->
+      <p class="web-stitch-label">Web Craftsmanship</p>
+      <!-- Heading -->
+      <h1 class="web-stitch-title">
+        High-Performance<br />
+        <span class="web-stitch-title-accent"><em>Digital Ecosystems</em></span>
+      </h1>
+      <!-- CTA Buttons -->
+      <div class="web-stitch-cta">
+        <a href="#projects" class="web-stitch-btn-primary">
+          Lihat Projects
+        </a>
+        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-stitch-btn-ghost">
+          <i class="fas fa-comment-dots"></i>
+          Hubungi via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <!-- Left: Copy -->
-      <div class="web-hero-copy fade-up">
-        <span class="section-label gradient-label">JASA PEMBUATAN WEBSITE</span>
-        <h1 class="web-headline">Buat Website &amp; Sistem</h1>
-        <p class="web-subtext">Mulai dari landing page, company profile, web app, sampai sistem custom. Semua bisa.</p>
-        <div class="web-hero-cta">
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-web-solid">
-            <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+  <!-- ====== PROJECTS — Stitch Browser Frame Layout ====== -->
+  <section class="web-projects" id="projects" transition:animate="fade">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar fade-up" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+      <button class="filter-btn" data-filter="landing">Landing Page</button>
+      <button class="filter-btn" data-filter="companyprofile">Company Profile</button>
+    </div>
+
+    <!-- Project One: Image Left / Info Right -->
+    <div class="web-project-row web-project-row-normal" data-category="portfolio">
+      <div class="web-project-browser-wrap">
+        <div class="web-project-browser-frame">
+          <!-- Browser chrome -->
+          <div class="web-browser-chrome">
+            <div class="web-browser-dots">
+              <span class="web-browser-dot web-browser-dot-red"></span>
+              <span class="web-browser-dot web-browser-dot-yellow"></span>
+              <span class="web-browser-dot web-browser-dot-green"></span>
+            </div>
+            <div class="web-browser-url-bar">
+              for-portfolio-mu.vercel.app
+            </div>
+          </div>
+          <!-- Screenshot -->
+          <a class="glightbox web-screenshot-link"
+             href="/assets/thumbnails/web1.png"
+             data-gallery="web-gallery"
+             data-title="Web Portfolio: Frame Of Rangga">
+            <img
+              src="/assets/thumbnails/web1.png"
+              alt="Web Portfolio Frame Of Rangga"
+              loading="lazy"
+              width="960"
+              height="540"
+            />
           </a>
-          <a href="#projects" class="btn btn-web-ghost">
-            <i class="fas fa-eye"></i> Lihat Projects
-          </a>
         </div>
       </div>
-
-      <!-- Right: Floating Mockups -->
-      <div class="web-hero-mockups fade-up">
-        <!-- Laptop Mockup -->
-        <a class="mockup laptop glightbox" href="/assets/thumbnails/web1.png" data-gallery="web-gallery" data-title="Website Portfolio FOR">
-          <img src="/assets/thumbnails/web1.png" alt="Website Portfolio FOR" loading="lazy" width="600" height="340" />
-        </a>
-
-        <!-- Tablet Mockup -->
-        <a class="mockup tablet glightbox" href="/assets/thumbnails/web2.png" data-gallery="web-gallery" data-title="Landing Page">
-          <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="400" height="500" />
-        </a>
-
-        <!-- Phone Mockup -->
-        <a class="mockup phone glightbox" href="/assets/design/brand/web3.png" data-gallery="web-gallery" data-title="Brand Design Showcase">
-          <img src="/assets/design/brand/web3.png" alt="Brand Design Showcase" loading="lazy" width="220" height="400" />
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ====== FEATURES ====== -->
-  <section class="web-features" transition:animate="fade">
-    <div class="web-features-inner">
-      <h2 class="web-features-title fade-up">Tertarik dengan jasa ini?</h2>
-      <p class="web-features-sub fade-up">Berikut keunggulan yang bisa lo dapetin.</p>
-
-      <div class="web-feat-grid fade-up">
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-infinity"></i></div>
-          <h3>Revisi Unlimited</h3>
-          <p>Sampe lo baru selesai. No batas, no drama.</p>
+      <div class="web-project-info">
+        <span class="web-project-badge web-project-badge-purple">Portfolio Website</span>
+        <h2 class="web-project-title">Web Portfolio: Frame Of Rangga</h2>
+        <p class="web-project-desc">
+          Portfolio website personal dengan Astro framework, featuring dark glassmorphism design yang elegan dan modern. Fast loading, responsive, dan optimized untuk SEO.
+        </p>
+        <div class="web-project-tech">
+          <span class="web-tech-pill">Astro</span>
+          <span class="web-tech-pill">CSS</span>
+          <span class="web-tech-pill">JavaScript</span>
+          <span class="web-tech-pill">Vercel</span>
         </div>
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
-          <h3>Desain Modern</h3>
-          <p>Look &amp; feel yang fresh dan sesuai tren sekarang.</p>
-        </div>
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-code"></i></div>
-          <h3>Clean Code</h3>
-          <p>Code rapih, performant, dan gampang di-maintain.</p>
-        </div>
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Fast Loading</h3>
-          <p>Website lo bakal load kilat. Sampe visitor betah.</p>
-        </div>
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-mobile-screen-button"></i></div>
-          <h3>Responsive</h3>
-          <p>Tampil sempurna di semua device - desktop sampe HP.</p>
-        </div>
-
-        <div class="web-feat-card">
-          <div class="web-feat-icon"><i class="fas fa-tags"></i></div>
-          <h3>Harga Kompetitif</h3>
-          <p>Kualitas premium, harga yang sesuai kantong lo.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== PROJECTS ====== -->
-  <section class="projects-section" id="projects" transition:animate="fade">
-    <div class="projects-inner">
-      <div class="projects-header fade-up">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">Projects</h2>
-        <p class="projects-sub">Website dan aplikasi yang sudah dibuat dan live.</p>
-      </div>
-
-      <!-- Category Filter -->
-      <div class="filter-bar fade-up" aria-label="Filter by category">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="portfolio">Portfolio</button>
-        <button class="filter-btn" data-filter="landing">Landing Page</button>
-        <button class="filter-btn" data-filter="companyprofile">Company Profile</button>
-      </div>
-
-      <div class="projects-grid fade-up">
-
-        <!-- Project 1 -->
-        <div class="project-card" data-category="portfolio" data-title="Web Portfolio: Frame Of Rangga" data-desc="Portfolio website personal dengan Astro framework, featuring dark glassmorphism design yang elegan dan modern." data-tech="Astro, CSS, JavaScript" data-category-label="Portfolio" data-year="2026" data-url="https://for-portfolio-mu.vercel.app">
-          <div class="project-card-thumb">
-            <a class="glightbox"
-               href="/assets/thumbnails/web1.png"
-               data-gallery="projects-gallery"
-               data-title="Web Portfolio: Frame Of Rangga">
-              <img src="/assets/thumbnails/web1.png" alt="Web Portfolio FOR" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
-              <div class="gallery-overlay">
-                <i class="fas fa-expand"></i>
-              </div>
-            </a>
-          </div>
-          <div class="project-card-body">
-            <h3 class="project-card-title">Web Portfolio: Frame Of Rangga</h3>
-            <p class="project-card-desc">Portfolio website personal dengan Astro framework, responsive dan fast loading.</p>
-            <div class="project-tech">
-              <span class="tech-badge astro">Astro</span>
-              <span class="tech-badge css">CSS</span>
-              <span class="tech-badge js">JavaScript</span>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://for-portfolio-mu.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
-                <i class="fas fa-external-link-alt"></i> Live Site
-              </a>
-              <button type="button" class="project-link-btn detail" data-open-modal>
-                <i class="fas fa-info-circle"></i> Detail
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card" data-category="landing" data-title="Landing Page: Project Client" data-desc="Landing page yang didesain untuk mengkonversi visitor jadi leads. Dengan CTA yang jelas dan layout yang clean." data-tech="HTML, CSS, JavaScript" data-category-label="Landing Page" data-year="2025" data-url="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page">
-          <div class="project-card-thumb">
-            <a class="glightbox"
-               href="/assets/thumbnails/web2.png"
-               data-gallery="projects-gallery"
-               data-title="Landing Page: Project Client">
-              <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
-              <div class="gallery-overlay">
-                <i class="fas fa-expand"></i>
-              </div>
-            </a>
-          </div>
-          <div class="project-card-body">
-            <h3 class="project-card-title">Landing Page: Project Client</h3>
-            <p class="project-card-desc">Landing page yang didesain untuk mengkonversi visitor jadi leads.</p>
-            <div class="project-tech">
-              <span class="tech-badge html">HTML</span>
-              <span class="tech-badge css">CSS</span>
-              <span class="tech-badge js">JavaScript</span>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
-                <i class="fab fa-whatsapp"></i> Tanya Project
-              </a>
-              <button type="button" class="project-link-btn detail" data-open-modal>
-                <i class="fas fa-info-circle"></i> Detail
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card" data-category="companyprofile" data-title="Company Profile: Project Client" data-desc="Website company profile yang menampilkan identitas brand secara profesional dengan desain yang modern dan informatif." data-tech="HTML, CSS, JavaScript" data-category-label="Company Profile" data-year="2025" data-url="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20company%20profile">
-          <div class="project-card-thumb">
-            <a class="glightbox"
-               href="/assets/design/brand/web3.png"
-               data-gallery="projects-gallery"
-               data-title="Company Profile: Project Client">
-              <img src="/assets/design/brand/web3.png" alt="Company Profile" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
-              <div class="gallery-overlay">
-                <i class="fas fa-expand"></i>
-              </div>
-            </a>
-          </div>
-          <div class="project-card-body">
-            <h3 class="project-card-title">Company Profile: Project Client</h3>
-            <p class="project-card-desc">Website company profile yang menampilkan identitas brand secara profesional.</p>
-            <div class="project-tech">
-              <span class="tech-badge html">HTML</span>
-              <span class="tech-badge css">CSS</span>
-              <span class="tech-badge js">JavaScript</span>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20company%20profile" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
-                <i class="fab fa-whatsapp"></i> Tanya Project
-              </a>
-              <button type="button" class="project-link-btn detail" data-open-modal>
-                <i class="fas fa-info-circle"></i> Detail
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== PROJECT DETAIL MODAL ====== -->
-  <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="project-modal-backdrop" data-close-modal></div>
-    <div class="project-modal-box">
-      <button type="button" class="project-modal-close" id="modalClose" aria-label="Close modal">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="project-modal-img-wrap">
-        <a class="glightbox" id="modalImgLink" href="" data-gallery="modal-gallery" data-type="image">
-          <img id="modalImg" src="" alt="" loading="lazy" />
-        </a>
-      </div>
-      <div class="project-modal-content">
-        <div class="project-modal-meta">
-          <span class="project-modal-cat" id="modalCat"></span>
-          <span class="project-modal-year" id="modalYear"></span>
-        </div>
-        <h2 class="project-modal-title" id="modalTitle"></h2>
-        <p class="project-modal-desc" id="modalDesc"></p>
-        <div class="project-modal-tech" id="modalTech"></div>
-        <div class="project-modal-actions">
-          <a href="#" id="modalUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <div class="web-project-links">
+          <a href="https://for-portfolio-mu.vercel.app" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Kunjungi Website
           </a>
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-            <i class="fab fa-whatsapp"></i> Diskusi Project
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+            <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Project Two: Info Left / Image Right (inverse) -->
+    <div class="web-project-row web-project-row-inverse" data-category="landing">
+      <div class="web-project-info">
+        <span class="web-project-badge web-project-badge-blue">Landing Page</span>
+        <h2 class="web-project-title">Landing Page: Client Project</h2>
+        <p class="web-project-desc">
+          Landing page yang didesain untuk mengkonversi visitor jadi leads. Dengan CTA yang jelas, layout yang clean, dan pengalaman pengguna yang seamless di semua device.
+        </p>
+        <div class="web-project-tech">
+          <span class="web-tech-pill">HTML</span>
+          <span class="web-tech-pill">CSS</span>
+          <span class="web-tech-pill">JavaScript</span>
+        </div>
+        <div class="web-project-links web-project-links-right">
+          <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20landing%20page" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
+            <i class="fas fa-external-link-alt"></i> Kunjungi Website
+          </a>
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+            <i class="fab fa-whatsapp"></i> Tanya Project
+          </a>
+        </div>
+      </div>
+      <div class="web-project-browser-wrap">
+        <div class="web-project-browser-frame">
+          <!-- Browser chrome -->
+          <div class="web-browser-chrome">
+            <div class="web-browser-dots">
+              <span class="web-browser-dot web-browser-dot-red"></span>
+              <span class="web-browser-dot web-browser-dot-yellow"></span>
+              <span class="web-browser-dot web-browser-dot-green"></span>
+            </div>
+            <div class="web-browser-url-bar">
+              client-landing.vercel.app
+            </div>
+          </div>
+          <!-- Screenshot -->
+          <a class="glightbox web-screenshot-link"
+             href="/assets/thumbnails/web2.png"
+             data-gallery="web-gallery"
+             data-title="Landing Page: Client Project">
+            <img
+              src="/assets/thumbnails/web2.png"
+              alt="Landing Page Client Project"
+              loading="lazy"
+              width="960"
+              height="540"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bento Stats Grid — Stitch Style -->
+    <div class="web-stitch-bento">
+      <div class="web-stitch-bento-cta">
+        <h3 class="web-stitch-bento-title">Ready to scale your digital presence?</h3>
+        <p class="web-stitch-bento-desc">
+          We don't just build websites; we engineer experiences that convert attention into authority.
+        </p>
+        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-stitch-bento-link">
+          Start a conversation
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="web-stitch-bento-stat">
+        <i class="fas fa-rocket web-stitch-bento-icon"></i>
+        <div class="web-stitch-bento-value">98/100</div>
+        <div class="web-stitch-bento-label">Lighthouse Score</div>
+      </div>
+      <div class="web-stitch-bento-stat">
+        <i class="fas fa-mobile-screen-button web-stitch-bento-icon"></i>
+        <div class="web-stitch-bento-value">Fluid</div>
+        <div class="web-stitch-bento-label">Mobile Optimized</div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- ====== CTA ====== -->
   <section class="web-cta-section" transition:animate="fade">
     <div class="web-cta-box fade-up">
       <h2>Punya ide project?</h2>
-      <p>Diskusi gratis - tell me your idea dan kita bikin jadi kenyataan.</p>
+      <p>Diskusi gratis — tell me your idea dan kita bikin jadi kenyataan.</p>
       <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-web-solid">
         <i class="fab fa-whatsapp"></i> Chat Sekarang
       </a>
@@ -267,10 +193,614 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 
   <PortfolioCTA />
 
-  <Footer slot="footer" variant="full" />
+  <Footer slot="footer" variant="minimal" />
 </BaseLayout>
 
+<style>
+  /* =============================================
+     STITCH WEBSITE PAGE — Scoped styles
+     Matches: stitch/website_development_redesign/code.html
+     ============================================= */
+
+  /* ---- HERO ---- */
+  .web-stitch-hero {
+    padding: 140px 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(64, 72, 93, 0.15);
+  }
+
+  .web-stitch-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .web-stitch-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-secondary);
+    margin-bottom: 16px;
+  }
+
+  .web-stitch-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 36px;
+  }
+
+  .web-stitch-title-accent {
+    display: block;
+    color: var(--accent-primary);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* CTA buttons — primary filled */
+  .web-stitch-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .web-stitch-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-dim));
+    color: #0f00a4;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(163, 166, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .web-stitch-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(163, 166, 255, 0.4);
+    opacity: 0.9;
+  }
+
+  /* CTA buttons — ghost outlined */
+  .web-stitch-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    border: 1px solid rgba(64, 72, 93, 0.4);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .web-stitch-btn-ghost i {
+    font-size: 14px;
+  }
+
+  .web-stitch-btn-ghost:hover {
+    background: var(--surface-bright);
+    border-color: rgba(163, 166, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* ---- PROJECTS SECTION ---- */
+  .web-projects {
+    padding: 80px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    margin-bottom: 80px;
+  }
+
+  .filter-btn {
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 9px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: var(--surface-bright);
+    color: var(--accent-primary);
+    border-color: rgba(163, 166, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-secondary-container);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  /* Project Row — 12-col grid */
+  .web-project-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 96px;
+  }
+
+  /* Normal: image left (7 cols) + info right (5 cols) */
+  .web-project-row-normal .web-project-browser-wrap {
+    grid-column: span 7;
+  }
+
+  .web-project-row-normal .web-project-info {
+    grid-column: span 5;
+  }
+
+  /* Inverse: info left (5 cols) + image right (7 cols) */
+  .web-project-row-inverse .web-project-info {
+    grid-column: span 5;
+    text-align: right;
+    order: 1;
+  }
+
+  .web-project-row-inverse .web-project-browser-wrap {
+    grid-column: span 7;
+    order: 2;
+  }
+
+  /* Browser Frame */
+  .web-project-browser-wrap {
+    position: relative;
+  }
+
+  /* Glow behind browser */
+  .web-project-browser-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, rgba(163, 166, 255, 0.12), rgba(193, 128, 255, 0.12));
+    filter: blur(24px);
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .web-project-browser-wrap:hover::before {
+    opacity: 1;
+  }
+
+  /* Inverse glow color */
+  .web-project-row-inverse .web-project-browser-wrap::before {
+    background: linear-gradient(135deg, rgba(105, 156, 255, 0.12), rgba(163, 166, 255, 0.12));
+  }
+
+  .web-project-browser-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(64, 72, 93, 0.25);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    background: var(--surface-container);
+  }
+
+  /* Browser chrome bar */
+  .web-browser-chrome {
+    background: var(--surface-container-highest);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(64, 72, 93, 0.2);
+  }
+
+  .web-browser-dots {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .web-browser-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .web-browser-dot-red { background: rgba(215, 51, 87, 0.5); }
+  .web-browser-dot-yellow { background: rgba(105, 156, 255, 0.5); }
+  .web-browser-dot-green { background: rgba(163, 166, 255, 0.5); }
+
+  .web-browser-url-bar {
+    flex: 1;
+    text-align: center;
+    background: var(--surface-container-low);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-family: 'Inter', monospace;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    opacity: 0.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Screenshot image */
+  .web-screenshot-link {
+    display: block;
+  }
+
+  .web-screenshot-link img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .web-project-browser-frame:hover .web-screenshot-link img {
+    transform: scale(1.02);
+  }
+
+  /* Project Info */
+  .web-project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .web-project-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .web-project-badge-purple { color: var(--accent-secondary); }
+  .web-project-badge-blue   { color: var(--accent-tertiary); }
+
+  .web-project-row-inverse .web-project-badge {
+    align-self: flex-end;
+  }
+
+  .web-project-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .web-project-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  /* Tech pills */
+  .web-project-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .web-project-row-inverse .web-project-tech {
+    justify-content: flex-end;
+  }
+
+  .web-tech-pill {
+    padding: 5px 14px;
+    border-radius: 9999px;
+    border: 1px solid rgba(96, 99, 238, 0.3);
+    color: var(--accent-primary-dim);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Links */
+  .web-project-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .web-project-links-right {
+    justify-content: flex-end;
+  }
+
+  .web-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .web-project-link i { font-size: 13px; }
+
+  .web-project-link-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-dim));
+    color: #0f00a4;
+    box-shadow: 0 6px 20px rgba(163, 166, 255, 0.25);
+  }
+
+  .web-project-link-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(163, 166, 255, 0.4);
+  }
+
+  .web-project-link-ghost {
+    border: 1px solid rgba(64, 72, 93, 0.4);
+    color: var(--text-primary);
+  }
+
+  .web-project-link-ghost:hover {
+    background: var(--surface-bright);
+    border-color: rgba(163, 166, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* ---- BENTO STATS GRID ---- */
+  .web-stitch-bento {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  /* Glass panel base */
+  .web-stitch-bento > * {
+    background: rgba(25, 37, 64, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(64, 72, 93, 0.15);
+    border-radius: 24px;
+  }
+
+  /* CTA panel */
+  .web-stitch-bento-cta {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .web-stitch-bento-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .web-stitch-bento-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 340px;
+  }
+
+  .web-stitch-bento-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+  }
+
+  .web-stitch-bento-link:hover {
+    gap: 14px;
+  }
+
+  .web-stitch-bento-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .web-stitch-bento-link:hover i {
+    transform: translateX(4px);
+  }
+
+  /* Stat panels */
+  .web-stitch-bento-stat {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .web-stitch-bento-icon {
+    font-size: 36px;
+    color: var(--accent-primary);
+    margin-bottom: 4px;
+  }
+
+  .web-stitch-bento-stat:nth-child(3) .web-stitch-bento-icon {
+    color: var(--accent-secondary);
+  }
+
+  .web-stitch-bento-value {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .web-stitch-bento-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  /* ---- CTA SECTION ---- */
+  .web-cta-section {
+    padding: 0 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .web-cta-box {
+    background: var(--surface-container-high);
+    border: 1px solid rgba(163, 166, 255, 0.1);
+    border-radius: 20px;
+    padding: 56px 48px;
+    text-align: center;
+  }
+
+  .web-cta-box h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .web-cta-box p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 1024px) {
+    .web-stitch-bento {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .web-stitch-bento-cta {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .web-stitch-hero {
+      padding: 120px 24px 60px;
+    }
+
+    .web-projects,
+    .web-cta-section {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .web-project-row {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .web-project-row-normal .web-project-browser-wrap,
+    .web-project-row-normal .web-project-info,
+    .web-project-row-inverse .web-project-browser-wrap,
+    .web-project-row-inverse .web-project-info {
+      grid-column: span 1;
+      order: unset;
+      text-align: left;
+    }
+
+    .web-project-row-inverse .web-project-info {
+      order: -1;
+    }
+
+    .web-project-row-inverse .web-project-tech,
+    .web-project-row-inverse .web-project-links,
+    .web-project-row-inverse .web-project-badge {
+      justify-content: flex-start;
+      align-self: flex-start;
+      text-align: left;
+    }
+
+    .filter-bar {
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      margin-bottom: 48px;
+    }
+
+    .filter-bar::-webkit-scrollbar { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .web-stitch-bento {
+      grid-template-columns: 1fr;
+    }
+
+    .web-stitch-bento-cta {
+      grid-column: span 1;
+      padding: 32px 24px;
+    }
+
+    .web-stitch-bento-stat {
+      padding: 24px;
+    }
+
+    .web-cta-box {
+      padding: 36px 24px;
+    }
+  }
+</style>
+
 <script>
+  /* ---------- GLIGHTBOX ---------- */
   document.addEventListener('DOMContentLoaded', function initGL() {
     if (typeof GLightbox === 'undefined') {
       setTimeout(initGL, 100);
@@ -283,96 +813,26 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
       autoplayVideos: false,
       zoomable: true,
     });
+  });
 
-    /* ---------- PROJECT MODAL ---------- */
-    const modal = document.getElementById('projectModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalImgLink = document.getElementById('modalImgLink');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalCat = document.getElementById('modalCat');
-    const modalYear = document.getElementById('modalYear');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalTech = document.getElementById('modalTech');
-    const modalUrl = document.getElementById('modalUrl');
-    const modalClose = document.getElementById('modalClose');
+  /* ---------- PROJECT FILTER ---------- */
+  (function() {
+    const filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+    const btns = filterBar.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.web-project-row');
 
-    function openModal(card) {
-      const img = card.querySelector('.project-card-thumb img');
-      const title = card.dataset.title || '';
-      const desc = card.dataset.desc || '';
-      const tech = card.dataset.tech || '';
-      const cat = card.dataset.categoryLabel || '';
-      const year = card.dataset.year || '';
-      const url = card.dataset.url || '#';
-      const imgSrc = img ? img.src : '';
-      const imgAlt = img ? img.alt : title;
-
-      if (modalImg) { modalImg.src = imgSrc; modalImg.alt = imgAlt; }
-      if (modalImgLink) { modalImgLink.href = imgSrc; }
-      if (modalTitle) modalTitle.textContent = title;
-      if (modalCat) modalCat.textContent = cat;
-      if (modalYear) modalYear.textContent = year;
-      if (modalDesc) modalDesc.textContent = desc;
-      if (modalUrl) { modalUrl.href = url; }
-
-      // Build tech badges
-      if (modalTech) {
-        const techList = tech.split(',').map(t => t.trim());
-        const techMap = {
-          'Astro': '<span class="tech-badge astro">Astro</span>',
-          'HTML': '<span class="tech-badge html">HTML</span>',
-          'CSS': '<span class="tech-badge css">CSS</span>',
-          'JavaScript': '<span class="tech-badge js">JavaScript</span>',
-          'React': '<span class="tech-badge react">React</span>',
-          'Figma': '<span class="tech-badge figma">Figma</span>',
-        };
-        modalTech.innerHTML = techList.map(t => techMap[t] || `<span class="tech-badge html">${t}</span>`).join('');
-      }
-
-      if (modal) { modal.hidden = false; document.body.style.overflow = 'hidden'; }
-    }
-
-    function closeModal() {
-      if (modal) { modal.hidden = true; document.body.style.overflow = ''; }
-    }
-
-    // Open modal from Detail buttons
-    document.querySelectorAll('[data-open-modal]').forEach(function(btn) {
+    btns.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        const card = btn.closest('.project-card');
-        if (card) openModal(card);
-      });
-    });
-
-    // Close modal
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (modal) {
-      modal.querySelectorAll('[data-close-modal]').forEach(function(el) {
-        el.addEventListener('click', closeModal);
-      });
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal && !modal.hidden) closeModal();
-    });
-
-    /* ---------- PROJECT FILTER ---------- */
-    const filterBar = document.querySelector('.projects-section .filter-bar');
-    if (filterBar) {
-      const btns = filterBar.querySelectorAll('.filter-btn');
-      const grid = document.querySelector('.projects-grid');
-      btns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const filter = btn.dataset.filter;
-          btns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          if (grid) {
-            grid.querySelectorAll('.project-card').forEach(function(card) {
-              const cat = card.dataset.category || '';
-              card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
-            });
-          }
+        const filter = btn.dataset.filter;
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        rows.forEach(function(row) {
+          const cat = (row as HTMLElement).dataset.category || '';
+          (row as HTMLElement).style.display =
+            (filter === 'all' || cat === filter) ? '' : 'none';
         });
       });
-    }
-  });
+    });
+  })();
 </script>
