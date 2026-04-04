@@ -156,6 +156,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: 1.6;
+  /* Push page content below fixed navbar (72px tall) */
+  padding-top: var(--nav-h);
+}
+
+/* Hero sections handle their own navbar-aware padding — no double-offset */
+.hero {
+  padding-top: 0;
 }
 
 /* iOS input zoom prevention — font-size must be >= 16px */
@@ -3138,3 +3145,9 @@ body.glightbox-open { overflow: hidden; }
   }
 }
 @media (max-width: 768px) { .web-hero-mockups { transform: scale(0.65); transform-origin: top left; } }
+
+/* Bottom nav removed — ensure no stale bottom padding remains */
+@media (max-width: 768px) {
+  body { padding-bottom: 0; }
+  main, .page-content { padding-bottom: 40px; }
+}
