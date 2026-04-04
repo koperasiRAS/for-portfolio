@@ -12,7 +12,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
   keywords="photography, commercial photography, wedding photography, automotive photography, editorial photography, visual storyteller, fotografer Depok"
   ogTitle="Photography | Frame Of Rangga"
   ogDescription="Koleksi foto komersial, wedding, automotive, dan editorial oleh Rangga Danuarta."
-  ogUrl="https://web-portfolio-gray-ten.vercel.app/foto"
+  ogUrl="https://for-portfolio-mu.vercel.app/foto"
   hasGlightbox={true}
 >
   <Navbar slot="navbar" activePage="foto" />
@@ -43,6 +43,9 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           </div>
           <div class="carousel-slide">
             <img src="/assets/foto/fotografer/ccm rangga.jpg" alt="Lifestyle Photography" loading="lazy" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/foto/fashion/foto baju coklat.jpg" alt="Commercial Photography" loading="lazy" />
           </div>
         </div>
         <!-- Dots -->
@@ -103,6 +106,18 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           title="Automotive: Fotografi Mobil"
           category="automotive"
           href="/assets/foto/fotografer/fotografi mobil.jpg"
+          gallery="portfolio-gallery"
+        />
+      </div>
+
+      <!-- Komersial -->
+      <div class="gallery-portrait-wrap">
+        <GalleryItem
+          src="/assets/foto/fashion/foto baju coklat.jpg"
+          alt="Commercial Photography"
+          title="Komersial: Fashion Shoot"
+          category="komersial"
+          href="/assets/foto/fashion/foto baju coklat.jpg"
           gallery="portfolio-gallery"
         />
       </div>

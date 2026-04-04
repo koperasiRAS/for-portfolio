@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://web-portfolio-gray-ten.vercel.app/sitemap.xml
+Sitemap: https://for-portfolio-mu.vercel.app/sitemap.xml
