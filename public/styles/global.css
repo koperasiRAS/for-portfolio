@@ -3151,3 +3151,55 @@ body.glightbox-open { overflow: hidden; }
   body { padding-bottom: 0; }
   main, .page-content { padding-bottom: 40px; }
 }
+
+/* =============================================
+   WhatsApp CTA Buttons — Global
+   ============================================= */
+.btn-wa-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-top: 16px;
+}
+
+.btn-wa-category:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+}
+
+.btn-wa-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid #25D366;
+  color: #25D366;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-wa-small:hover {
+  background: #25D366;
+  color: white;
+}
+
+/* Mobile: full width WA category button */
+@media (max-width: 480px) {
+  .btn-wa-category {
+    width: 100%;
+    justify-content: center;
+  }
+}
+}
