@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PortfolioCTA from '../components/PortfolioCTA.astro';
+---
+
+<BaseLayout
+  title="Videography | Frame Of Rangga"
+  description="Portofolio video brand, dokumentasi event, dan konten kreatif cinematic oleh Rangga Danuarta."
+  keywords="videography, cinematography, video editing, brand video, documentary, konten kreatif, video production, motion graphics"
+  ogTitle="Videography | Frame Of Rangga"
+  ogDescription="Portofolio video brand, dokumentasi event, dan konten kreatif cinematic oleh Rangga Danuarta."
+  ogUrl="https://web-portfolio-gray-ten.vercel.app/video"
+  hasGlightbox={true}
+>
+  <Navbar slot="navbar" activePage="video" />
+
+  <section class="gallery-section" transition:animate="fade">
+    <h1 class="fade-up">Video Portfolio</h1>
+    <p class="gallery-subtitle fade-up">Koleksi video brand, dokumentasi event, dan konten kreatif dengan pendekatan cinematic storytelling</p>
+
+    <!-- Update notice -->
+    <div class="update-notice fade-up">
+      <i class="fas fa-film"></i>
+      <span>Video portfolio sedang dalam proses update. <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a> untuk melihat showreel lengkap.</span>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar fade-up" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="brand">Brand Video</button>
+      <button class="filter-btn" data-filter="dokumentasi">Dokumentasi</button>
+      <button class="filter-btn" data-filter="sosmed">Konten Sosial Media</button>
+      <button class="filter-btn" data-filter="promosi">Promosi</button>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="video-grid fade-up">
+
+      <!-- Card 1 — Brand Video -->
+      <a class="video-card"
+         href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20video%20branding"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-category="brand">
+        <div class="video-thumb-wrap">
+          <img
+            src="/assets/thumbnails/ss keyboard.png"
+            alt="Brand Video Preview"
+            loading="lazy"
+            width="600" height="338"
+            onerror="this.style.display='none'"
+          />
+          <div class="play-overlay">
+            <div class="play-btn"><i class="fas fa-play play-icon"></i></div>
+          </div>
+          <span class="video-duration-badge">3:45</span>
+        </div>
+        <div class="video-card-body">
+          <span class="video-cat-label">Brand Video</span>
+          <h3 class="video-card-title">Brand Video — Client Project</h3>
+          <p class="video-card-desc">Video campaign dengan pendekatan cinematic storytelling untuk brand.</p>
+        </div>
+      </a>
+
+      <!-- Card 2 — Dokumentasi -->
+      <a class="video-card"
+         href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20dokumentasi%20video"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-category="dokumentasi">
+        <div class="video-thumb-wrap">
+          <img
+            src="/assets/thumbnails/ss laptop.png"
+            alt="Dokumentasi Event Preview"
+            loading="lazy"
+            width="600" height="338"
+            onerror="this.style.display='none'"
+          />
+          <div class="play-overlay">
+            <div class="play-btn"><i class="fas fa-play play-icon"></i></div>
+          </div>
+          <span class="video-duration-badge">5:20</span>
+        </div>
+        <div class="video-card-body">
+          <span class="video-cat-label">Dokumentasi</span>
+          <h3 class="video-card-title">Dokumentasi Event</h3>
+          <p class="video-card-desc">Coverage acara dan event dengan hasil yang dinamis dan emosional.</p>
+        </div>
+      </a>
+
+      <!-- Card 3 — Konten Sosial Media -->
+      <a class="video-card"
+         href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20konten%20sosial%20media"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-category="sosmed">
+        <div class="video-thumb-wrap">
+          <img
+            src="/assets/thumbnails/web1.png"
+            alt="Konten Sosmed Preview"
+            loading="lazy"
+            width="600" height="338"
+            onerror="this.style.display='none'"
+          />
+          <div class="play-overlay">
+            <div class="play-btn"><i class="fas fa-play play-icon"></i></div>
+          </div>
+          <span class="video-duration-badge">0:30</span>
+        </div>
+        <div class="video-card-body">
+          <span class="video-cat-label">Konten Sosial Media</span>
+          <h3 class="video-card-title">Konten Sosial Media</h3>
+          <p class="video-card-desc">Short-form content yang engaging untuk Instagram, TikTok, dan YouTube Shorts.</p>
+        </div>
+      </a>
+
+      <!-- Card 4 — Promosi -->
+      <a class="video-card"
+         href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20video%20promosi"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-category="promosi">
+        <div class="video-thumb-wrap">
+          <img
+            src="/assets/thumbnails/web2.png"
+            alt="Video Promosi Preview"
+            loading="lazy"
+            width="600" height="338"
+            onerror="this.style.display='none'"
+          />
+          <div class="play-overlay">
+            <div class="play-btn"><i class="fas fa-play play-icon"></i></div>
+          </div>
+          <span class="video-duration-badge">1:00</span>
+        </div>
+        <div class="video-card-body">
+          <span class="video-cat-label">Promosi</span>
+          <h3 class="video-card-title">Video Promosi Produk</h3>
+          <p class="video-card-desc">Video iklan yang langsung nge-hit target audiens dan boost conversion.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <PortfolioCTA />
+
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<script>
+  /* ---------- VIDEO FILTER ---------- */
+  document.addEventListener('DOMContentLoaded', function init() {
+    const filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+
+    const btns = filterBar.querySelectorAll('.filter-btn');
+    const grid = document.querySelector('.video-grid');
+    if (!grid) return;
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        // Show/hide cards
+        const cards = grid.querySelectorAll('.video-card');
+        cards.forEach(function(card) {
+          const cat = card.dataset.category || '';
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="svc-card fade-up">
+  <div class="service-icon">
+    <i class={icon}></i>
+  </div>
+  <h3 class="service-title">{title}</h3>
+  <p class="service-desc">{description}</p>
+</div>

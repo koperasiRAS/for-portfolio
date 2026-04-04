@@ -1,0 +1,29 @@
+---
+export interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+}
+
+const { quote, name, role, initials } = Astro.props;
+---
+
+<div class="testimonial-card fade-up">
+  <span class="testimonial-quote-mark">&#8220;</span>
+  <p class="testimonial-text">{quote}</p>
+  <div class="testimonial-footer">
+    <div class="testimonial-avatar" aria-hidden="true">{initials}</div>
+    <div class="testimonial-meta">
+      <p class="testimonial-name">{name}</p>
+      <p class="testimonial-role">{role}</p>
+      <div class="testimonial-stars" aria-label="5 stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+  </div>
+</div>

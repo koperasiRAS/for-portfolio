@@ -1,0 +1,118 @@
+---
+export interface Props {
+  variant?: 'full' | 'minimal';
+}
+
+const { variant = 'minimal' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/foto', label: 'Foto' },
+  { href: '/video', label: 'Video' },
+  { href: '/design', label: 'Design' },
+  { href: '/website', label: 'Website' },
+  { href: '/editing', label: 'Editing' },
+];
+---
+
+<footer class={variant === 'full' ? 'footer-full' : 'footer-minimal'}>
+  {variant === 'full' && (
+    <div class="footer-main">
+      <div class="footer-col footer-brand-col">
+        <div class="footer-logo">FOR</div>
+        <p class="footer-tagline">Visual storytelling yang autentik dan berkesan.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a id="footer-email-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <ul class="footer-nav">
+          {navLinks.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Layanan</h4>
+        <ul class="footer-nav">
+          <li><a href="/foto">Photography</a></li>
+          <li><a href="/video">Videography</a></li>
+          <li><a href="/design">Brand Design</a></li>
+          <li><a href="/website">Web Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> +62 895 321 693 131
+            </a>
+          </li>
+          <li>
+            <a id="footer-email-text" href="#" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-envelope"></i> <span id="email-display"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i> @frameofrangga
+            </a>
+          </li>
+          <li>
+            <span class="footer-location">
+              <i class="fas fa-map-marker-alt"></i> Depok, Indonesia
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )}
+
+  {variant === 'minimal' && (
+    <div class="footer-social-minimal">
+      <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  )}
+
+  <div class="footer-bottom">
+    <p>&copy; {new Date().getFullYear()} <span class="footer-brand">Frame Of Rangga</span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Obfuscate email — split into parts to avoid plain-text scraping
+  const _p = ['fr', 'ameo', 'fr', 'ang', 'a@', 'gm', 'ail.', 'co', 'm'];
+  const _email = _p[0] + _p[1] + _p[2] + _p[3] + _p[4] + _p[5] + _p[6] + _p[7] + _p[8];
+
+  const displayEl = document.getElementById('email-display');
+  const linkEl    = document.getElementById('footer-email-link');
+  const textEl    = document.getElementById('footer-email-text');
+
+  if (displayEl) displayEl.textContent = _email;
+  if (linkEl)    linkEl.href    = 'mailto:' + _email;
+  if (textEl)    textEl.href    = 'mailto:' + _email;
+</script>

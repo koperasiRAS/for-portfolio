@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import GalleryItem from '../components/GalleryItem.astro';
+import PortfolioCTA from '../components/PortfolioCTA.astro';
+---
+
+<BaseLayout
+  title="Photography | Frame Of Rangga"
+  description="Koleksi foto komersial, wedding, automotive, dan editorial oleh Rangga Danuarta, fotografer profesional berbasis di Depok, Indonesia."
+  keywords="photography, commercial photography, wedding photography, automotive photography, editorial photography, visual storyteller, fotografer Depok"
+  ogTitle="Photography | Frame Of Rangga"
+  ogDescription="Koleksi foto komersial, wedding, automotive, dan editorial oleh Rangga Danuarta."
+  ogUrl="https://web-portfolio-gray-ten.vercel.app/foto"
+  hasGlightbox={true}
+  hasSwiper={true}
+>
+  <Navbar slot="navbar" activePage="foto" />
+
+  <!-- GALLERY -->
+  <section class="gallery-section" transition:animate="fade">
+    <h1 class="fade-up">Photography</h1>
+    <p class="gallery-subtitle fade-up">Momen-momen yang diabadikan dengan sentuhan visual yang kuat</p>
+
+    <!-- Carousel -->
+    <div class="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/wedding/anggie 2 landscape.jpg" alt="Portrait Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/wedding/ultah raden 2 landscape.JPG" alt="Wedding Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/wedding/anggie 4 landscape.jpg" alt="Editorial Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Brand Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/fotografer/fotografi mobil.jpg" alt="Automotive Photography" loading="lazy" width="1200" height="800" /></div>
+          <div class="swiper-slide"><img src="/assets/foto/fotografer/ccm rangga.jpg" alt="Lifestyle Photography" loading="lazy" width="1200" height="800" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar fade-up" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="wedding">Wedding</button>
+      <button class="filter-btn" data-filter="komersial">Komersial</button>
+      <button class="filter-btn" data-filter="automotive">Automotive</button>
+      <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+      <button class="filter-btn" data-filter="fotografer">Fotografer</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid fade-up">
+
+      <!-- Wedding -->
+      <GalleryItem
+        src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+        alt="Wedding Photography"
+        title="Wedding — Ultah Raden"
+        category="wedding"
+        href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+        gallery="portfolio-gallery"
+      />
+      <GalleryItem
+        src="/assets/foto/wedding/anggie 2 landscape.jpg"
+        alt="Portrait Photography"
+        title="Wedding — Anggie"
+        category="wedding"
+        href="/assets/foto/wedding/anggie 2 landscape.jpg"
+        gallery="portfolio-gallery"
+      />
+      <GalleryItem
+        src="/assets/foto/wedding/anggie 4 landscape.jpg"
+        alt="Editorial Photography"
+        title="Wedding — Anggie Editorial"
+        category="wedding"
+        href="/assets/foto/wedding/anggie 4 landscape.jpg"
+        gallery="portfolio-gallery"
+      />
+
+      <!-- Automotive -->
+      <GalleryItem
+        src="/assets/foto/fotografer/fotografi mobil.jpg"
+        alt="Automotive Photography"
+        title="Automotive — Fotografi Mobil"
+        category="automotive"
+        href="/assets/foto/fotografer/fotografi mobil.jpg"
+        gallery="portfolio-gallery"
+      />
+
+      <!-- Lifestyle -->
+      <GalleryItem
+        src="/assets/foto/fotografer/ccm rangga.jpg"
+        alt="Lifestyle Photography"
+        title="Lifestyle — CCM Rangga"
+        category="lifestyle"
+        href="/assets/foto/fotografer/ccm rangga.jpg"
+        gallery="portfolio-gallery"
+      />
+
+      <!-- Fotografer -->
+      <GalleryItem
+        src="/assets/foto/fotografer/fotografi gojek.jpg"
+        alt="Brand Photography"
+        title="Fotografer — Fotografi Gojek"
+        category="fotografer"
+        href="/assets/foto/fotografer/fotografi gojek.jpg"
+        gallery="portfolio-gallery"
+      />
+
+    </div>
+  </section>
+
+  <PortfolioCTA />
+
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function initGL() {
+    if (typeof GLightbox === 'undefined') {
+      setTimeout(initGL, 100);
+      return;
+    }
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false,
+      zoomable: true,
+    });
+  });
+
+  /* ---------- CATEGORY FILTER (standalone, not dependent on script.js) ---------- */
+  (function() {
+    const filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+    const btns = filterBar.querySelectorAll('.filter-btn');
+    const grid = document.querySelector('.gallery-grid');
+    if (!grid) return;
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const filter = btn.dataset.filter;
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        grid.querySelectorAll('.gallery-item').forEach(function(item) {
+          const cat = item.dataset.category || '';
+          item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PortfolioCTA from '../components/PortfolioCTA.astro';
+---
+
+<BaseLayout
+  title="Web Development | Frame Of Rangga"
+  description="Jasa pembuatan website: landing page, company profile, web app, dan undangan digital oleh Rangga Danuarta."
+  keywords="web development, website creation, landing page, company profile, web app, Astro, HTML, CSS, JavaScript, frontend developer"
+  ogTitle="Web Development | Frame Of Rangga"
+  ogDescription="Jasa pembuatan website: landing page, company profile, web app, dan undangan digital oleh Rangga Danuarta."
+  ogUrl="https://web-portfolio-gray-ten.vercel.app/website"
+  hasGlightbox={true}
+>
+  <Navbar slot="navbar" activePage="website" />
+
+  <!-- ====== WEB HERO ====== -->
+  <section class="web-hero" transition:animate="fade">
+    <div class="web-hero-inner">
+
+      <!-- Left: Copy -->
+      <div class="web-hero-copy fade-up">
+        <span class="web-badge">JASA PEMBUATAN WEBSITE</span>
+        <h1 class="web-headline">Buat Website &amp; Sistem</h1>
+        <p class="web-subtext">Mulai dari landing page, company profile, web app, sampai sistem custom. Semua bisa.</p>
+        <div class="web-hero-cta">
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-web-solid">
+            <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+          </a>
+          <a href="#projects" class="btn btn-web-ghost">
+            <i class="fas fa-eye"></i> Lihat Projects
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Floating cards -->
+      <div class="web-hero-cards fade-up">
+        <div class="web-card web-card-1">
+          <div class="web-card-browser">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">web-portfolio-gray-ten.vercel.app</div>
+          </div>
+          <a class="web-card-img-wrap glightbox"
+             href="/assets/thumbnails/web1.png"
+             data-gallery="web-gallery"
+             data-title="Website Portfolio — Frame Of Rangga"
+             data-type="image">
+            <img src="/assets/thumbnails/web1.png" alt="Website Portfolio FOR" loading="lazy" width="260" height="180" onerror="this.style.display='none'" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Website Portfolio FOR</span>
+              <div class="gallery-tech">
+                <span class="tech-tag">Astro</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JS</span>
+              </div>
+              <i class="fas fa-expand"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="web-card web-card-2">
+          <div class="web-card-browser">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">landing-page.example</div>
+          </div>
+          <a class="web-card-img-wrap glightbox"
+             href="/assets/thumbnails/web2.png"
+             data-gallery="web-gallery"
+             data-title="Landing Page — Creative Agency"
+             data-type="image">
+            <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="260" height="180" onerror="this.style.display='none'" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Landing Page</span>
+              <div class="gallery-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Astro</span>
+              </div>
+              <i class="fas fa-expand"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="web-card web-card-3">
+          <div class="web-card-browser">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">brand-design.example</div>
+          </div>
+          <a class="web-card-img-wrap glightbox"
+             href="/assets/design/brand/web3.png"
+             data-gallery="web-gallery"
+             data-title="Brand Design Showcase"
+             data-type="image">
+            <img src="/assets/design/brand/web3.png" alt="Brand Design Showcase" loading="lazy" width="220" height="140" onerror="this.style.display='none'" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Brand Design</span>
+              <div class="gallery-tech">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Illustrator</span>
+              </div>
+              <i class="fas fa-expand"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FEATURES ====== -->
+  <section class="web-features" transition:animate="fade">
+    <div class="web-features-inner">
+      <h2 class="web-features-title fade-up">Tertarik dengan jasa ini?</h2>
+      <p class="web-features-sub fade-up">Berikut keunggulan yang bisa lo dapetin.</p>
+
+      <div class="web-feat-grid fade-up">
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-infinity"></i></div>
+          <h3>Revisi Unlimited</h3>
+          <p>Sampe lo baru selesai. No batas, no drama.</p>
+        </div>
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3>Desain Modern</h3>
+          <p>Look &amp; feel yang fresh dan sesuai tren sekarang.</p>
+        </div>
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-code"></i></div>
+          <h3>Clean Code</h3>
+          <p>Code rapih, performant, dan gampang di-maintain.</p>
+        </div>
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Fast Loading</h3>
+          <p>Website lo bakal load kilat. Sampe visitor betah.</p>
+        </div>
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-mobile-screen-button"></i></div>
+          <h3>Responsive</h3>
+          <p>Tampil sempurna di semua device — desktop sampe HP.</p>
+        </div>
+
+        <div class="web-feat-card">
+          <div class="web-feat-icon"><i class="fas fa-tags"></i></div>
+          <h3>Harga Kompetitif</h3>
+          <p>Kualitas premium, harga yang sesuai kantong lo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section class="projects-section" id="projects" transition:animate="fade">
+    <div class="projects-inner">
+      <div class="projects-header fade-up">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="projects-sub">Website dan aplikasi yang sudah dibuat dan live.</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-bar fade-up" aria-label="Filter by category">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+        <button class="filter-btn" data-filter="landing">Landing Page</button>
+        <button class="filter-btn" data-filter="companyprofile">Company Profile</button>
+      </div>
+
+      <div class="projects-grid fade-up">
+
+        <!-- Project 1 -->
+        <div class="project-card" data-category="portfolio" data-title="Web Portfolio — Frame Of Rangga" data-desc="Portfolio website personal dengan Astro framework, featuring dark glassmorphism design yang elegan dan modern." data-tech="Astro, CSS, JavaScript" data-category-label="Portfolio" data-year="2026" data-url="https://web-portfolio-gray-ten.vercel.app">
+          <div class="project-card-thumb">
+            <a class="glightbox"
+               href="/assets/thumbnails/web1.png"
+               data-gallery="projects-gallery"
+               data-title="Web Portfolio — Frame Of Rangga">
+              <img src="/assets/thumbnails/web1.png" alt="Web Portfolio FOR" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
+              <div class="gallery-overlay">
+                <i class="fas fa-expand"></i>
+              </div>
+            </a>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Web Portfolio — Frame Of Rangga</h3>
+            <p class="project-card-desc">Portfolio website personal dengan Astro framework, responsive dan fast loading.</p>
+            <div class="project-tech">
+              <span class="tech-badge astro">Astro</span>
+              <span class="tech-badge css">CSS</span>
+              <span class="tech-badge js">JavaScript</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://web-portfolio-gray-ten.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <button type="button" class="project-link-btn detail" data-open-modal>
+                <i class="fas fa-info-circle"></i> Detail
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="landing" data-title="Landing Page — Project Client" data-desc="Landing page yang didesain untuk mengkonversi visitor jadi leads. Dengan CTA yang jelas dan layout yang clean." data-tech="HTML, CSS, JavaScript" data-category-label="Landing Page" data-year="2025" data-url="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page">
+          <div class="project-card-thumb">
+            <a class="glightbox"
+               href="/assets/thumbnails/web2.png"
+               data-gallery="projects-gallery"
+               data-title="Landing Page — Project Client">
+              <img src="/assets/thumbnails/web2.png" alt="Landing Page" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
+              <div class="gallery-overlay">
+                <i class="fas fa-expand"></i>
+              </div>
+            </a>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Landing Page — Project Client</h3>
+            <p class="project-card-desc">Landing page yang didesain untuk mengkonversi visitor jadi leads.</p>
+            <div class="project-tech">
+              <span class="tech-badge html">HTML</span>
+              <span class="tech-badge css">CSS</span>
+              <span class="tech-badge js">JavaScript</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <button type="button" class="project-link-btn detail" data-open-modal>
+                <i class="fas fa-info-circle"></i> Detail
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="companyprofile" data-title="Company Profile — Project Client" data-desc="Website company profile yang menampilkan identitas brand secara profesional dengan desain yang modern dan informatif." data-tech="HTML, CSS, JavaScript" data-category-label="Company Profile" data-year="2025" data-url="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20company%20profile">
+          <div class="project-card-thumb">
+            <a class="glightbox"
+               href="/assets/design/brand/web3.png"
+               data-gallery="projects-gallery"
+               data-title="Company Profile — Project Client">
+              <img src="/assets/design/brand/web3.png" alt="Company Profile" loading="lazy" width="600" height="340" onerror="this.style.display='none'" />
+              <div class="gallery-overlay">
+                <i class="fas fa-expand"></i>
+              </div>
+            </a>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Company Profile — Project Client</h3>
+            <p class="project-card-desc">Website company profile yang menampilkan identitas brand secara profesional.</p>
+            <div class="project-tech">
+              <span class="tech-badge html">HTML</span>
+              <span class="tech-badge css">CSS</span>
+              <span class="tech-badge js">JavaScript</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20company%20profile" target="_blank" rel="noopener noreferrer" class="project-link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <button type="button" class="project-link-btn detail" data-open-modal>
+                <i class="fas fa-info-circle"></i> Detail
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECT DETAIL MODAL ====== -->
+  <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="project-modal-backdrop" data-close-modal></div>
+    <div class="project-modal-box">
+      <button type="button" class="project-modal-close" id="modalClose" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="project-modal-img-wrap">
+        <a class="glightbox" id="modalImgLink" href="" data-gallery="modal-gallery" data-type="image">
+          <img id="modalImg" src="" alt="" loading="lazy" />
+        </a>
+      </div>
+      <div class="project-modal-content">
+        <div class="project-modal-meta">
+          <span class="project-modal-cat" id="modalCat"></span>
+          <span class="project-modal-year" id="modalYear"></span>
+        </div>
+        <h2 class="project-modal-title" id="modalTitle"></h2>
+        <p class="project-modal-desc" id="modalDesc"></p>
+        <div class="project-modal-tech" id="modalTech"></div>
+        <div class="project-modal-actions">
+          <a href="#" id="modalUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> Kunjungi Website
+          </a>
+          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <i class="fab fa-whatsapp"></i> Diskusi Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== CTA ====== -->
+  <section class="web-cta-section" transition:animate="fade">
+    <div class="web-cta-box fade-up">
+      <h2>Punya ide project?</h2>
+      <p>Diskusi gratis — tell me your idea dan kita bikin jadi kenyataan.</p>
+      <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-web-solid">
+        <i class="fab fa-whatsapp"></i> Chat Sekarang
+      </a>
+    </div>
+  </section>
+
+  <PortfolioCTA />
+
+  <Footer slot="footer" variant="full" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function initGL() {
+    if (typeof GLightbox === 'undefined') {
+      setTimeout(initGL, 100);
+      return;
+    }
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false,
+      zoomable: true,
+    });
+
+    /* ---------- PROJECT MODAL ---------- */
+    const modal = document.getElementById('projectModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalImgLink = document.getElementById('modalImgLink');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCat = document.getElementById('modalCat');
+    const modalYear = document.getElementById('modalYear');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTech = document.getElementById('modalTech');
+    const modalUrl = document.getElementById('modalUrl');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal(card) {
+      const img = card.querySelector('.project-card-thumb img');
+      const title = card.dataset.title || '';
+      const desc = card.dataset.desc || '';
+      const tech = card.dataset.tech || '';
+      const cat = card.dataset.categoryLabel || '';
+      const year = card.dataset.year || '';
+      const url = card.dataset.url || '#';
+      const imgSrc = img ? img.src : '';
+      const imgAlt = img ? img.alt : title;
+
+      if (modalImg) { modalImg.src = imgSrc; modalImg.alt = imgAlt; }
+      if (modalImgLink) { modalImgLink.href = imgSrc; }
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalCat) modalCat.textContent = cat;
+      if (modalYear) modalYear.textContent = year;
+      if (modalDesc) modalDesc.textContent = desc;
+      if (modalUrl) { modalUrl.href = url; }
+
+      // Build tech badges
+      if (modalTech) {
+        const techList = tech.split(',').map(t => t.trim());
+        const techMap = {
+          'Astro': '<span class="tech-badge astro">Astro</span>',
+          'HTML': '<span class="tech-badge html">HTML</span>',
+          'CSS': '<span class="tech-badge css">CSS</span>',
+          'JavaScript': '<span class="tech-badge js">JavaScript</span>',
+          'React': '<span class="tech-badge react">React</span>',
+          'Figma': '<span class="tech-badge figma">Figma</span>',
+        };
+        modalTech.innerHTML = techList.map(t => techMap[t] || `<span class="tech-badge html">${t}</span>`).join('');
+      }
+
+      if (modal) { modal.hidden = false; document.body.style.overflow = 'hidden'; }
+    }
+
+    function closeModal() {
+      if (modal) { modal.hidden = true; document.body.style.overflow = ''; }
+    }
+
+    // Open modal from Detail buttons
+    document.querySelectorAll('[data-open-modal]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const card = btn.closest('.project-card');
+        if (card) openModal(card);
+      });
+    });
+
+    // Close modal
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modal) {
+      modal.querySelectorAll('[data-close-modal]').forEach(function(el) {
+        el.addEventListener('click', closeModal);
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal && !modal.hidden) closeModal();
+    });
+
+    /* ---------- PROJECT FILTER ---------- */
+    const filterBar = document.querySelector('.projects-section .filter-bar');
+    if (filterBar) {
+      const btns = filterBar.querySelectorAll('.filter-btn');
+      const grid = document.querySelector('.projects-grid');
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const filter = btn.dataset.filter;
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          if (grid) {
+            grid.querySelectorAll('.project-card').forEach(function(card) {
+              const cat = card.dataset.category || '';
+              card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+            });
+          }
+        });
+      });
+    }
+  });
+</script>

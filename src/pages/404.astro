@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="404 — Halaman Tidak Ditemukan | Frame Of Rangga"
+  description="Halaman yang kamu cari tidak ditemukan."
+  keywords="404, not found, page missing"
+  ogTitle="404 | Frame Of Rangga"
+  ogDescription="Halaman yang kamu cari tidak ditemukan."
+  ogUrl="https://web-portfolio-gray-ten.vercel.app/404"
+>
+  <Navbar slot="navbar" activePage="404" />
+
+  <section class="not-found-section">
+    <div class="not-found-inner fade-up">
+      <div class="not-found-number">404</div>
+      <h1 class="not-found-title">Halaman tidak ditemukan</h1>
+      <p class="not-found-message">
+        Sepertinya halaman yang kamu cari sudah dipindahkan, dihapus, atau belum dibuat.
+      </p>
+      <div class="not-found-actions">
+        <a href="/" class="btn btn-primary">
+          <i class="fas fa-home"></i> Kembali ke Home
+        </a>
+        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <i class="fab fa-whatsapp"></i> Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<style>
+  .not-found-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+  }
+
+  .not-found-inner {
+    text-align: center;
+    max-width: 520px;
+  }
+
+  .not-found-number {
+    font-size: clamp(100px, 20vw, 180px);
+    font-weight: 900;
+    line-height: 1;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    animation: floatUp 1s ease-out both;
+  }
+
+  .not-found-title {
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s ease-out 0.15s both;
+  }
+
+  .not-found-message {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    animation: fadeUp 0.8s ease-out 0.3s both;
+  }
+
+  .not-found-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease-out 0.45s both;
+  }
+
+  @keyframes floatUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

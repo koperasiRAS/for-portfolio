@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import GalleryItem from '../components/GalleryItem.astro';
+import PortfolioCTA from '../components/PortfolioCTA.astro';
+---
+
+<BaseLayout
+  title="Brand Design | Frame Of Rangga"
+  description="Brand identity, desain sosial media, poster, dan visual branding memorable oleh Rangga Danuarta."
+  keywords="brand design, graphic design, brand identity, logo design, social media design, poster design, visual branding, Figma, Illustrator"
+  ogTitle="Brand Design | Frame Of Rangga"
+  ogDescription="Brand identity, desain sosial media, poster, dan visual branding memorable oleh Rangga Danuarta."
+  ogUrl="https://web-portfolio-gray-ten.vercel.app/design"
+  hasGlightbox={true}
+  hasSwiper={true}
+>
+  <Navbar slot="navbar" activePage="design" />
+
+  <!-- GALLERY -->
+  <section class="gallery-section" transition:animate="fade">
+    <h1 class="fade-up">Design Showcase</h1>
+    <p class="gallery-subtitle fade-up">Brand identity, social media content, dan visual branding yang memorable</p>
+
+    <!-- Carousel -->
+    <div class="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+          <div class="swiper-slide"><img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+          <div class="swiper-slide"><img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+          <div class="swiper-slide"><img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+          <div class="swiper-slide"><img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+          <div class="swiper-slide"><img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" width="1200" height="800" onerror="this.style.display='none'" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar fade-up" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="brand">Brand Identity</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="poster">Poster</button>
+      <button class="filter-btn" data-filter="advertising">Advertising</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid fade-up">
+
+      <!-- Brand Identity -->
+      <GalleryItem
+        src="/assets/design/brand/skincare.png"
+        alt="Skincare Brand Design"
+        title="Brand Identity — Skincare"
+        category="brand"
+        href="/assets/design/brand/skincare.png"
+        gallery="design-gallery"
+      />
+      <GalleryItem
+        src="/assets/design/brand/desain elektronik.png"
+        alt="Elektronik Product Design"
+        title="Brand Identity — Elektronik"
+        category="brand"
+        href="/assets/design/brand/desain elektronik.png"
+        gallery="design-gallery"
+      />
+      <GalleryItem
+        src="/assets/design/brand/LACOSTE.png"
+        alt="LACOSTE Brand Design"
+        title="Brand Identity — LACOSTE"
+        category="brand"
+        href="/assets/design/brand/LACOSTE.png"
+        gallery="design-gallery"
+      />
+
+      <!-- Social Media -->
+      <GalleryItem
+        src="/assets/design/social/carousels 1.png"
+        alt="Social Media Carousel Design"
+        title="Social Media — Carousel"
+        category="social"
+        href="/assets/design/social/carousels 1.png"
+        gallery="design-gallery"
+      />
+      <GalleryItem
+        src="/assets/design/social/desain iklan parfum.png"
+        alt="Parfum Advertisement Design"
+        title="Social Media — Parfum Iklan"
+        category="social"
+        href="/assets/design/social/desain iklan parfum.png"
+        gallery="design-gallery"
+      />
+
+      <!-- Poster -->
+      <GalleryItem
+        src="/assets/design/social/poster edukasi.png"
+        alt="Educational Poster Design"
+        title="Poster — Edukasi"
+        category="poster"
+        href="/assets/design/social/poster edukasi.png"
+        gallery="design-gallery"
+      />
+      <GalleryItem
+        src="/assets/design/social/poster product.png"
+        alt="Product Poster Design"
+        title="Poster — Product"
+        category="poster"
+        href="/assets/design/social/poster product.png"
+        gallery="design-gallery"
+      />
+
+      <!-- Advertising -->
+      <GalleryItem
+        src="/assets/design/social/poster tips.png"
+        alt="Tips Social Media Design"
+        title="Advertising — Tips Konten"
+        category="advertising"
+        href="/assets/design/social/poster tips.png"
+        gallery="design-gallery"
+      />
+
+    </div>
+  </section>
+
+  <PortfolioCTA />
+
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function initGL() {
+    if (typeof GLightbox === 'undefined') {
+      setTimeout(initGL, 100);
+      return;
+    }
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false,
+      zoomable: true,
+    });
+  });
+
+  /* ---------- CATEGORY FILTER (standalone, not dependent on script.js) ---------- */
+  (function() {
+    const filterBar = document.querySelector('.filter-bar');
+    if (!filterBar) return;
+    const btns = filterBar.querySelectorAll('.filter-btn');
+    const grid = document.querySelector('.gallery-grid');
+    if (!grid) return;
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const filter = btn.dataset.filter;
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        grid.querySelectorAll('.gallery-item').forEach(function(item) {
+          const cat = item.dataset.category || '';
+          item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>

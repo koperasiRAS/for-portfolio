@@ -1,0 +1,187 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage?: string;
+  ogUrl?: string;
+  canonicalUrl?: string;
+  bodyClass?: string;
+  hasGlightbox?: boolean;
+  hasSwiper?: boolean;
+  hasHeroPreload?: boolean;
+}
+
+const {
+  title,
+  description,
+  keywords = 'photography, videography, design, branding, visual storytelling, Indonesia',
+  ogTitle,
+  ogDescription,
+  ogImage = 'https://web-portfolio-gray-ten.vercel.app/assets/foto/foto cover halaman utama.jpg',
+  ogUrl,
+  canonicalUrl,
+  bodyClass = '',
+  hasGlightbox = false,
+  hasSwiper = false,
+  hasHeroPreload = false,
+} = Astro.props;
+
+const siteUrl = 'https://web-portfolio-gray-ten.vercel.app';
+const pageUrl = canonicalUrl ?? ogUrl ?? siteUrl;
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+---
+
+<!DOCTYPE html>
+<html lang="id" data-theme>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Rangga Danuarta" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:site_name" content="Frame Of Rangga" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={ogDescription} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:site" content="@frameofrangga" />
+  <title>{title}</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href={pageUrl} />
+
+  <!-- JSON-LD Structured Data -->
+  {isHome ? (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rangga Danuarta",
+    "alternateName": ["FOR", "Frame Of Rangga"],
+    "jobTitle": "Visual Storyteller",
+    "url": siteUrl,
+    "description": "Visual storyteller specializing in photography, videography, and brand design based in Depok, Jawa Barat, Indonesia.",
+    "knowsAbout": ["Photography", "Videography", "Graphic Design", "Web Development"],
+    "areaServed": { "@type": "Country", "name": "Indonesia" },
+    "sameAs": [
+      "https://instagram.com/frameofrangga",
+      "https://www.tiktok.com/@madebyrangga"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "frameofrangga@gmail.com",
+      "telephone": "+62895321693131",
+      "contactType": "Customer Service"
+    }
+  })} />
+  ) : (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": ogTitle,
+    "description": description,
+    "url": pageUrl,
+    "isPartOf": { "@type": "WebSite", "name": "Frame Of Rangga", "url": siteUrl }
+  })} />
+  )}
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Hero image preload for LCP (home page only) -->
+  {hasHeroPreload && (
+    <link rel="preload" as="image" href="/assets/foto/foto cover halaman utama.jpg" />
+  )}
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Swiper (foto, design, video pages) -->
+  {hasSwiper && (
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  )}
+
+  <!-- GLightbox (foto, design, video, website pages) -->
+  {hasGlightbox && (
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  )}
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Theme init — runs before paint to prevent flash -->
+  <script is:inline>
+    (function() {
+      var saved = localStorage.getItem('for-theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body class={bodyClass}>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-gradient"></div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loading-screen" id="loader" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-text">FOR</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <slot name="navbar" />
+
+  <!-- Back to Top -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Page Content -->
+  <slot />
+
+  <!-- Footer -->
+  <slot name="footer" />
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  {hasSwiper && (
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  )}
+  {hasGlightbox && (
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  )}
+  <script is:inline src="/scripts/components.js"></script>
+  <script is:inline src="/scripts/script.js"></script>
+
+  <!-- Asset error debug — remove after QA -->
+  <script is:inline>
+    window.addEventListener('error', function(e) {
+      var src = e.target ? (e.target.src || e.target.href || e.target.localName) : e.message;
+      console.error('[DEBUG] Asset error:', src);
+    });
+  </script>
+</body>
+</html>
