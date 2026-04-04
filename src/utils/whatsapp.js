@@ -3,7 +3,7 @@
  * Semua pesan WhatsApp terpusat di sini untuk mudah diupdate
  */
 
-export const WA_NUMBER = '62895321693131'
+export const WA_NUMBER = '6287779560264'
 
 export const WA_MESSAGES = {
 
