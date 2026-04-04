@@ -48,27 +48,10 @@ import { waLink } from '../utils/whatsapp.js';
           Frame of<br />
           <span class="stitch-hero-title-accent">Rangga</span>
         </h1>
-        <!-- Description + Stats -->
-        <div class="stitch-hero-desc-row">
-          <p class="stitch-hero-desc">
-            Crafting visual narratives through the lens of cinematic precision and editorial depth. Creative Direction for the digital age.
-          </p>
-          <!-- Stats row -->
-          <div class="stitch-hero-stats">
-            <div class="stitch-stat">
-              <div class="stitch-stat-value">08+</div>
-              <div class="stitch-stat-label">Years Exp.</div>
-            </div>
-            <div class="stitch-stat">
-              <div class="stitch-stat-value">140</div>
-              <div class="stitch-stat-label">Projects</div>
-            </div>
-            <div class="stitch-stat">
-              <div class="stitch-stat-value">12</div>
-              <div class="stitch-stat-label">Awards</div>
-            </div>
-          </div>
-        </div>
+        <!-- Description -->
+        <p class="stitch-hero-desc">
+          Crafting visual narratives through the lens of cinematic precision and editorial depth. Creative Direction for the digital age.
+        </p>
       </div>
 
       <!-- Portrait -->
@@ -473,51 +456,12 @@ import { waLink } from '../utils/whatsapp.js';
     font-style: italic;
   }
 
-  /* Desc row */
-  .stitch-hero-desc-row {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    border-top: 1px solid rgba(64, 72, 93, 0.2);
-    padding-top: 24px;
-  }
-
+  /* Desc */
   .stitch-hero-desc {
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--on-surface-variant);
-    max-width: 480px;
-  }
-
-  /* Stats */
-  .stitch-hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .stitch-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .stitch-stat-value {
-    font-family: 'Manrope', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--on-surface);
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-
-  .stitch-stat-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--on-surface-variant);
+    max-width: 520px;
   }
 
   /* Portrait */
@@ -616,18 +560,8 @@ import { waLink } from '../utils/whatsapp.js';
       font-size: clamp(72px, 12vw, 120px);
     }
 
-    .stitch-hero-desc-row {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 48px;
-    }
-
-    .stitch-hero-stats {
-      gap: 32px;
-    }
-
-    .stitch-stat-value {
-      font-size: 42px;
+    .stitch-hero-desc {
+      font-size: 16px;
     }
 
     .stitch-hero-portrait-inner {
@@ -659,25 +593,9 @@ import { waLink } from '../utils/whatsapp.js';
       letter-spacing: -3px;
     }
 
-    .stitch-hero-desc-row {
-      flex-direction: row;
-      align-items: flex-end;
-      gap: 64px;
-    }
-
     .stitch-hero-desc {
       max-width: 520px;
       font-size: 16px;
-    }
-
-    .stitch-hero-stats {
-      gap: 40px;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    .stitch-stat-value {
-      font-size: 48px;
     }
 
     .stitch-hero-portrait {

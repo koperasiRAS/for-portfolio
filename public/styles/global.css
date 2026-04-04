@@ -373,7 +373,7 @@ textarea:focus-visible {
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 9999;
+  z-index: 10000;
   height: var(--nav-h);
   display: flex;
   align-items: center;
@@ -2487,6 +2487,7 @@ body.glightbox-open { overflow: hidden; }
     display: flex;
     z-index: 10001;
     animation: navSlideDown 0.3s ease-out;
+    pointer-events: auto;
   }
 
   @keyframes navSlideDown {
