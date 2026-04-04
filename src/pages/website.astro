@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
+import { waLink } from '../utils/whatsapp.js';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
         <a href="#projects" class="web-stitch-btn-primary">
           Lihat Projects
         </a>
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-stitch-btn-ghost">
+        <a href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="web-stitch-btn-ghost">
           <i class="fas fa-comment-dots"></i>
           Hubungi via WhatsApp
         </a>
@@ -96,7 +97,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           <a href="https://for-portfolio-mu.vercel.app" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Kunjungi Website
           </a>
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+          <a href={waLink('web_portfolio')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Tanya Project
           </a>
         </div>
@@ -120,8 +121,8 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20landing%20page" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Tanya Project
           </a>
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
-            <i class="fab fa-whatsapp"></i> Tanya Project
+          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+            <i class="fab fa-whatsapp"></i> Konsultasi
           </a>
         </div>
       </div>
@@ -201,7 +202,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20sistem%20POS" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Tanya Project
           </a>
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+          <a href={waLink('web_sistem')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Konsultasi
           </a>
         </div>
@@ -225,7 +226,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           <a href="https://wa.me/62895321693131?text=Halo%2C%20saya%20tertarik%20dengan%20landing%20page%20untuk%20brand%20saya" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-primary">
             <i class="fas fa-external-link-alt"></i> Tanya Project
           </a>
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
+          <a href={waLink('web_landing')} target="_blank" rel="noopener noreferrer" class="web-project-link web-project-link-ghost">
             <i class="fab fa-whatsapp"></i> Konsultasi
           </a>
         </div>
@@ -267,7 +268,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
         <p class="web-stitch-bento-desc">
           We don't just build websites; we engineer experiences that convert attention into authority.
         </p>
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="web-stitch-bento-link">
+        <a href={waLink('web_general')} target="_blank" rel="noopener noreferrer" class="web-stitch-bento-link">
           Start a conversation
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -291,7 +292,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     <div class="web-cta-box fade-up">
       <h2>Punya ide project?</h2>
       <p>Diskusi gratis — ceritakan ide Anda dan kita bikin jadi kenyataan.</p>
-      <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-web-solid">
+      <a href={waLink('web_general')} target="_blank" rel="noopener" class="btn btn-web-solid">
         <i class="fab fa-whatsapp"></i> Chat Sekarang
       </a>
     </div>

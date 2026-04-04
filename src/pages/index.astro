@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
+import { waLink } from '../utils/whatsapp.js';
 ---
 
 <BaseLayout
@@ -143,7 +144,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
             <span class="stat-label">Services</span>
           </div>
         </div>
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href={waLink('general')} target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> Chat via WhatsApp
         </a>
       </div>
@@ -317,7 +318,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         <span>atau hubungi langsung</span>
       </div>
       <div class="contact-buttons">
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href={waLink('collab')} target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener" class="btn btn-ghost">

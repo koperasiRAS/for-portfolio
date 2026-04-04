@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PortfolioCTA from '../components/PortfolioCTA.astro';
+import { waLink } from '../utils/whatsapp.js';
 ---
 
 <BaseLayout
@@ -220,7 +221,7 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
           I specialize in helping brands find their unique visual voice through intentional design and strategic storytelling. Currently accepting new projects.
         </p>
         <div class="stitch-design-cta-buttons">
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="stitch-cta-primary">
+          <a href={waLink('design_general')} target="_blank" rel="noopener noreferrer" class="stitch-cta-primary">
             Start Project
           </a>
           <a href="#" class="stitch-cta-secondary">

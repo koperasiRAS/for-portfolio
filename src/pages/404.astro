@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { waLink } from '../utils/whatsapp.js';
 ---
 
 <BaseLayout
@@ -23,7 +24,7 @@ import Footer from '../components/Footer.astro';
         <a href="/" class="btn btn-primary">
           <i class="fas fa-home"></i> Kembali ke Home
         </a>
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+        <a href={waLink('general')} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> Hubungi Kami
         </a>
       </div>
