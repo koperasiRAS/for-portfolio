@@ -232,6 +232,28 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 
   </section>
 
+  <!-- Bottom Nav Bar (Mobile Only) -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bottom-nav-inner">
+      <a href="/" class="bottom-nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/foto" class="bottom-nav-item">
+        <i class="fas fa-camera"></i>
+        <span>Foto</span>
+      </a>
+      <a href="/video" class="bottom-nav-item">
+        <i class="fas fa-play"></i>
+        <span>Video</span>
+      </a>
+      <a href="/design" class="bottom-nav-item active">
+        <i class="fas fa-palette"></i>
+        <span>Design</span>
+      </a>
+    </div>
+  </nav>
+
   <Footer slot="footer" variant="minimal" />
 </BaseLayout>
 
@@ -705,6 +727,104 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 
     .filter-bar::-webkit-scrollbar {
       display: none;
+    }
+  }
+
+  /* Responsive — Mobile (480px) */
+  @media (max-width: 600px) {
+    .stitch-hero {
+      padding: 88px 20px 40px;
+    }
+
+    .stitch-header-title {
+      font-size: clamp(28px, 10vw, 40px);
+    }
+
+    .stitch-header-desc p {
+      font-size: 14px;
+    }
+
+    .filter-bar {
+      padding: 0 20px 8px;
+      margin-bottom: 24px;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+
+    .filter-bar,
+    .gallery-section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .stitch-design-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      grid-auto-rows: 240px;
+    }
+
+    .stitch-design-card-overlay {
+      opacity: 1;
+      padding: 16px;
+    }
+
+    .stitch-design-card-desc {
+      display: none;
+    }
+
+    .stitch-design-card-link {
+      font-size: 12px;
+    }
+
+    .stitch-design-cta {
+      margin-top: 48px;
+      padding: 32px 20px;
+    }
+
+    .stitch-design-cta-title {
+      font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .stitch-design-cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .stitch-design-cta-btns {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stitch-hero {
+      padding: 80px 20px 32px;
+    }
+
+    .stitch-header-label {
+      font-size: 10px;
+    }
+
+    .stitch-design-grid {
+      grid-auto-rows: 200px;
+    }
+
+    .stitch-design-card-overlay {
+      padding: 12px;
+    }
+
+    .stitch-badge-pill {
+      font-size: 9px;
+      padding: 3px 8px;
+    }
+
+    .stitch-design-card-title {
+      font-size: 14px;
     }
   }
 </style>

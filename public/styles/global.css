@@ -181,6 +181,7 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -193,6 +194,24 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
+
+/* iOS input zoom prevention — font-size must be >= 16px */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Filter bar horizontal scroll utility (mobile) */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: nowrap;
+  padding-bottom: 4px;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.filter-bar::-moz-scrollbar { display: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Manrope', sans-serif;
@@ -472,6 +491,88 @@ textarea:focus-visible {
 }
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ---------- BOTTOM NAVIGATION BAR (Mobile Only) ---------- */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  background: rgba(6, 14, 32, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(64, 72, 93, 0.3);
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+.bottom-nav-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav-item i {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.bottom-nav-item span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bottom-nav-item.active {
+  color: var(--accent-primary);
+}
+
+.bottom-nav-item:hover {
+  color: var(--accent-primary);
+}
+
+/* Active dot indicator */
+.bottom-nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 0 0 2px 2px;
+}
+
+/* Show bottom nav on mobile only — syncs with hamburger at 640px */
+@media (max-width: 640px) {
+  .bottom-nav {
+    display: block;
+  }
+  body {
+    padding-bottom: 72px;
+  }
 }
 
 /* ---------- THEME TOGGLE ---------- */

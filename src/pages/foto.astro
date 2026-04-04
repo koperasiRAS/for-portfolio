@@ -209,6 +209,28 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
   <PortfolioCTA />
 
   <Footer slot="footer" variant="minimal" />
+
+  <!-- Bottom Nav Bar (Mobile Only) -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bottom-nav-inner">
+      <a href="/" class="bottom-nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/foto" class="bottom-nav-item active">
+        <i class="fas fa-camera"></i>
+        <span>Foto</span>
+      </a>
+      <a href="/video" class="bottom-nav-item">
+        <i class="fas fa-play"></i>
+        <span>Video</span>
+      </a>
+      <a href="/design" class="bottom-nav-item">
+        <i class="fas fa-palette"></i>
+        <span>Design</span>
+      </a>
+    </div>
+  </nav>
 </BaseLayout>
 
 <style>
@@ -447,41 +469,113 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     transform: translateX(4px);
   }
 
-  /* Responsive */
-  @media (max-width: 900px) {
+  /* Responsive — iPad (768px) */
+  @media (max-width: 768px) {
     .stitch-hero {
-      padding: 120px 24px 60px;
+      padding: 100px 24px 60px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(40px, 10vw, 72px);
     }
 
     .filter-bar,
     .stitch-bento-grid {
-      padding: 0 24px;
+      padding: 0 20px;
+    }
+
+    /* 2-column masonry-like gallery */
+    .stitch-bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
     }
 
     .stitch-card-featured {
-      grid-column: span 12;
+      grid-column: span 2;
     }
 
     .stitch-card:not(.stitch-card-featured) {
-      grid-column: span 6;
+      grid-column: span 1;
+    }
+
+    /* Offset every even card to create masonry feel */
+    .stitch-card:nth-child(even):not(.stitch-card-featured) {
+      margin-top: 24px;
     }
   }
 
+  /* Responsive — Mobile (480px) */
   @media (max-width: 600px) {
-    .stitch-card-featured,
-    .stitch-card:not(.stitch-card-featured) {
-      grid-column: span 12;
+    .stitch-hero {
+      padding: 88px 20px 48px;
     }
 
+    .stitch-hero-title {
+      font-size: clamp(36px, 12vw, 56px);
+    }
+
+    .stitch-hero-sub {
+      font-size: 15px;
+    }
+
+    /* Filter: horizontal scroll */
     .filter-bar {
       gap: 8px;
       overflow-x: auto;
       flex-wrap: nowrap;
-      padding-bottom: 8px;
+      padding: 0 20px 8px;
       scrollbar-width: none;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .filter-bar::-webkit-scrollbar {
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .filter-btn {
+      flex-shrink: 0;
+      font-size: 12px;
+      padding: 8px 18px;
+    }
+
+    /* Single column gallery */
+    .stitch-bento-grid {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+      gap: 16px;
+    }
+
+    .stitch-card-featured,
+    .stitch-card:not(.stitch-card-featured) {
+      grid-column: span 1;
+    }
+
+    .stitch-card:nth-child(even):not(.stitch-card-featured) {
+      margin-top: 0;
+    }
+
+    .stitch-card-overlay {
+      opacity: 1;
+    }
+
+    .stitch-archive-cta {
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stitch-hero {
+      padding: 80px 20px 40px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(32px, 14vw, 48px);
+    }
+
+    .stitch-card-overlay {
+      opacity: 1;
+    }
+
+    .stitch-card-desc {
       display: none;
     }
   }

@@ -333,6 +333,28 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   <!-- Footer slot -->
   <Footer slot="footer" variant="full" />
 
+  <!-- Bottom Nav Bar (Mobile Only) -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="bottom-nav-inner">
+      <a href="/" class="bottom-nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/foto" class="bottom-nav-item">
+        <i class="fas fa-camera"></i>
+        <span>Foto</span>
+      </a>
+      <a href="/video" class="bottom-nav-item">
+        <i class="fas fa-play"></i>
+        <span>Video</span>
+      </a>
+      <a href="/design" class="bottom-nav-item">
+        <i class="fas fa-palette"></i>
+        <span>Design</span>
+      </a>
+    </div>
+  </nav>
+
   <!-- JSON-LD Person Structured Data -->
   <script type="application/ld+json">
   {
@@ -361,6 +383,120 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   }
   </script>
 </BaseLayout>
+
+<style>
+  /* =============================================
+     HOME PAGE — Mobile & iPad Responsive
+     ============================================= */
+
+  /* iPad: hero 2-column stays, adjust spacing */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .hero-content {
+      align-items: center;
+    }
+    .hero-sub {
+      max-width: 100%;
+    }
+    .hero-cta {
+      justify-content: center;
+    }
+    .hero-portrait {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+    }
+    .hero-headline {
+      font-size: clamp(48px, 12vw, 72px);
+    }
+    .preview-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: 0 24px;
+    }
+    .about-text {
+      text-align: center;
+    }
+    .about-stats {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-inner {
+      padding: 24px 20px 40px;
+    }
+    .hero-headline {
+      font-size: clamp(40px, 14vw, 60px);
+      letter-spacing: -1px;
+    }
+    .hero-badge {
+      font-size: 10px;
+      padding: 6px 12px;
+    }
+    .hero-portrait {
+      max-width: 280px;
+    }
+    .hero-experience-badge {
+      right: 0;
+      bottom: 16px;
+      padding: 10px 14px;
+    }
+    .hero-experience-badge strong {
+      font-size: 22px;
+    }
+    .preview-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .preview-card {
+      aspect-ratio: 1 / 1;
+    }
+    .preview-overlay {
+      opacity: 1;
+      background: linear-gradient(to top, rgba(15, 25, 48, 0.7) 0%, transparent 60%);
+    }
+    .preview-overlay-content {
+      padding: 12px;
+    }
+    .preview-overlay-content i {
+      font-size: 14px;
+    }
+    .preview-overlay-title {
+      font-size: 11px;
+    }
+    .preview-overlay-arrow {
+      display: none;
+    }
+    .about-inner {
+      padding: 0 20px;
+      gap: 32px;
+    }
+    .about-bio {
+      font-size: 14px;
+    }
+    .about-stats {
+      gap: 12px;
+    }
+    .section-title {
+      font-size: 28px;
+    }
+  }
+</style>
 
 <script>
   function animateCounters() {
