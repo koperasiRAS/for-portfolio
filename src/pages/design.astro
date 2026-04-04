@@ -15,38 +15,45 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 >
   <Navbar slot="navbar" activePage="design" />
 
+  <!-- PAGE HERO -->
+  <section class="page-hero" transition:animate="fade">
+    <div class="page-hero-bg-glow" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="section-label gradient-label">Portfolio</span>
+      <h1 class="page-hero-title">Design Showcase</h1>
+      <p class="page-hero-sub">Brand identity, social media content, dan visual branding yang memorable dan berdampak.</p>
+    </div>
+  </section>
+
+  <!-- CAROUSEL -->
+  <section class="photo-carousel-section" transition:animate="fade">
+    <div class="carousel-container fade-up">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" />
+        </div>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
   <!-- GALLERY -->
   <section class="gallery-section" transition:animate="fade">
-    <h1 class="fade-up">Design Showcase</h1>
-    <p class="gallery-subtitle fade-up">Brand identity, social media content, dan visual branding yang memorable</p>
-
-    <!-- Carousel -->
-    <div class="fade-up">
-      <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-slide">
-            <img src="/assets/design/social/desain iklan parfum.png" alt="Parfum Advertisement Design" loading="lazy" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/assets/design/brand/skincare.png" alt="Skincare Brand Design" loading="lazy" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/assets/design/brand/desain elektronik.png" alt="Elektronik Product Design" loading="lazy" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/assets/design/social/carousels 1.png" alt="Social Media Carousel Design" loading="lazy" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/assets/design/social/poster edukasi.png" alt="Educational Poster Design" loading="lazy" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/assets/design/social/poster product.png" alt="Product Poster Design" loading="lazy" />
-          </div>
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
-      </div>
-    </div>
-
     <!-- Filter Bar -->
     <div class="filter-bar fade-up" aria-label="Filter by category">
       <button class="filter-btn active" data-filter="all">Semua</button>

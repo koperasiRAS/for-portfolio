@@ -14,10 +14,17 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
 >
   <Navbar slot="navbar" activePage="video" />
 
-  <section class="gallery-section" transition:animate="fade">
-    <h1 class="fade-up">Video Portfolio</h1>
-    <p class="gallery-subtitle fade-up">Koleksi video brand, dokumentasi event, dan konten kreatif dengan pendekatan cinematic storytelling</p>
+  <!-- PAGE HERO -->
+  <section class="page-hero" transition:animate="fade">
+    <div class="page-hero-bg-glow" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="section-label gradient-label">Portfolio</span>
+      <h1 class="page-hero-title">Video Portfolio</h1>
+      <p class="page-hero-sub">Koleksi video brand, dokumentasi event, dan konten kreatif dengan pendekatan cinematic storytelling.</p>
+    </div>
+  </section>
 
+  <section class="video-section" transition:animate="fade">
     <!-- Update notice -->
     <div class="update-notice fade-up">
       <i class="fas fa-film"></i>
@@ -37,98 +44,94 @@ import PortfolioCTA from '../components/PortfolioCTA.astro';
     <div class="video-grid fade-up">
 
       <!-- Card 1: Brand Video -->
-      <!-- GANTI: YouTube video ID kamu (dari URL youtube.com/watch?v=XXXX) -->
       <a class="glightbox video-card"
          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
          data-type="video"
          data-source="youtube"
          data-gallery="videos"
          data-category="brand">
-        <div class="thumbnail-wrapper">
+        <div class="video-thumb-wrap">
           <img src="/assets/thumbnails/ss keyboard.png" alt="Brand Video" loading="lazy" />
           <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
+            <div class="play-btn">
+              <i class="fas fa-play play-icon"></i>
+            </div>
           </div>
-          <span class="duration-badge">3:45</span>
-          <span class="category-badge">Brand Video</span>
+          <span class="video-duration-badge">3:45</span>
         </div>
-        <div class="card-info">
-          <h3>Brand Video: Client Project</h3>
-          <p>Video campaign dengan pendekatan cinematic storytelling untuk brand.</p>
+        <div class="video-card-body">
+          <span class="video-cat-label">Brand Video</span>
+          <h3 class="video-card-title">Brand Video: Client Project</h3>
+          <p class="video-card-desc">Video campaign dengan pendekatan cinematic storytelling untuk brand.</p>
         </div>
       </a>
 
       <!-- Card 2: Dokumentasi -->
-      <!-- GANTI: YouTube video ID kamu (dari URL youtube.com/watch?v=XXXX) -->
       <a class="glightbox video-card"
          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
          data-type="video"
          data-source="youtube"
          data-gallery="videos"
          data-category="dokumentasi">
-        <div class="thumbnail-wrapper">
+        <div class="video-thumb-wrap">
           <img src="/assets/thumbnails/ss laptop.png" alt="Dokumentasi Event" loading="lazy" />
           <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
+            <div class="play-btn">
+              <i class="fas fa-play play-icon"></i>
+            </div>
           </div>
-          <span class="duration-badge">5:20</span>
-          <span class="category-badge">Dokumentasi</span>
+          <span class="video-duration-badge">5:20</span>
         </div>
-        <div class="card-info">
-          <h3>Dokumentasi Event</h3>
-          <p>Coverage acara dan event dengan hasil yang dinamis dan emosional.</p>
+        <div class="video-card-body">
+          <span class="video-cat-label">Dokumentasi</span>
+          <h3 class="video-card-title">Dokumentasi Event</h3>
+          <p class="video-card-desc">Coverage acara dan event dengan hasil yang dinamis dan emosional.</p>
         </div>
       </a>
 
       <!-- Card 3: Konten Sosial Media -->
-      <!-- GANTI: YouTube video ID kamu (dari URL youtube.com/watch?v=XXXX) -->
       <a class="glightbox video-card"
          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
          data-type="video"
          data-source="youtube"
          data-gallery="videos"
          data-category="sosmed">
-        <div class="thumbnail-wrapper">
+        <div class="video-thumb-wrap">
           <img src="/assets/thumbnails/web1.png" alt="Konten Sosmed" loading="lazy" />
           <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
+            <div class="play-btn">
+              <i class="fas fa-play play-icon"></i>
+            </div>
           </div>
-          <span class="duration-badge">0:30</span>
-          <span class="category-badge">Konten Sosial Media</span>
+          <span class="video-duration-badge">0:30</span>
         </div>
-        <div class="card-info">
-          <h3>Konten Sosial Media</h3>
-          <p>Short-form content yang engaging untuk Instagram, TikTok, dan YouTube Shorts.</p>
+        <div class="video-card-body">
+          <span class="video-cat-label">Konten Sosial Media</span>
+          <h3 class="video-card-title">Konten Sosial Media</h3>
+          <p class="video-card-desc">Short-form content yang engaging untuk Instagram, TikTok, dan YouTube Shorts.</p>
         </div>
       </a>
 
       <!-- Card 4: Promosi -->
-      <!-- GANTI: YouTube video ID kamu (dari URL youtube.com/watch?v=XXXX) -->
       <a class="glightbox video-card"
          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
          data-type="video"
          data-source="youtube"
          data-gallery="videos"
          data-category="promosi">
-        <div class="thumbnail-wrapper">
+        <div class="video-thumb-wrap">
           <img src="/assets/thumbnails/web2.png" alt="Video Promosi" loading="lazy" />
           <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
+            <div class="play-btn">
+              <i class="fas fa-play play-icon"></i>
+            </div>
           </div>
-          <span class="duration-badge">1:00</span>
-          <span class="category-badge">Promosi</span>
+          <span class="video-duration-badge">1:00</span>
         </div>
-        <div class="card-info">
-          <h3>Video Promosi Produk</h3>
-          <p>Video iklan yang langsung nge-hit target audiens dan boost conversion.</p>
+        <div class="video-card-body">
+          <span class="video-cat-label">Promosi</span>
+          <h3 class="video-card-title">Video Promosi Produk</h3>
+          <p class="video-card-desc">Video iklan yang langsung nge-hit target audiens dan boost conversion.</p>
         </div>
       </a>
 

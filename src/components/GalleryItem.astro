@@ -30,16 +30,18 @@ const {
   >
     <img src={src} alt={alt} loading={loading} width="600" height="400" />
     <div class="gallery-overlay">
+      <span class="gallery-cat-badge">{category}</span>
       <span class="gallery-item-title">{title}</span>
-      <i class="fas fa-expand"></i>
+      <i class="fas fa-expand gallery-expand-icon"></i>
     </div>
   </a>
 ) : (
   <div class="gallery-item" data-category={category}>
     <img src={src} alt={alt} loading={loading} width="600" height="400" />
     <div class="gallery-overlay">
+      <span class="gallery-cat-badge">{category}</span>
       <span class="gallery-item-title">{title}</span>
-      <i class="fas fa-expand"></i>
+      <i class="fas fa-expand gallery-expand-icon"></i>
     </div>
   </div>
 )}
