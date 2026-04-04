@@ -18,75 +18,91 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 
   <!-- HERO -->
   <header class="hero" id="hero" transition:animate="fade">
+    <div class="hero-bg-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <!-- Portrait -->
-      <div class="hero-portrait fade-up">
-        <div class="portrait-frame glass">
-          <img
-            src="/assets/foto/foto cover halaman utama.jpg"
-            alt="Rangga Danuarta - Frame Of Rangga"
-            class="portrait"
-            loading="eager"
-            fetchpriority="high"
-            onerror="this.style.display='none'"
-          />
-          <div class="portrait-overlay" aria-hidden="true"></div>
-        </div>
-        <div class="portrait-badge glass" aria-label="Experience badge">
-          <strong>4+</strong>
-          Years Experience
-        </div>
-      </div>
-
-      <!-- Content -->
+      <!-- Left: Copy -->
       <div class="hero-content fade-up">
-        <span class="kicker">Photography &bull; Videography &bull; Design &bull; Web Dev</span>
-        <h1>
-          Frame Of<br>
-          <span class="accent">Rangga</span>
+        <span class="hero-badge">
+          <i class="fas fa-star"></i> Visual Storyteller
+        </span>
+        <h1 class="hero-headline">
+          Frame<br>Of<br>
+          <span class="text-glow">Rangga</span>
         </h1>
-        <p class="lead">
+        <p class="hero-sub">
           Menciptakan karya visual yang bercerita dan berkarakter. Mari kita bangun narasi visual dan brand presence yang kuat.
         </p>
         <div class="hero-cta">
           <a href="/design" class="btn btn-primary">
-            <i class="fas fa-folder-open"></i>
-            See All Projects
+            <i class="fas fa-folder-open"></i> See Projects
           </a>
           <a href="#contact" class="btn btn-ghost">
-            <i class="fas fa-paper-plane"></i>
-            Contact Now
+            <i class="fas fa-paper-plane"></i> Contact
           </a>
+        </div>
+      </div>
+
+      <!-- Right: Portrait -->
+      <div class="hero-portrait fade-up">
+        <div class="hero-portrait-wrap">
+          <img
+            src="/assets/foto/foto cover halaman utama.jpg"
+            alt="Rangga Danuarta - Frame Of Rangga"
+            loading="eager"
+            fetchpriority="high"
+            onerror="this.style.display='none'"
+          />
+          <div class="hero-portrait-glow" aria-hidden="true"></div>
+        </div>
+        <div class="hero-experience-badge" aria-label="Experience badge">
+          <strong>4+</strong>
+          <span>Years<br>Experience</span>
         </div>
       </div>
     </div>
 
-    <!-- Preview cards -->
+    <!-- Preview Categories -->
     <div class="hero-previews">
       <p class="preview-section-label">Explore Categories</p>
       <div class="preview-grid fade-up">
         <a href="/foto" class="preview-card">
           <img src="/assets/foto/fotografer/fotografi gojek.jpg" alt="Photography portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-label">
-            <i class="fas fa-camera preview-icon"></i>Photography
+          <div class="preview-overlay">
+            <div class="preview-overlay-content">
+              <i class="fas fa-camera"></i>
+              <span class="preview-overlay-title">Photography</span>
+              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
           </div>
         </a>
         <a href="/video" class="preview-card">
           <img src="/assets/thumbnails/ss keyboard.png" alt="Video portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-label">
-            <i class="fas fa-play preview-icon"></i>Video
+          <div class="preview-overlay">
+            <div class="preview-overlay-content">
+              <i class="fas fa-play"></i>
+              <span class="preview-overlay-title">Video</span>
+              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
           </div>
         </a>
         <a href="/design" class="preview-card">
           <img src="/assets/design/brand/desain elektronik.png" alt="Design portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-label">
-            <i class="fas fa-palette preview-icon"></i>Design
+          <div class="preview-overlay">
+            <div class="preview-overlay-content">
+              <i class="fas fa-palette"></i>
+              <span class="preview-overlay-title">Design</span>
+              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
           </div>
         </a>
         <a href="/website" class="preview-card">
           <img src="/assets/thumbnails/web1.png" alt="Web Development portfolio preview" loading="lazy" width="600" height="400" onerror="this.style.display='none'" />
-          <div class="preview-label">
-            <i class="fas fa-code preview-icon"></i>Web Dev
+          <div class="preview-overlay">
+            <div class="preview-overlay-content">
+              <i class="fas fa-code"></i>
+              <span class="preview-overlay-title">Web Dev</span>
+              <span class="preview-overlay-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
           </div>
         </a>
       </div>
@@ -99,13 +115,18 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   <!-- ABOUT -->
   <section class="about" id="about" transition:animate="fade">
     <div class="about-inner">
+      <div class="about-photo fade-up">
+        <div class="about-photo-wrap">
+          <img src="/assets/foto/about rangga.jpg" alt="Rangga Danuarta" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+      </div>
       <div class="about-text fade-up">
-        <span class="section-label">About</span>
+        <span class="section-label gradient-label">TENTANG FOR</span>
         <h2 class="section-title">About Me</h2>
         <p class="about-bio">
           Saya Rangga Danuarta, seorang Visual Storyteller dan Creative Professional berbasis di Depok, Indonesia. Dengan pengalaman lebih dari 4 tahun di bidang fotografi, videografi, brand design, dan web development, saya berdedikasi untuk menghadirkan karya visual yang tidak hanya estetis, tetapi juga berdampak nyata bagi brand dan bisnis klien.
         </p>
-        <p class="about-bio" style="margin-top:12px;">
+        <p class="about-bio">
           Setiap project dikerjakan dengan pendekatan yang terstruktur: mulai dari riset mendalam, pengembangan konsep, eksekusi teknis, hingga final delivery yang memenuhi standar kualitas tertinggi. Saya percaya bahwa visual yang kuat adalah fondasi dari komunikasi brand yang efektif.
         </p>
         <div class="about-stats">
@@ -122,18 +143,9 @@ import TestimonialCard from '../components/TestimonialCard.astro';
             <span class="stat-label">Services</span>
           </div>
         </div>
-        <div class="about-cta">
-          <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-ghost">
-            <i class="fab fa-whatsapp"></i>
-            Chat via WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div class="about-photo fade-up">
-        <div class="about-photo-card" style="aspect-ratio: 4 / 5; width: 100%; max-width: 400px; overflow: hidden; border-radius: 12px;">
-          <img src="/assets/foto/about rangga.jpg" alt="Rangga Danuarta" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'" />
-        </div>
+        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -175,8 +187,9 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   <section class="services" id="services" transition:animate="fade">
     <div class="services-inner">
       <div class="services-header fade-up">
-        <span class="section-label">What I Do</span>
+        <span class="section-label gradient-label">WHAT I DO</span>
         <h2 class="section-title">Services</h2>
+        <p class="section-sub">Solusi kreatif lengkap untuk brand dan bisnis Anda</p>
       </div>
       <div class="services-grid">
         <ServiceCard
@@ -244,12 +257,14 @@ import TestimonialCard from '../components/TestimonialCard.astro';
   <!-- CONTACT -->
   <section class="contact" id="contact" transition:animate="fade">
     <div class="contact-inner fade-up">
-      <span class="section-label">Get In Touch</span>
-      <h2>Let's Create Together</h2>
-      <p>Hubungi saya untuk kolaborasi dan proyek kreatif berikutnya.</p>
+      <div class="contact-header">
+        <span class="section-label gradient-label">GET IN TOUCH</span>
+        <h2 class="section-title">Let's Create Together</h2>
+        <p class="section-sub">Hubungi saya untuk kolaborasi dan proyek kreatif berikutnya.</p>
+      </div>
 
       <!-- Contact Form -->
-      <form id="contact-form" class="contact-form" novalidate>
+      <form id="contact-form" class="contact-form stitch-form" novalidate>
         <!-- Honeypot — bot-only, hidden from humans -->
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;" />
 
@@ -298,15 +313,17 @@ import TestimonialCard from '../components/TestimonialCard.astro';
         </div>
       </form>
 
-      <p class="contact-alt">Atau hubungi langsung:</p>
+      <div class="contact-divider">
+        <span>atau hubungi langsung</span>
+      </div>
       <div class="contact-buttons">
-        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn-contact whatsapp">
+        <a href="https://wa.me/62895321693131" target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
-        <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener" class="btn-contact instagram">
+        <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-instagram"></i> Instagram
         </a>
-        <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener" class="btn-contact tiktok">
+        <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fab fa-tiktok"></i> TikTok
         </a>
       </div>
