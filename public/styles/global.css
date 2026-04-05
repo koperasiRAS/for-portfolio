@@ -2617,13 +2617,19 @@ body.glightbox-open { overflow: hidden; }
   /* ---- Mobile CTA + Toggle ---- */
   .btn-nav-cta { 
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     font-size: 11px;
-    padding: 6px 12px;
+    padding: 8px 16px;
+    min-height: 44px;
+    min-width: 80px;
     position: relative;
     z-index: 10004;
     pointer-events: auto !important;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(163,166,255,0.2);
+    touch-action: manipulation;
   }
   .nav-toggle { 
     display: flex; 
@@ -2631,10 +2637,15 @@ body.glightbox-open { overflow: hidden; }
     top: auto; 
     right: auto; 
     padding: 12px; 
-    margin-left: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
     z-index: 10004;
     pointer-events: auto !important;
     cursor: pointer;
+    touch-action: manipulation;
   }
   .preview-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 8px; }
