@@ -373,7 +373,7 @@ textarea:focus-visible {
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 10000;
+  z-index: 10003;
   height: var(--nav-h);
   display: flex;
   align-items: center;
@@ -2469,7 +2469,7 @@ body.glightbox-open { overflow: hidden; }
 }
 
 @media (max-width: 900px) {
-  .navbar { padding: 0 20px; }
+  .navbar { padding: 0 16px; gap: 6px; }
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -2620,6 +2620,10 @@ body.glightbox-open { overflow: hidden; }
     margin-left: auto;
     font-size: 11px;
     padding: 6px 12px;
+    position: relative;
+    z-index: 10004;
+    pointer-events: auto !important;
+    cursor: pointer;
   }
   .nav-toggle { 
     display: flex; 
@@ -2628,7 +2632,9 @@ body.glightbox-open { overflow: hidden; }
     right: auto; 
     padding: 12px; 
     margin-left: 8px;
-    z-index: 10002;
+    z-index: 10004;
+    pointer-events: auto !important;
+    cursor: pointer;
   }
   .preview-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 8px; }
