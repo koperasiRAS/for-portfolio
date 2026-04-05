@@ -458,6 +458,14 @@ textarea:focus-visible {
   color: var(--on-primary);
 }
 
+.desktop-cta {
+  display: inline-flex;
+}
+
+/* Hide desktop CTA inside mobile nav-links drawer */
+.nav-links .desktop-cta { display: none; }
+.nav-drawer-cta { display: none; }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -2621,22 +2629,48 @@ body.glightbox-open { overflow: hidden; }
     transform: scale(1.4);
   }
 
-  /* ---- Mobile CTA + Toggle ---- */
-  .btn-nav-cta { 
-    display: inline-flex;
+  /* ---- Drawer Contact CTA (inside nav-links) ---- */
+  .nav-drawer-cta {
+    display: flex !important;
+    padding: 16px 16px 4px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(163, 166, 255, 0.1);
+  }
+
+  .nav-links .btn-nav-cta {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
-    font-size: 11px;
-    padding: 8px 16px;
-    min-height: 44px;
-    min-width: 80px;
-    position: relative;
-    z-index: 10004;
-    pointer-events: auto !important;
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(163,166,255,0.2);
-    touch-action: manipulation;
+    font-size: 12px;
+    padding: 14px 20px;
+    min-height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-dim));
+    color: #000;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(163, 166, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nav-links .btn-nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(163, 166, 255, 0.4);
+    padding-left: 20px;
+  }
+
+  /* ---- Desktop CTA — always visible on desktop ---- */
+  .desktop-cta {
+    display: inline-flex !important;
+  }
+
+  /* ---- Mobile CTA + Toggle ---- */
+  .btn-nav-cta:not(.desktop-cta) {
+    display: none;
   }
   .nav-toggle { 
     display: flex; 
