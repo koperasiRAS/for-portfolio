@@ -1,0 +1,104 @@
+---
+export interface Props {
+  activePage?: string;
+}
+
+const { activePage = 'home' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home', page: 'home' },
+  { href: '/about', label: 'About', page: 'about' },
+  { href: '/foto', label: 'Foto', page: 'foto' },
+  { href: '/video', label: 'Video', page: 'video' },
+  { href: '/design', label: 'Design', page: 'design' },
+  { href: '/website', label: 'Website', page: 'website' },
+];
+---
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo">FOR</a>
+  <ul class="nav-links" id="navLinks">
+    {navLinks.map(link => (
+      <li>
+        <a
+          href={link.href}
+          class={activePage === link.page ? 'active' : ''}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <!-- Contact CTA desktop only, outside nav-links -->
+  <a href="/#contact" class="btn-nav-cta desktop-cta">Contact</a>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<script is:inline>
+  function setupMobileNav() {
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    let backdrop = document.getElementById('navBackdrop');
+
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'navBackdrop';
+      backdrop.className = 'nav-backdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(backdrop);
+    }
+
+    if (!toggle || !links) return;
+
+    const newToggle = toggle.cloneNode(true);
+    if (toggle.parentNode) toggle.parentNode.replaceChild(newToggle, toggle);
+
+    const openNav = () => {
+      links.classList.add('open');
+      newToggle.classList.add('active');
+      newToggle.setAttribute('aria-expanded', 'true');
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeNav = () => {
+      links.classList.remove('open');
+      newToggle.classList.remove('active');
+      newToggle.setAttribute('aria-expanded', 'false');
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    newToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      links.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeNav);
+    });
+
+    backdrop.addEventListener('click', closeNav);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        closeNav();
+        newToggle.focus();
+      }
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupMobileNav);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileNav);
+  } else {
+    setupMobileNav();
+  }
+</script>

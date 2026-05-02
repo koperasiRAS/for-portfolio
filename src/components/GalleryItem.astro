@@ -1,0 +1,47 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  category: string;
+  href?: string;
+  gallery?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  src,
+  alt,
+  title,
+  category,
+  href,
+  gallery = 'portfolio-gallery',
+  loading = 'lazy',
+} = Astro.props;
+---
+
+{href ? (
+  <a
+    class="gallery-item glightbox"
+    href={href}
+    data-gallery={gallery}
+    data-title={title}
+    data-category={category}
+  >
+    <img src={src} alt={alt} loading={loading} width="600" height="400" />
+    <div class="gallery-overlay">
+      <span class="gallery-cat-badge">{category}</span>
+      <span class="gallery-item-title">{title}</span>
+      <i class="fas fa-expand gallery-expand-icon"></i>
+    </div>
+  </a>
+) : (
+  <div class="gallery-item" data-category={category}>
+    <img src={src} alt={alt} loading={loading} width="600" height="400" />
+    <div class="gallery-overlay">
+      <span class="gallery-cat-badge">{category}</span>
+      <span class="gallery-item-title">{title}</span>
+      <i class="fas fa-expand gallery-expand-icon"></i>
+    </div>
+  </div>
+)}

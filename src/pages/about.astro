@@ -1,0 +1,1033 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { waLink } from '../utils/whatsapp.js';
+---
+
+<BaseLayout
+  title="About Rangga Danuarta | Visual Storyteller Frame Of Rangga"
+  description="Kenalan lebih dekat dengan Rangga Danuarta Visual Storyteller berbasis di Depok dengan 4+ tahun pengalaman di fotografi, videografi, brand design, dan web development."
+  ogImage="https://for-portfolio-mu.vercel.app/assets/og/og-default.jpg"
+  ogUrl="https://for-portfolio-mu.vercel.app/about"
+>
+  <Navbar slot="navbar" activePage="about" />
+
+  <!-- PAGE HERO -->
+  <section class="about-hero" transition:animate="fade">
+    <div class="about-hero-glow-r" aria-hidden="true"></div>
+    <div class="about-hero-glow-l" aria-hidden="true"></div>
+    <div class="about-hero-inner">
+      <div class="about-hero-content">
+        <span class="stitch-badge">
+          <i class="fas fa-user"></i>
+          About Me
+        </span>
+        <h1 class="about-hero-title">
+          Crafting Stories<br />
+          <span class="about-hero-accent">Through Every Frame.</span>
+        </h1>
+        <p class="about-hero-desc">
+          Saya Rangga Danuarta seorang Visual Storyteller dan Creative Professional yang berbasis di Depok, Indonesia. Dengan lebih dari 4 tahun pengalaman, saya menggabungkan kepekaan artistik dan ketelitian teknis untuk menghasilkan karya visual yang tidak hanya indah, tapi juga berdampak nyata.
+        </p>
+        <div class="about-hero-cta">
+          <a href={waLink('collab')} target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i> Let's Collaborate
+          </a>
+          <a href="/#projects" class="btn btn-ghost">
+            <i class="fas fa-eye"></i> View Work
+          </a>
+        </div>
+      </div>
+      <div class="about-hero-portrait">
+        <div class="about-hero-portrait-inner">
+          <img
+            src="/assets/foto/about rangga.jpg"
+            alt="Rangga Danuarta Visual Storyteller"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="about-hero-float-badge">
+            <div class="about-float-icon">
+              <span class="material-symbols-outlined stitch-icon-filled">verified</span>
+            </div>
+            <div>
+              <p class="about-float-sub">Visual Storyteller</p>
+              <p class="about-float-name">Rangga Danuarta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- STORY -->
+  <section class="about-story" id="story" transition:animate="fade">
+    <div class="about-story-inner">
+      <div class="about-story-header fade-up">
+        <span class="section-label gradient-label">MY STORY</span>
+        <h2 class="section-title">From Hobbyist to Professional</h2>
+      </div>
+      <div class="about-story-grid fade-up">
+        <div class="about-story-text">
+          <p>
+            Perjalanan saya di dunia visual storytelling dimulai dari ketertarikan sederhana terhadap kamera sebuah Canon tua yangwarisan dari kakak. Dari situlah saya belajar bahwa setiap foto punya cerita, dan tugas seorang storyteller adalah menemukan dan menyimpankannya dengan cara yang paling autentik.
+          </p>
+          <p>
+            Seiring waktu, ketertarikan itu berkembang menjadi passion yang mendalam. Saya mulai mendalami videografi, lalu brand design, dan akhirnya web development. Setiap disiplin baru menambah perspektif baru dalam cara saya melihat dan mengkomunikasikan sebuah cerita.
+          </p>
+          <p>
+            Hari ini, saya bekerja dengan brand-brand Indonesia seperti Tokopedia, Shopee, KitaBisa, dan Mandiri untuk mengubah ide menjadi pengalaman visual yang berkesan dari concept hingga final delivery.
+          </p>
+        </div>
+        <div class="about-story-highlights">
+          <div class="about-highlight-card">
+            <span class="about-highlight-num" data-target="4">0+</span>
+            <span class="about-highlight-label">Tahun Pengalaman</span>
+          </div>
+          <div class="about-highlight-card">
+            <span class="about-highlight-num" data-target="30">0+</span>
+            <span class="about-highlight-label">Project Selesai</span>
+          </div>
+          <div class="about-highlight-card">
+            <span class="about-highlight-num" data-target="6">0+</span>
+            <span class="about-highlight-label">Brand Partners</span>
+          </div>
+          <div class="about-highlight-card">
+            <span class="about-highlight-num" data-target="4">0</span>
+            <span class="about-highlight-label">Layanan Utama</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- SKILLS & TOOLS -->
+  <section class="about-skills" id="skills" transition:animate="fade">
+    <div class="about-skills-inner">
+      <div class="about-skills-header fade-up">
+        <span class="section-label gradient-label">TOOLS &amp; SKILLS</span>
+        <h2 class="section-title">What I Use to Create</h2>
+      </div>
+      <div class="about-skills-grid fade-up">
+
+        <!-- Photography -->
+        <div class="about-skill-card">
+          <div class="about-skill-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3 class="about-skill-title">Photography</h3>
+          <ul class="about-skill-list">
+            <li>Adobe Lightroom Classic</li>
+            <li>Adobe Photoshop</li>
+            <li>Capture One Pro</li>
+            <li>Exposure X7</li>
+          </ul>
+        </div>
+
+        <!-- Videography -->
+        <div class="about-skill-card">
+          <div class="about-skill-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3 class="about-skill-title">Videography</h3>
+          <ul class="about-skill-list">
+            <li>Adobe Premiere Pro</li>
+            <li>DaVinci Resolve</li>
+            <li>After Effects</li>
+            <li>CapCut Pro</li>
+          </ul>
+        </div>
+
+        <!-- Brand Design -->
+        <div class="about-skill-card">
+          <div class="about-skill-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 class="about-skill-title">Brand Design</h3>
+          <ul class="about-skill-list">
+            <li>Adobe Illustrator</li>
+            <li>Figma</li>
+            <li>Canva Pro</li>
+            <li>Adobe InDesign</li>
+          </ul>
+        </div>
+
+        <!-- Web Development -->
+        <div class="about-skill-card">
+          <div class="about-skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="about-skill-title">Web Development</h3>
+          <ul class="about-skill-list">
+            <li>Astro</li>
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript / TypeScript</li>
+            <li>Vercel / Netlify</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- APPROACH -->
+  <section class="about-approach" id="approach" transition:animate="fade">
+    <div class="about-approach-inner">
+      <div class="about-approach-header fade-up">
+        <span class="section-label gradient-label">HOW I WORK</span>
+        <h2 class="section-title">My Creative Process</h2>
+      </div>
+      <div class="about-approach-steps fade-up">
+        <div class="about-step">
+          <div class="about-step-num">01</div>
+          <div class="about-step-content">
+            <h3 class="about-step-title">Discovery &amp; Research</h3>
+            <p class="about-step-desc">
+              Memahami tujuan, audiens, dan konteks brand secara mendalam. Riset kompetitor, trend, dan referensi visual untuk membangun fondasi konsep yang kuat.
+            </p>
+          </div>
+        </div>
+        <div class="about-step-arrow" aria-hidden="true">
+          <i class="fas fa-arrow-right-long"></i>
+        </div>
+        <div class="about-step">
+          <div class="about-step-num">02</div>
+          <div class="about-step-content">
+            <h3 class="about-step-title">Concept Development</h3>
+            <p class="about-step-desc">
+              Mengubah insight menjadi konsep visual yang terstruktur. Moodboard, storyboard, dan wireframe dikembangkan untuk menyelaraskan ekspektasi sebelum eksekusi.
+            </p>
+          </div>
+        </div>
+        <div class="about-step-arrow" aria-hidden="true">
+          <i class="fas fa-arrow-right-long"></i>
+        </div>
+        <div class="about-step">
+          <div class="about-step-num">03</div>
+          <div class="about-step-content">
+            <h3 class="about-step-title">Production &amp; Execution</h3>
+            <p class="about-step-desc">
+              Shooting, recording, atau coding tergantung jenis project. Standar teknis tinggi dengan attention to detail di setiap langkah produksi.
+            </p>
+          </div>
+        </div>
+        <div class="about-step-arrow" aria-hidden="true">
+          <i class="fas fa-arrow-right-long"></i>
+        </div>
+        <div class="about-step">
+          <div class="about-step-num">04</div>
+          <div class="about-step-content">
+            <h3 class="about-step-title">Refinement &amp; Delivery</h3>
+            <p class="about-step-desc">
+              Review, revisi, dan finalisasi hingga hasil memenuhi standar tertinggi. Deliverables dikemas dengan lengkap beserta panduan penggunaan jika diperlukan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- WHY ME -->
+  <section class="about-why" id="why" transition:animate="fade">
+    <div class="about-why-inner">
+      <div class="about-why-header fade-up">
+        <span class="section-label gradient-label">WHY CHOOSE ME</span>
+        <h2 class="section-title">What Sets Me Apart</h2>
+      </div>
+      <div class="about-why-grid fade-up">
+        <div class="about-why-card">
+          <div class="about-why-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>All-in-One Creative</h3>
+          <p>
+            Dari foto hingga website saya handle end to end. Tidak perlu merekrut beberapa vendor berbeda. Satu komunikasi, satu hasil yang konsisten.
+          </p>
+        </div>
+        <div class="about-why-card">
+          <div class="about-why-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Strategic Thinking</h3>
+          <p>
+            Visual yang bagus itu mudah dibuat. Visual yang efektif untuk bisnis itulah yang saya berikan. Setiap keputusan desain didasarkan pada tujuan brand.
+          </p>
+        </div>
+        <div class="about-why-card">
+          <div class="about-why-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Professional &amp; Reliable</h3>
+          <p>
+            Komitmen waktu, komunikasi yang jelas, dan revisi yang reasonable. Saya percaya bahwa profesionalisme sama pentingnya dengan kreativitas.
+          </p>
+        </div>
+        <div class="about-why-card">
+          <div class="about-why-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3>Passion for Quality</h3>
+          <p>
+            Saya tidak pernah puas dengan "cukup bagus." Setiap project mendapat full attention dan standar kualitas yang sama tidak peduli besar atau kecil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- CTA -->
+  <section class="about-cta" transition:animate="fade">
+    <div class="about-cta-inner fade-up">
+      <h2 class="about-cta-title">Ready to Create Something <span class="about-cta-accent">Amazing</span> Together?</h2>
+      <p class="about-cta-desc">
+        Apapun project visual yang sedang Anda rencanakan, saya siap membantu mewujudkannya. Mari diskusi dan mulai collaborate.
+      </p>
+      <div class="about-cta-buttons">
+        <a href={waLink('collab')} target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+        </a>
+        <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fab fa-instagram"></i> Follow on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<style>
+  /* ========== ABOUT HERO ========== */
+  .about-hero {
+    position: relative;
+    padding: 120px 64px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .about-hero-glow-r {
+    position: absolute;
+    top: -5%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(193, 128, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-hero-glow-l {
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(163, 166, 255, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .stitch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.12);
+    color: var(--secondary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .stitch-badge i { font-size: 12px; }
+
+  .about-hero-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(36px, 4vw, 64px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--on-surface);
+  }
+
+  .about-hero-accent {
+    color: var(--accent-primary);
+    font-style: italic;
+  }
+
+  .about-hero-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--on-surface-variant);
+    max-width: 520px;
+  }
+
+  .about-hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  /* Portrait */
+  .about-hero-portrait {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-hero-portrait-inner {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .about-hero-portrait-inner img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 24px;
+    display: block;
+    filter: grayscale(20%);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+  }
+
+  .about-hero-float-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(25, 37, 64, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(64, 72, 93, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .about-float-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(163, 166, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stitch-icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: var(--accent-primary);
+    font-size: 20px;
+  }
+
+  .about-float-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 2px;
+  }
+
+  .about-float-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--on-surface);
+  }
+
+  /* ========== STORY ========== */
+  .about-story {
+    padding: 80px 0;
+    background: var(--surface-container);
+  }
+
+  .about-story-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .about-story-header {
+    margin-bottom: 56px;
+  }
+
+  .about-story-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-story-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-story-text p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--on-surface-variant);
+  }
+
+  .about-story-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .about-highlight-card {
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .about-highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(163, 166, 255, 0.2);
+  }
+
+  .about-highlight-num {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-primary);
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .about-highlight-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+  }
+
+  /* ========== SKILLS ========== */
+  .about-skills {
+    padding: 80px 0;
+  }
+
+  .about-skills-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .about-skills-header {
+    margin-bottom: 56px;
+  }
+
+  .about-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .about-skill-card {
+    background: var(--surface-container);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+
+  .about-skill-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(163, 166, 255, 0.18);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  .about-skill-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(163, 166, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-skill-icon i {
+    font-size: 20px;
+    color: var(--accent-primary);
+  }
+
+  .about-skill-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--on-surface);
+  }
+
+  .about-skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .about-skill-list li {
+    font-size: 13px;
+    color: var(--on-surface-variant);
+    font-family: 'Inter', sans-serif;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .about-skill-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-secondary);
+    opacity: 0.7;
+  }
+
+  /* ========== APPROACH ========== */
+  .about-approach {
+    padding: 80px 0;
+    background: var(--surface-container);
+  }
+
+  .about-approach-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .about-approach-header {
+    margin-bottom: 56px;
+  }
+
+  .about-approach-steps {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .about-step {
+    flex: 1;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .about-step:hover {
+    transform: translateY(-4px);
+    border-color: rgba(163, 166, 255, 0.2);
+  }
+
+  .about-step-num {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--accent-secondary);
+    text-transform: uppercase;
+  }
+
+  .about-step-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--on-surface);
+    margin-bottom: 4px;
+  }
+
+  .about-step-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--on-surface-variant);
+  }
+
+  .about-step-arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    color: var(--accent-primary);
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  /* ========== WHY ME ========== */
+  .about-why {
+    padding: 80px 0;
+  }
+
+  .about-why-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .about-why-header {
+    margin-bottom: 56px;
+  }
+
+  .about-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-why-card {
+    background: var(--surface-container);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+
+  .about-why-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(163, 166, 255, 0.18);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  .about-why-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(163, 166, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-why-icon i {
+    font-size: 22px;
+    color: var(--accent-primary);
+  }
+
+  .about-why-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--on-surface);
+  }
+
+  .about-why-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--on-surface-variant);
+  }
+
+  /* ========== CTA ========== */
+  .about-cta {
+    padding: 80px 0 120px;
+    background: var(--surface-container);
+  }
+
+  .about-cta-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 64px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .about-cta-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--on-surface);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    max-width: 640px;
+  }
+
+  .about-cta-accent {
+    color: var(--accent-secondary);
+    font-style: italic;
+  }
+
+  .about-cta-desc {
+    font-size: 16px;
+    color: var(--on-surface-variant);
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  .about-cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+
+  /* ========== SHARED UTILS (already in global.css but redefining for clarity) ========== */
+  .section-label {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 12px;
+  }
+
+  .gradient-label {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: var(--on-surface);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(163, 166, 255, 0.12) 20%,
+      rgba(193, 128, 255, 0.12) 80%,
+      transparent
+    );
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px) {
+    .about-hero {
+      padding: 120px 48px 80px;
+    }
+    .about-hero-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .about-hero-portrait {
+      order: -1;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .about-skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .about-approach-steps {
+      flex-direction: column;
+    }
+    .about-step-arrow {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero,
+    .about-story-inner,
+    .about-skills-inner,
+    .about-approach-inner,
+    .about-why-inner,
+    .about-cta-inner {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .about-hero-title {
+      font-size: clamp(32px, 9vw, 52px);
+    }
+    .about-story-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .about-skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .about-why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-hero,
+    .about-story-inner,
+    .about-skills-inner,
+    .about-approach-inner,
+    .about-why-inner,
+    .about-cta-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .about-hero {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+    .about-skills-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-story-highlights {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .about-highlight-num {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-hero {
+      padding: 88px 20px 48px;
+    }
+    .about-hero-portrait-inner {
+      max-width: 280px;
+    }
+    .about-hero-float-badge {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 12px 16px;
+    }
+    .about-step {
+      padding: 20px;
+    }
+  }
+</style>
+
+<script is:inline>
+  /* ---------- COUNTER ANIMATION (reused from home) ---------- */
+  function animateCounters() {
+    const counters = document.querySelectorAll('.about-highlight-num[data-target]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function tick(now) {
+          if (document.visibilityState === 'hidden') {
+            requestAnimationFrame(tick);
+            return;
+          }
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + '+';
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = target + '+';
+          }
+        }
+
+        requestAnimationFrame(tick);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => observer.observe(el));
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    animateCounters();
+  });
+</script>

@@ -1,0 +1,12 @@
+# Track code/text files normally
+*.astro  text
+*.js     text
+*.mjs    text
+*.json   text
+*.toml   text
+*.css    text
+*.svg    text
+*.xml    text
+*.html   text
+*.md     text
+*.yml    text

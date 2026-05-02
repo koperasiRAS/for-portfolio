@@ -1,0 +1,184 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  canonicalUrl?: string;
+  bodyClass?: string;
+  hasGlightbox?: boolean;
+  hasSwiper?: boolean;
+  hasHeroPreload?: boolean;
+}
+
+const {
+  title = "Frame Of Rangga | Visual Storytelling",
+  description = "Rangga Danuarta Visual Storyteller. Fotografi, Videografi, Brand Design, dan Web Development di Depok, Indonesia.",
+  keywords = 'photography, videography, design, branding, visual storytelling, Indonesia',
+  ogImage = 'https://for-portfolio-mu.vercel.app/assets/foto/foto cover halaman utama.jpg',
+  ogUrl,
+  canonicalUrl,
+  bodyClass = '',
+  hasGlightbox = false,
+  hasSwiper = false,
+  hasHeroPreload = false,
+} = Astro.props;
+
+const siteUrl = 'https://for-portfolio-mu.vercel.app';
+const pageUrl = canonicalUrl ?? ogUrl ?? siteUrl;
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+---
+
+<!DOCTYPE html>
+<html lang="id" data-theme>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary Meta -->
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Rangga Danuarta" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Telegram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Frame Of Rangga" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card (Twitter/X) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@frameofrangga" />
+  <meta name="twitter:creator" content="@frameofrangga" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={title} />
+
+  <title>{title}</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href={pageUrl} />
+
+  <!-- JSON-LD Structured Data -->
+  {isHome ? (
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rangga Danuarta",
+    "alternateName": ["FOR", "Frame Of Rangga"],
+    "jobTitle": "Visual Storyteller",
+    "url": siteUrl,
+    "description": "Visual storyteller specializing in photography, videography, and brand design based in Depok, Jawa Barat, Indonesia.",
+    "knowsAbout": ["Photography", "Videography", "Graphic Design", "Web Development"],
+    "areaServed": { "@type": "Country", "name": "Indonesia" },
+    "sameAs": [
+      "https://instagram.com/frameofrangga",
+      "https://www.tiktok.com/@madebyrangga"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "frameofrangga@gmail.com",
+      "telephone": "+6287779560264",
+      "contactType": "Customer Service"
+    }
+  })} />
+  ) : (
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": pageUrl,
+    "isPartOf": { "@type": "WebSite", "name": "Frame Of Rangga", "url": siteUrl }
+  })} />
+  )}
+
+  <!-- Fonts Stitch Design System: Manrope + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Hero image preload for LCP (home page only) -->
+  {hasHeroPreload && (
+    <link rel="preload" as="image" href="/assets/foto/foto cover halaman utama.jpg" />
+  )}
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Swiper (foto, design, video pages) -->
+  {hasSwiper && (
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  )}
+
+  <!-- GLightbox (foto, design, video, website pages) -->
+  {hasGlightbox && (
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  )}
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+</head>
+<body class={bodyClass}>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-gradient"></div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loading-screen" id="loader" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-text">FOR</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <slot name="navbar" />
+
+  <!-- Back to Top -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Page Content -->
+  <slot />
+
+  <!-- Footer -->
+  <slot name="footer" />
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  {hasSwiper && (
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  )}
+  {hasGlightbox && (
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  )}
+  <script is:inline src="/scripts/script.js"></script>
+
+  <!-- Plausible Analytics privacy-friendly, GDPR-compliant -->
+  <!-- Replace with your actual Plausible domain if you have an account -->
+  <!-- Register at https://plausible.io to get your domain -->
+  <!--
+  <script defer data-domain="for-portfolio-mu.vercel.app" src="https://plausible.io/js/script.js"></script>
+  -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+---
+export interface Props {
+  variant?: 'full' | 'minimal';
+}
+
+const { variant = 'minimal' } = Astro.props;
+
+import { waLink } from '../utils/whatsapp.js';
+
+// Server-side email rendered at build time, no JS needed
+// Obfuscated as HTML entities to reduce spam bot exposure
+const emailParts = ['fr', 'ameo', 'fr', 'ang', 'a@', 'gm', 'ail.', 'co', 'm'];
+const emailDisplay = emailParts.join('');
+const emailHref = 'mailto:' + emailParts.join('');
+---
+
+<footer class={variant === 'full' ? 'footer-full' : 'footer-minimal'}>
+  {variant === 'full' && (
+    <div class="footer-main">
+      <div class="footer-col footer-brand-col">
+        <div class="footer-logo">FOR</div>
+        <p class="footer-tagline">Visual storytelling yang autentik dan berkesan.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href={waLink('general')} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href={emailHref} target="_blank" rel="noopener noreferrer" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <ul class="footer-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/foto">Photography</a></li>
+          <li><a href="/video">Videography</a></li>
+          <li><a href="/design">Brand Design</a></li>
+          <li><a href="/website">Web Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Layanan</h4>
+        <ul class="footer-nav">
+          <li><a href="/foto">Photography</a></li>
+          <li><a href="/video">Videography</a></li>
+          <li><a href="/design">Brand Design</a></li>
+          <li><a href="/website">Web Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <ul class="footer-nav">
+          <li>
+            <a href={waLink('general')} target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> +62 877 795 602 64
+            </a>
+          </li>
+          <li>
+            <a href={emailHref} target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <i class="fas fa-envelope"></i> {emailDisplay}
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i> @frameofrangga
+            </a>
+          </li>
+          <li>
+            <span class="footer-location">
+              <i class="fas fa-map-marker-alt"></i> Depok, Indonesia
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )}
+
+  {variant === 'minimal' && (
+    <div class="footer-social-minimal">
+      <a href="https://instagram.com/frameofrangga" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@madebyrangga" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://wa.me/6287779560264" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  )}
+
+  <div class="footer-bottom">
+    <p>&copy; {new Date().getFullYear()} <span class="footer-brand">Frame Of Rangga</span>. All rights reserved.</p>
+  </div>
+</footer>

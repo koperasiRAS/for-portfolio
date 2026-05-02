@@ -1,0 +1,593 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Photography Portfolio | Frame Of Rangga"
+  description="Portofolio fotografi Rangga Danuarta wedding, komersial, automotive, lifestyle, dan brand photography dengan pendekatan visual storytelling."
+  ogImage="https://for-portfolio-mu.vercel.app/assets/og/og-foto.jpg"
+  ogUrl="https://for-portfolio-mu.vercel.app/foto"
+  hasGlightbox={true}
+>
+  <Navbar slot="navbar" activePage="foto" />
+
+  <!-- PAGE HERO Stitch Reference -->
+  <section class="page-hero stitch-hero" transition:animate="fade">
+    <div class="page-hero-bg-glow" aria-hidden="true"></div>
+    <div class="page-hero-inner stitch-hero-inner">
+      <!-- Label badge -->
+      <div class="stitch-badge">
+        <i class="fas fa-camera"></i>
+        <span>Portfolio</span>
+      </div>
+      <!-- Heading -->
+      <h1 class="stitch-hero-title">Photography</h1>
+      <!-- Subtitle -->
+      <p class="stitch-hero-sub">
+        Momen-momen yang diabadikan dengan sentuhan visual yang kuat dan
+        storytelling yang autentik. Dari pernikahan hingga konten brand, setiap
+        frame bercerita.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER + GALLERY Stitch Bento Grid -->
+  <section class="gallery-section" transition:animate="fade">
+    <!-- Filter Bar Stitch pill style -->
+    <div class="filter-bar fade-up" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="wedding">Wedding</button>
+      <button class="filter-btn" data-filter="komersial">Komersial</button>
+      <button class="filter-btn" data-filter="automotive">Automotive</button>
+      <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+      <button class="filter-btn" data-filter="fotografer">Fotografer</button>
+    </div>
+
+    <!-- Bento Grid Gallery Stitch asymmetric layout -->
+    <div class="stitch-bento-grid fade-up">
+      <!-- Wedding 1 Featured Large (col-span-8) -->
+      <a
+        class="stitch-card stitch-card-featured glightbox"
+        href="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+        data-gallery="portfolio-gallery"
+        data-title="Wedding: Ultah Rangen"
+        data-category="wedding"
+      >
+        <div class="stitch-card-img-wrap">
+          <img
+            src="/assets/foto/wedding/ultah raden 2 landscape.JPG"
+            alt="Wedding Photography"
+            loading="lazy"
+            width="960"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Ultah</h3>
+          <p class="stitch-card-desc">
+            Momen pernikahan yang diabadikan dengan cahaya natural dan komposisi
+            sinematik.
+          </p>
+        </div>
+      </a>
+
+      <!-- Wedding 2 (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/wedding/anggie 2 landscape.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Wedding: Anggie"
+        data-category="wedding"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/wedding/anggie 2 landscape.jpg"
+            alt="Portrait Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie</h3>
+        </div>
+      </a>
+
+      <!-- Wedding 3 (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/wedding/anggie 4 landscape.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Wedding: Anggie Editorial"
+        data-category="wedding"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/wedding/anggie 4 landscape.jpg"
+            alt="Editorial Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie Editorial</h3>
+        </div>
+      </a>
+
+      <!-- Wedding 4 Portrait (card baru) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/wedding/anggie 1.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Wedding: Anggie"
+        data-category="wedding"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/wedding/anggie 1.jpg"
+            alt="Wedding Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Wedding</span>
+          <h3 class="stitch-card-title">Wedding: Anggie</h3>
+        </div>
+      </a>
+
+      <!-- Automotive (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/fotografer/fotografi mobil.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Automotive: Fotografi Mobil"
+        data-category="automotive"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/fotografer/fotografi mobil.jpg"
+            alt="Automotive Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Automotive</span>
+          <h3 class="stitch-card-title">Automotive: Fotografi Mobil</h3>
+        </div>
+      </a>
+
+      <!-- Komersial (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/fashion/foto baju coklat.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Komersial: Fashion Shoot"
+        data-category="komersial"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/fashion/foto baju coklat.jpg"
+            alt="Commercial Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Komersial</span>
+          <h3 class="stitch-card-title">Komersial: Fashion Shoot</h3>
+        </div>
+      </a>
+
+      <!-- Lifestyle (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/fotografer/ccm rangga.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Lifestyle: CCM Rangga"
+        data-category="lifestyle"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-square">
+          <img
+            src="/assets/foto/fotografer/ccm rangga.jpg"
+            alt="Lifestyle Photography"
+            loading="lazy"
+            width="480"
+            height="480"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Lifestyle</span>
+          <h3 class="stitch-card-title">Lifestyle: CCM Rangga</h3>
+        </div>
+      </a>
+
+      <!-- Fotografer (col-span-4) -->
+      <a
+        class="stitch-card glightbox"
+        href="/assets/foto/fotografer/fotografi gojek.jpg"
+        data-gallery="portfolio-gallery"
+        data-title="Fotografer: Fotografi Gojek"
+        data-category="fotografer"
+      >
+        <div class="stitch-card-img-wrap stitch-card-img-portrait">
+          <img
+            src="/assets/foto/fotografer/fotografi gojek.jpg"
+            alt="Brand Photography"
+            loading="lazy"
+            width="480"
+            height="600"
+          />
+        </div>
+        <div class="stitch-card-overlay">
+          <span class="stitch-card-cat">Fotografer</span>
+          <h3 class="stitch-card-title">Fotografer: Fotografi Gojek</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" variant="minimal" />
+</BaseLayout>
+
+<style>
+  /* =============================================
+     STITCH FOTO PAGE Scoped styles
+     Matches: stitch/photography_showcase/code.html
+     ============================================= */
+
+  /* Hero Stitch style */
+  .stitch-hero {
+    padding: 140px 48px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .stitch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.15);
+    color: var(--accent-secondary);
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .stitch-badge i {
+    font-size: 12px;
+  }
+
+  .stitch-hero-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .stitch-hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 580px;
+  }
+
+  /* Filter Bar pill buttons, centered */
+  .filter-bar {
+    padding: 0 48px;
+    margin-bottom: 48px;
+  }
+
+  .filter-btn {
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(163, 166, 255, 0.08);
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 9px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: var(--surface-bright);
+    color: var(--accent-primary);
+    border-color: rgba(163, 166, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-secondary-container);
+    border-color: rgba(193, 128, 255, 0.3);
+    color: #e9cdff;
+  }
+
+  /* Bento Grid Masonry layout to prevent empty gaps */
+  .stitch-bento-grid {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 0 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Remove grid-column spans for masonry */
+  .stitch-card-featured {
+    /* No longer grid-column */
+  }
+
+  .stitch-card:not(.stitch-card-featured) {
+    /* No longer grid-column */
+  }
+
+  /* Stitch Card */
+  .stitch-card {
+    position: relative;
+    border-radius: 16px;
+    background: var(--surface-container);
+    border: 1px solid rgba(163, 166, 255, 0.06);
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    transition:
+      transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .stitch-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(163, 166, 255, 0.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Image containers */
+  .stitch-card-img-wrap {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  .stitch-card-img-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .stitch-card-img-portrait {
+    aspect-ratio: 4 / 5;
+  }
+
+  .stitch-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+
+  .stitch-card:hover .stitch-card-img-wrap img {
+    transform: scale(1.06);
+  }
+
+  /* Overlay Stitch style, bottom gradient + text */
+  .stitch-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(6, 14, 32, 0.92) 0%,
+      rgba(6, 14, 32, 0.3) 40%,
+      transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stitch-card:hover .stitch-card-overlay {
+    opacity: 1;
+  }
+
+  .stitch-card-cat {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-tertiary, #8ab0ff);
+    margin-bottom: 6px;
+  }
+
+  .stitch-card-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .stitch-card-desc {
+    font-size: 12px;
+    color: rgba(222, 229, 255, 0.7);
+    line-height: 1.5;
+    max-width: 320px;
+  }
+
+  /* Responsive iPad (768px) */
+  @media (max-width: 768px) {
+    .stitch-hero {
+      padding: 100px 24px 60px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(40px, 10vw, 72px);
+    }
+
+    .filter-bar,
+    .stitch-bento-grid {
+      padding: 0 20px;
+    }
+
+    /* 2-column masonry gallery */
+    .stitch-bento-grid {
+      column-count: 2;
+      column-gap: 14px;
+    }
+
+    .stitch-card {
+      margin-bottom: 14px;
+    }
+
+    .stitch-card-featured,
+    .stitch-card:not(.stitch-card-featured) {
+      /* Grid spans removed */
+    }
+  }
+
+  /* Responsive Mobile (480px) */
+  @media (max-width: 600px) {
+    .stitch-hero {
+      padding: 88px 20px 48px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(36px, 12vw, 56px);
+    }
+
+    .stitch-hero-sub {
+      font-size: 15px;
+    }
+
+    /* Filter: horizontal scroll */
+    .filter-bar {
+      gap: 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding: 0 20px 8px;
+      scrollbar-width: none;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      font-size: 12px;
+      padding: 8px 18px;
+    }
+
+    /* Single column gallery */
+    .stitch-bento-grid {
+      column-count: 1;
+      padding: 0 20px;
+      column-gap: 16px;
+    }
+
+    .stitch-card {
+      margin-bottom: 16px;
+    }
+
+    .stitch-card-featured,
+    .stitch-card:not(.stitch-card-featured) {
+      /* Grid spans removed */
+    }
+
+    .stitch-card-overlay {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stitch-hero {
+      padding: 80px 20px 40px;
+    }
+
+    .stitch-hero-title {
+      font-size: clamp(32px, 14vw, 48px);
+    }
+
+    .stitch-card-overlay {
+      opacity: 1;
+    }
+
+    .stitch-card-desc {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  /* ---------- GLIGHTBOX ---------- */
+  document.addEventListener("DOMContentLoaded", function initGL() {
+    if (typeof GLightbox === "undefined") {
+      setTimeout(initGL, 100);
+      return;
+    }
+    GLightbox({
+      selector: ".glightbox",
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false,
+      zoomable: true,
+    });
+  });
+
+  /* ---------- CATEGORY FILTER ---------- */
+  (function () {
+    const filterBar = document.querySelector(".filter-bar");
+    if (!filterBar) return;
+    const btns = filterBar.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".stitch-card");
+    if (!cards.length) return;
+
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const filter = btn.dataset.filter;
+        btns.forEach(function (b) {
+          b.classList.remove("active");
+        });
+        btn.classList.add("active");
+        cards.forEach(function (card) {
+          const cat = card.dataset.category || "";
+          if (filter === "all" || cat === filter) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  })();
+</script>
